@@ -1,0 +1,49 @@
+foot-item {
+  //display: block;
+  .foot {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    .foot-top {
+      background: $primary;
+      padding: 30px;
+      color: white;
+      //border-radius: 3px;
+
+      .foot-title {
+        color: white;
+        font-weight: 700;
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+
+      .foot-item {
+      }
+
+      .fa {
+        font-size: 26px;
+        margin-right: 10px;
+      }
+    }
+
+    .foot-bottom {
+      margin-top: 30px;
+      line-height: 30px;
+      text-align: center;
+      //color: white;
+
+      .dark & {
+        color: white;
+      }
+
+      a {
+        color: $primary;
+        font-weight: bold;
+
+        .dark & {
+          color: white;
+        }
+      }
+    }
+  }
+}

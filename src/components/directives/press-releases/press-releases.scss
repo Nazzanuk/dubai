@@ -1,0 +1,23 @@
+press-releases-item {
+
+  .press-releases {
+
+    display: flex;
+    flex-direction: row;
+    height: 250px;
+    margin: -15px;
+
+    @include mobile {
+      flex-wrap: wrap;
+      height: auto;
+    }
+
+    .hero-main {
+      //padding-bottom: 30p/x;
+
+      @include mobile {
+        min-height: 150px;
+      }
+    }
+  }
+}

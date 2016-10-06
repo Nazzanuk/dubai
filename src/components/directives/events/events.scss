@@ -1,0 +1,69 @@
+events-item {
+
+  .events {
+    display: flex;
+    flex-direction: column;
+
+    .event {
+      display: flex;
+      flex-direction: row;
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid #eee;
+
+      &:first-child {
+        margin-top: 0;
+        padding-top: 0;
+        border-top: none;
+      }
+
+      .event-date {
+        background: $red;
+        //background: lighten($red, 5%);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 70px;
+        height: 70px;
+        margin-right: 15px;
+        //border-radius: 3px;
+
+        .date-number {
+          font-size: 30px;
+          line-height: 1;
+          font-weight: bold;
+        }
+      }
+
+      .event-content {
+        height: 70px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 16px;
+        font-weight: bold;
+        color: $red;
+
+        .content-small {
+          font-size: 12px;
+          font-weight: normal;
+          color: #999;
+
+        }
+
+      }
+
+      &:nth-child(2n) {
+        .event-date {
+          background: lighten($red, 10%);
+        }
+
+        .event-content {
+          //color: darken($red, 10%);
+        }
+      }
+    }
+  }
+}

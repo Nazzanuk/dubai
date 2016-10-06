@@ -1,0 +1,50 @@
+.search-filters {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin: -15px -15px 0 0;
+  //border: 1px solid #ccc;
+
+  .search-filter {
+    flex: 1 0 140px;
+    margin: 15px 15px 0 0;
+    position: relative;
+    border: none;
+
+    select, input {
+      height: 35px;
+      line-height: 25px;
+      padding: 5px 10px;
+      background: #eee;
+      float: left;
+      width: 100%;
+
+      //font-size: 18px;
+      outline: none;
+      //border: 1px solid #ccc;
+      border: none;
+      //border-right: 0;
+      //-webkit-appearance: none;
+      appearance: none;
+      border-radius: 0;
+    }
+
+    .fa {
+      right: 0;
+      position: absolute;
+      background: $teal;
+      //background: $red;
+      color: white;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      //line-height: 50px;
+      height: 35px;
+      width: 35px;
+      pointer-events: none;
+    }
+
+  }
+}

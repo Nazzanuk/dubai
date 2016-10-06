@@ -1,0 +1,46 @@
+vacancies-item {
+
+  .vacancies {
+    .vacancy {
+      color: $body;
+      margin-top: 15px;
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      background: #f7f7f7;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      .vacancy-content {
+        flex: 0 1 100%;
+        padding: 10px;
+
+      }
+
+      .vacancy-arrow {
+        flex: 0 0 40px;
+        float: right;
+        background: darken(white, 5%);
+        background: darken($teal, 0%);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        //border-radius: 0 3px 3px 0;
+
+        .fa {
+          font-size: 16px;
+        }
+      }
+
+      .vacancy-header {
+        font-size: 16px;
+        color: darken($teal, 0%);
+        font-weight: bold;
+
+      }
+    }
+  }
+}

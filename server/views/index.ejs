@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <title>Dubai Properties</title>
+    <meta name="description" content=""/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="public/lib.css"/>
+    <link rel="stylesheet" href="public/app.css"/>
+
+    <link href="https://fonts.googleapis.com/css?family=Assistant:100,200,300,400,600,700" rel="stylesheet"/>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+</head>
+<body data-ng-app="app">
+
+<header-item></header-item>
+
+<div ui-view></div>
+
+<foot-item></foot-item>
+
+<div angular-templates>
+<script type="text/ng-template" id="announcements.html">
+    <div class="announcements">
+        <i class="fa fa-caret-right"></i> &nbsp; DPG on target to deliver Mudon project with competitive mortgage solutions
+    </div>
+</script>
+<script type="text/ng-template" id="box.html">
+    <div class="box">
+        <div class="box-header">
+            {{header}}
+
+            <div class="box-expand">
+                <i class="fa fa-minus"></i>
+            </div>
+            <div class="box-butn" ng-if="butnText">{{butnText}} &nbsp; <i class="fa fa-caret-right"></i></div>
+        </div>
+        <div class="box-content" ng-transclude></div>
+    </div>
+</script>
+<script type="text/ng-template" id="documents.html">
+    <box-item header="Projects" butn-text="All Projects">
+        <div class="projects">
+            <div class="project">
+                <div class="project-title">Human Resources</div>
+                <img src="public/img/folder-2.svg" alt="">
+                <div class="project-subtitle">Dolorem error expedita molestias quod reprehenderit veritatis.</div>
+            </div>
+            <div class="project">
+                <div class="project-title">West Zone Development</div>
+                <img src="public/img/folder-2.svg" alt="">
+                <div class="project-subtitle">Amet expedita nihil nulla quia? Deleniti, recusandae.</div>
+            </div>
+            <div class="project">
+                <div class="project-title">Intranet Upgrade</div>
+                <img src="public/img/folder-2.svg" alt="">
+                <div class="project-subtitle">Fugiat labore maxime, modi quod tempora veritatis.</div>
+            </div>
+            <div class="project">
+                <div class="project-title">Branding</div>
+                <img src="public/img/folder-2.svg" alt="">
+                <div class="project-subtitle">Accusantium amet commodi eos ipsa repellat ut!</div>
+            </div>
+            <div class="project">
+                <div class="project-title">DPG Expansion</div>
+                <img src="public/img/folder-2.svg" alt="">
+                <div class="project-subtitle">Autem blanditiis exercitationem necessitatibus quae soluta.</div>
+            </div>
+            <div class="project">
+                <div class="project-title">Corporate Governance</div>
+                <img src="public/img/folder-2.svg" alt="">
+                <div class="project-subtitle">Adipisci, corporis facere maiores nisi officiis quia.</div>
+            </div>
+        </div>
+    </box-item>
+</script>
+<script type="text/ng-template" id="events.html">
+    <box-item header="Upcoming Events" butn-text="All Events">
+        <div class="events">
+            <div class="event teal">
+                <div class="event-date">
+                    <div class="date-number">05</div>
+                    <div class="date-month">Nov</div>
+                </div>
+                <div class="event-content">
+                    Fundraising Dinner
+                    <div class="content-small">Annual internal and privileged client dinner</div>
+                </div>
+            </div>
+            <div class="event blue">
+                <div class="event-date">
+                    <div class="date-number">12</div>
+                    <div class="date-month">Dec</div>
+                </div>
+                <div class="event-content">
+                    Investor Call
+                    <div class="content-small">Asperiores debitis dolor eaque expedita, in omnis</div>
+                </div>
+            </div>
+            <div class="event">
+                <div class="event-date">
+                    <div class="date-number">28</div>
+                    <div class="date-month">Jan</div>
+                </div>
+                <div class="event-content">
+                    West Zone Opening
+                    <div class="content-small">DPG opens West Zone retail facility at Al Waha</div>
+                </div>
+            </div>
+            <div class="event">
+                <div class="event-date">
+                    <div class="date-number">04</div>
+                    <div class="date-month">Mar</div>
+                </div>
+                <div class="event-content">
+                    Nostrum Perspiciatis
+                    <div class="content-small">Kuis quod repellendus temporibus totam veritatis.</div>
+                </div>
+            </div>
+        </div>
+    </box-item>
+</script>
+<script type="text/ng-template" id="foot.html">
+    <div class="container">
+        <div class="foot">
+            <div class="foot-top">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <img src="public/img/hewaar-white.png" alt="" style="height:45px;"><br>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="foot-title">Contact Us</div>
+                        <div class="foot-item">
+                            <p>500 oracle parkway</p>
+                            <p>Redwood Shores, 94065</p>
+                            <p>Phone: 800 DPUAE (800 37823)</p>
+                            <p>Email:admin@dp.ae</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="foot-title">Go Social</div>
+                        <div class="foot-item">
+                            <p>
+                                <i class="fa fa-fw fa-facebook"></i>
+                                <i class="fa fa-fw fa-twitter"></i>
+                                <i class="fa fa-fw fa-instagram"></i>
+                                <i class="fa fa-fw fa-linkedin"></i>
+                                <i class="fa fa-fw fa-youtube"></i>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <img src="public/img/dp-logo-trans.png" alt="" style="height:50px">
+                    </div>
+                </div>
+            </div>
+            <div class="foot-bottom">
+                <a href="#">About Dubai Properties</a> &nbsp; | &nbsp; <a>Privacy Statement</a>
+                <p>Copyright © 2016, Dubai Properties and/or its affiliates. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/ng-template" id="gallery.html">
+    <box-item header="Latest Gallery Images" butn-text="All Images">
+        <div class="gallery">
+            <div class="gallery-item" style="background-image: url('https://unsplash.it/400/?random&1')"></div>
+            <div class="gallery-item" style="background-image: url('https://unsplash.it/400/?random&2')"></div>
+            <div class="gallery-item" style="background-image: url('https://unsplash.it/400/?random&23')"></div>
+            <div class="gallery-item" style="background-image: url('https://unsplash.it/400/?random&234')"></div>
+            <div class="gallery-item" style="background-image: url('https://unsplash.it/400/?random&235')"></div>
+            <div class="gallery-item" style="background-image: url('https://unsplash.it/400/?random&236')"></div>
+            <div class="gallery-item" style="background-image: url('https://unsplash.it/400/?random&237')"></div>
+            <div class="gallery-item" style="background-image: url('https://unsplash.it/400/?random&244')"></div>
+            <div class="gallery-item" style="background-image: url('https://unsplash.it/400/?random&21')"></div>
+        </div>
+    </box-item>
+</script>
+<script type="text/ng-template" id="header.html">
+
+    <div class="header">
+        <div class="header-bottom">
+            <div class="container">
+                <div class="bottom-item header-menu">
+                    Menu &nbsp; <i class="fa fa-angle-down"></i>
+
+                    <div class="menu-1">
+                        <div class="menu-1-item" ui-sref="home">Home</div>
+                        <div class="menu-1-item">
+                            Human Resources
+                            <i class="fa fa-angle-right pull-right"></i>
+
+                            <div class="menu-2">
+                                <div class="menu-2-item">Documentation</div>
+                                <div class="menu-2-item">Support</div>
+                            </div>
+                        </div>
+                        <div class="menu-1-item">Shield Line</div>
+                        <div class="menu-1-item">Linkit</div>
+                        <div class="menu-1-item" ui-sref="legal">Legal Cases</div>
+                        <div class="menu-1-item">Documents</div>
+                    </div>
+                </div>
+                <div class="bottom-item item-menu">DP Destinations</div>
+                <div class="bottom-item item-menu">DP Projects</div>
+                <div class="bottom-item item-menu">DP Management</div>
+                <div class="bottom-item item-menu">DP Business Structure</div>
+                <div class="bottom-item item-menu">Dubai Holding</div>
+
+                <div class="pull-right bottom-item">
+                    Ahmed Mahmood
+                    <div class="pull-right item-image" style="background-image: url('https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRJ1XFhWAazn6HUs97tdWjgYCPaxzli3TCrFPDxSi1eVAkOkstO')"></div>
+                </div>
+                <div class="bottom-item item-menu pull-right" style="color: black">44°C &nbsp;
+                    <i class="fa fa-sun-o"></i></div>
+            </div>
+        </div>
+        <div class="header-top">
+            <div class="container">
+                <div class="logo" ui-sref="home">
+                    <img src="public/img/hewaar-white.png" alt="">
+                </div>
+
+                <div class="logo right" ui-sref="home">
+                    <img src="public/img/dp-logo-trans.png" alt="" style="height: 60px;margin-top: 0">
+                </div>
+
+                <div class="menu-search">
+                    <i class="fa fa-search" ui-sref="search"></i>
+                    <input type="text" placeholder="Search Hewaar">
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/ng-template" id="hero.html">
+    <div class="hero">
+        <div class="hero-main">
+            <div class="main-img" style="background-image: url('http://www.highwaytourism.net/sites/default/files/burj_al_arab_jumeirah_dubai-wide.jpg')"></div>
+            <div class="main-overlay"></div>
+            <div class="main-cat">Intranet</div>
+            <div class="main-title">Hewaar Intranet is Live</div>
+            <div class="main-text">Alias debitis dicta fugit odit perferendis rerum vitae! Architecto culpa dolor explicabo nobis placeat? Aliquid eos, rerum.</div>
+        </div>
+
+        <div class="hero-items">
+            <div class="hero-main">
+                <div class="main-img" style="background-image: url('http://www.arthurweill.fr/img/unsplash/images_1280/tumblr_mnh17lfd9R1st5lhmo1_1280.jpg')"></div>
+                <div class="main-overlay"></div>
+                <div class="main-cat">Human Resources</div>
+                <div class="main-title">Consectetur adipisicing elit</div>
+                <div class="main-text">Assumenda et impedit natus nisi. Atque exercitationem expedita porro quibusdam ullam vitae.</div>
+            </div>
+            <div class="hero-main">
+                <div class="main-img" style="background-image: url('http://www.arthurweill.fr/img/unsplash/images_1280/7dwwcdv7wc4_1280.jpg')"></div>
+                <div class="main-overlay"></div>
+                <div class="main-cat">Corporate</div>
+                <div class="main-title">New London Sales Office</div>
+                <div class="main-text">Facere fugit itaque iusto modi omnis perferendis quis quod reiciendis totam voluptatem.</div>
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/ng-template" id="polls.html">
+    <box-item header="Polls / Surveys">
+        <img src="http://polart2015.com.au/wp-content/uploads/2014/09/PolArt2015-Chairty-Dinner.jpg" alt="" style="width: calc(100% + 30px);margin: -15px -15px 10px">
+        <p><strong>Spring Fundraising Dinner</strong></p>
+        <p>Which dates will you be available?</p>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox"> &nbsp; 1st Oct 2016
+            </label>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox"> &nbsp; 8th Oct 2016
+            </label>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox"> &nbsp; 15th Oct 2016
+            </label>
+        </div>
+        <p><span class="butn">Submit</span></p>
+    </box-item>
+</script>
+<script type="text/ng-template" id="press-releases.html">
+    <box-item header="Press Releases" butn-text="All Press Releases">
+        <div class="press-releases">
+            <div class="hero-main">
+                <div class="main-img" style="background-image: url('http://www.arthurweill.fr/img/unsplash/images_1280/tumblr_n8zm2tFWMf1st5lhmo1_1280.jpg')"></div>
+                <div class="main-overlay"></div>
+                <div class="main-cat">Corporate</div>
+                <div class="main-title">Design Innovation Project Launched</div>
+            </div>
+            <div class="hero-main">
+                <div class="main-img" style="background-image: url('http://www.arabianbusiness.com/incoming/article623751.ece/BINARY/Dubai-property.jpg')"></div>
+                <div class="main-overlay"></div>
+                <div class="main-cat">Corporate</div>
+                <div class="main-title">DP Expansion Underway</div>
+            </div>
+            <div class="hero-main">
+                <div class="main-img" style="background-image: url('http://postbulletin.typepad.com/.a/6a00d83451cc8269e2010536b37c34970b-pi')"></div>
+                <div class="main-overlay"></div>
+                <div class="main-cat">Corporate</div>
+                <div class="main-title">Partnership with IBM announced</div>
+            </div>
+        </div>
+    </box-item>
+</script>
+<script type="text/ng-template" id="promos.html">
+    <div class="promos">
+        <div class="promo">
+            <img src="public/img/notebook.svg">
+            <div>Policies & Procedures</div>
+        </div>
+        <div class="promo" style="background-image: url('http://images.twistmagazine.com/uploads/posts/image/8722/b9d4e806b4.jpg')">
+            <div class="promo-overlay">
+                <i class="fa fa-play" style="opacity: 0.8"></i>
+                <div>Embrace Activities</div>
+
+            </div>
+        </div>
+        <div class="promo">
+            <img src="public/img/discount-sticker-with-percentage.svg">
+            <div>Souq</div>
+        </div>
+    </div>
+</script>
+<script type="text/ng-template" id="services.html">
+    <div class="services">
+        <div class="service">
+            <div class="service-overlay"></div>
+            <div class="service-icon">
+                <img src="public/img/group.svg"/>
+            </div>
+            <div class="service-content">Human Resources</div>
+        </div>
+        <div class="service">
+            <div class="service-overlay"></div>
+            <div class="service-icon">
+                <img src="public/img/magnifier.svg"/>
+            </div>
+            <div class="service-content">Vacancies</div>
+        </div>
+        <div class="service">
+            <div class="service-overlay"></div>
+            <div class="service-icon">
+                <img src="public/img/security-shield.svg"/>
+            </div>
+            <div class="service-content">Shield Line</div>
+        </div>
+        <div class="service">
+            <div class="service-overlay"></div>
+            <div class="service-icon">
+                <img src="public/img/web-link.svg"/>
+            </div>
+            <div class="service-content">Linkit</div>
+        </div>
+        <div class="service" ui-sref="legal">
+            <div class="service-overlay"></div>
+            <div class="service-icon">
+                <img src="public/img/hammer-legal-tool-symbol.svg"/>
+            </div>
+            <div class="service-content">Legal Cases</div>
+        </div>
+        <div class="service">
+            <div class="service-overlay"></div>
+            <div class="service-icon">
+                <img src="public/img/files.svg"/>
+            </div>
+            <div class="service-content">Document Manager</div>
+        </div>
+    </div>
+</script>
+<script type="text/ng-template" id="twitter.html">
+    <box-item header="Latest Tweets" butn-text="@DPGplc">
+
+        <div class="twitter">
+            <div class="tweet">
+                <div class="tweet-icon">
+                    <img src="https://pbs.twimg.com/profile_images/783221121583898624/61fegpZf_400x400.jpg" alt="">
+                </div>
+                <div class="tweet-content">
+                    Latest
+                    <a href="">@TowardsMaturity</a> report shows how transforming formal #learning can bring #business results:
+                    <a href="">http://bit.ly/2cADHPM</a> supported by DPG
+                </div>
+            </div>
+            <div class="tweet">
+                <div class="tweet-icon">
+                    <img src="https://pbs.twimg.com/profile_images/783221121583898624/61fegpZf_400x400.jpg" alt="">
+                </div>
+                <div class="tweet-content">
+                    A fantastic and inspiring video about self development through CPD
+                    <a href="">#loveCPD</a>
+                </div>
+            </div>
+            <div class="tweet">
+                <div class="tweet-icon">
+                    <img src="https://pbs.twimg.com/profile_images/783221121583898624/61fegpZf_400x400.jpg" alt="">
+                </div>
+                <div class="tweet-content">
+                    Excited for
+                    <a href="">#PMAs16</a>? One of DPG's participants have been shortlisted for the Michael Kelly Outstanding Student Award
+                    <a href="">http://bit.ly/2djb87v</a>
+                </div>
+            </div>
+        </div>
+        <!--<p style="margin-top: 15px">-->
+            <!--<span class="butn"><i class="fa fa-twitter"></i> &nbsp; @DPGplc</span>-->
+        <!--</p>-->
+    </box-item>
+</script>
+<script type="text/ng-template" id="vacancies.html">
+    <div class="vacancies">
+        <box-item header="Internal Vacancies" butn-text="All Vacancies">
+
+            <div class="vacancy">
+                <div class="vacancy-content">
+                    <div class="vacancy-header">Front End Developer</div>
+                    <p>HTML, JavaScript, C#. ASP.Net, TDD/BDD, Jira, Confluence, Agile/Waterfall...</p>
+                </div>
+                <div class="vacancy-arrow"><i class="fa fa-caret-right"></i></div>
+            </div>
+            <div class="vacancy">
+                <div class="vacancy-content">
+                    <div class="vacancy-header">Data Analyst</div>
+                    <p>Data Analyst - Business Intelligence This is initially a 12 month contract based in The City of London...</p>
+                </div>
+                <div class="vacancy-arrow"><i class="fa fa-caret-right"></i></div>
+            </div>
+            <div class="vacancy">
+                <div class="vacancy-content">
+                    <div class="vacancy-header">Administrator</div>
+                    <p>Systems Administrator - Splunk, Cloud, AWS, Opsview...</p>
+                </div>
+                <div class="vacancy-arrow"><i class="fa fa-caret-right"></i></div>
+            </div>
+        </box-item>
+    </div>
+</script>
+<script type="text/ng-template" id="home-screen.html">
+    <div screen="home">
+        <div class="container">
+
+            <announcements-item></announcements-item>
+            <services-item></services-item>
+            <hero-item></hero-item>
+
+            <div class="row">
+                <div class="col-md-8">
+                    <press-releases-item></press-releases-item>
+                    <documents-item></documents-item>
+                    <promos-item></promos-item>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <vacancies-item></vacancies-item>
+                        </div>
+                        <div class="col-md-6">
+                            <polls-item></polls-item>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <events-item></events-item>
+                    <twitter-item></twitter-item>
+                    <gallery-item></gallery-item>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</script>
+<script type="text/ng-template" id="case-screen.html">
+    <div screen="case">
+        <div class="container">
+
+            <div class="pull-right" style="margin-top: 30px;">
+                <div class="butn" ui-sref="legal">My Cases &nbsp; <i class="fa fa-list-ul"></i></div>
+                <div class="butn">Raise a Case &nbsp; +</div>
+            </div>
+
+            <div class="dp-header">Legal Case Management</div>
+            <!--<div></div>-->
+            <!--<div class="dp-subheader">Case Detail</div>-->
+
+
+
+            <box-item header="Case Info">
+                <div class="case-header">
+                    <div class="header-field">
+                        <div class="header-label">Case ID</div>
+                        <div class="header-value">9b72r68e27</div>
+                    </div>
+                    <div class="header-field">
+                        <div class="header-label">Date</div>
+                        <div class="header-value">16th October 2016</div>
+                    </div>
+                    <div class="header-field max">
+                        <div class="header-label">Description</div>
+                        <div class="header-value">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam beatae doloribus exercitationem? Commodi inventore ipsa iure nesciunt nostrum sapiente sint?</div>
+                    </div>
+                </div>
+            </box-item>
+
+            <box-item header="Case Documents">
+                <div class="box-content">
+                    <div class="case-documents">
+                        <div class="result">
+                            <img class="result-icon" src="public/img/doc.svg">
+                            <div class="result-content">
+                                <div class="dp-title">Internal Staff List 2016</div>
+                                <p>Error maxime, neque officia praesentium repudiandae similique.</p>
+                            </div>
+                        </div>
+                        <div class="result">
+                            <img class="result-icon" src="public/img/pdf.svg">
+                            <div class="result-content">
+                                <div class="dp-title">DPG 2015</div>
+                                <p>Amet autem cumque dolore eaque inventore nostrum obcaecati repudiandae vel voluptas voluptatem!</p>
+                            </div>
+                        </div>
+                        <div class="result">
+                            <img class="result-icon" src="public/img/pdf.svg">
+                            <div class="result-content">
+                                <div class="dp-title">DPG 2016</div>
+                                <p>Distinctio ducimus ea enim ipsam nisi sed tempora. Autem libero nemo quibusdam.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </box-item>
+
+        </div>
+    </div>
+</script>
+<script type="text/ng-template" id="legal-screen.html">
+    <div screen="legal">
+        <div class="container">
+
+
+            <div class="pull-right" style="margin-top: 30px;">
+                <div class="butn" ui-sref="legal">My Cases &nbsp; <i class="fa fa-list-ul"></i></div>
+                <div class="butn">Raise a Case &nbsp; +</div>
+            </div>
+
+            <div class="dp-header">Legal Case Management</div>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <box-item header="Filter Cases">
+                        <div class="search-filters">
+                            <div class="search-filter">
+                                <input type="text" placeholder="Search Cases">
+                            </div>
+                            <div class="search-filter">
+                                <div class="fa fa-caret-down"></div>
+                                <select>
+                                    <option value="">Order By Date</option>
+                                </select>
+                            </div>
+                            <div class="search-filter">
+                                <div class="fa fa-caret-down"></div>
+                                <select>
+                                    <option value="">All Categories</option>
+                                </select>
+                            </div>
+                            <div class="search-filter">
+                                <div class="fa fa-caret-down"></div>
+                                <select>
+                                    <option value="">All Subtypes</option>
+                                </select>
+                            </div>
+                        </div>
+                    </box-item>
+
+                </div>
+                <div class="col-md-9">
+                    <box-item header="My Cases">
+                        <div class="case-documents">
+                            <div class="result">
+                                <img class="result-icon" src="public/img/folder (2).svg">
+                                <div class="result-content">
+                                    <div class="dp-title">
+                                        Internal Staff List 2016
+                                        <span class="case-status">OPEN</span>
+                                    </div>
+                                    <p>Error maxime, neque officia praesentium repudiandae similique.</p>
+                                </div>
+                                <div class="case-actions" style="margin-left: auto">
+                                    <div class="butn" ui-sref="case">View &nbsp; <i class="fa fa-arrow-right"></i></div>
+                                </div>
+                            </div>
+                            <div class="result">
+                                <img class="result-icon" src="public/img/folder (2).svg">
+                                <div class="result-content">
+                                    <div class="dp-title">
+                                        DPG 2015
+                                        <span class="case-status">OPEN</span>
+                                    </div>
+                                    <p>Amet autem cumque dolore eaque inventore nostrum obcaecati repudiandae vel voluptas voluptatem!</p>
+                                </div>
+                            </div>
+                            <div class="result">
+                                <img class="result-icon" src="public/img/folder (2).svg">
+                                <div class="result-content">
+                                    <div class="dp-title">
+                                        DPG 2016
+                                        <span class="case-status">OPEN</span>
+                                    </div>
+                                    <p>Distinctio ducimus ea enim ipsam nisi sed tempora. Autem libero nemo quibusdam.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </box-item>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</script>
+<script type="text/ng-template" id="post-screen.html">
+    <div screen="post">
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-sm-8">
+
+                    <div class="post-hero">
+                        <div class="hero-main large">
+                            <div class="main-img" style="background-image: url('http://www.arthurweill.fr/img/unsplash/images_1280/7dwwcdv7wc4_1280.jpg')"></div>
+                            <div class="main-overlay"></div>
+                            <div class="main-title">New London Sales Office</div>
+                            <!--<div class="main-text">Facere fugit itaque iusto modi omnis perferendis quis quod reiciendis totam voluptatem.</div>-->
+                        </div>
+                    </div>
+
+
+                    <div class="post-content">
+                        <div class="post-cat">Corporate</div>
+                        <div class="post-date">12th October 2016</div>
+                        <div class="post-summary">Accusamus adipisci assumenda, beatae dignissimos ipsum iste laudantium natus quas quos sed.</div>
+
+                        <h2>Building the Future</h2>
+
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+
+                        <p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
+
+                        <p>In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</p>
+
+                        <p>Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.</p>
+
+                        <p>
+                            Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
+
+                            In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.
+                        </p>
+
+                        <p>Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cumque ducimus, eveniet excepturi explicabo, id, laboriosam maiores minima nemo neque nihil nostrum officia provident qui sequi similique sit sunt voluptates.</p>
+
+                        <h2>A Different Approach</h2>
+
+                        <p>Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.</p>
+
+                        <p>
+                            <img src="https://www.architectsjournal.co.uk/pictures/2000x2000fit/9/4/2/1369942_London_Skyline.jpg">
+                        </p>
+
+                        <p>Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,</p>
+
+                        <p>In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</p>
+
+                        <p>Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.</p>
+
+
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <events-item></events-item>
+                    <vacancies-item></vacancies-item>
+                    <polls-item></polls-item>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</script>
+<script type="text/ng-template" id="search-screen.html">
+    <div screen="search">
+        <div class="container">
+            <!--<div class="dp-header">Document Search</div>-->
+
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8">
+                    <div class="search-bar">
+                        <input type="search" placeholder="Search Documents">
+                        <div class="search-butn"><i class="fa fa-search"></i></div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-sm-3">
+
+                    <box-item header="Filters">
+                        <div class="search-filters">
+                            <div class="search-filter">
+                                <div class="fa fa-caret-down"></div>
+                                <select>
+                                    <option value="">All Types</option>
+                                </select>
+                            </div>
+                            <div class="search-filter">
+                                <div class="fa fa-caret-down"></div>
+                                <select>
+                                    <option value="">All Subtypes</option>
+                                </select>
+                            </div>
+                            <div class="search-filter">
+                                <div class="fa fa-caret-down"></div>
+                                <select>
+                                    <option value="">All Departments</option>
+                                </select>
+                            </div>
+                            <div class="search-filter">
+                                <div class="fa fa-caret-down"></div>
+                                <select>
+                                    <option value="">All Sections</option>
+                                </select>
+                            </div>
+                            <div class="search-filter">
+                                <div class="fa fa-caret-down"></div>
+                                <select>
+                                    <option value="">All Functions</option>
+                                </select>
+                            </div>
+                            <div class="search-filter">
+                                <div class="fa fa-caret-down"></div>
+                                <select>
+                                    <option value="">All Projects</option>
+                                </select>
+                            </div>
+                        </div>
+                    </box-item>
+
+                    <box-item header="Advanced Filters"></box-item>
+                </div>
+
+                <div class="col-sm-9">
+
+                    <box-item header="Results 1 - 10 of 34">
+                        <div class="search-results">
+                            <div class="result">
+                                <img class="result-icon" src="public/img/doc.svg">
+                                <div class="result-content">
+                                    <div class="dp-title">Internal Staff List 2016</div>
+                                    <p>Error maxime, neque officia praesentium repudiandae similique.</p>
+                                </div>
+                            </div>
+                            <div class="result">
+                                <img class="result-icon" src="public/img/pdf.svg">
+                                <div class="result-content">
+                                    <div class="dp-title">DPG 2015</div>
+                                    <p>Amet autem cumque dolore eaque inventore nostrum obcaecati repudiandae vel voluptas voluptatem!</p>
+                                </div>
+                            </div>
+                            <div class="result">
+                                <img class="result-icon" src="public/img/pdf.svg">
+                                <div class="result-content">
+                                    <div class="dp-title">DPG 2016</div>
+                                    <p>Distinctio ducimus ea enim ipsam nisi sed tempora. Autem libero nemo quibusdam.</p>
+                                </div>
+                            </div>
+                            <div class="result">
+                                <img class="result-icon" src="public/img/xls.svg">
+                                <div class="result-content">
+                                    <div class="dp-title">Budget - Summer Procurement</div>
+                                    <p>Consectetur nam non, nulla optio totam vitae?</p>
+                                </div>
+                            </div>
+                            <div class="result">
+                                <img class="result-icon" src="public/img/doc.svg">
+                                <div class="result-content">
+                                    <div class="dp-title">Information Architecture</div>
+                                    <p>Beatae dicta facilis iure molestiae mollitia natus nisi rerum, sequi soluta tenetur, veritatis vitae. Nulla, quas, tempora!</p>
+                                </div>
+                            </div>
+                            <div class="result">
+                                <img class="result-icon" src="public/img/xls.svg">
+                                <div class="result-content">
+                                    <div class="dp-title">Major Event Calendar</div>
+                                    <p>Error maxime, neque officia praesentium repudiandae similique.</p>
+                                </div>
+                            </div>
+                            <div class="result">
+                                <img class="result-icon" src="public/img/pdf.svg">
+                                <div class="result-content">
+                                    <div class="dp-title">Architecture Guidelines</div>
+                                    <p>Amet autem cumque dolore eaque inventore nostrum obcaecati repudiandae vel voluptas voluptatem!</p>
+                                </div>
+                            </div>
+                            <div class="result">
+                                <img class="result-icon" src="public/img/pdf.svg">
+                                <div class="result-content">
+                                    <div class="dp-title">HR Notes</div>
+                                    <p>Distinctio ducimus ea enim ipsam nisi sed tempora. Autem libero nemo quibusdam.</p>
+                                </div>
+                            </div>
+                            <div class="result">
+                                <img class="result-icon" src="public/img/xls.svg">
+                                <div class="result-content">
+                                    <div class="dp-title">Budget - Spring Procurement</div>
+                                    <p>Consectetur nam non, nulla optio totam vitae?</p>
+                                </div>
+                            </div>
+                            <div class="result">
+                                <img class="result-icon" src="public/img/doc.svg">
+                                <div class="result-content">
+                                    <div class="dp-title">Construction Proposal</div>
+                                    <p>Beatae dicta facilis iure molestiae mollitia natus nisi rerum, sequi soluta tenetur, veritatis vitae. Nulla, quas, tempora!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </box-item>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</script>
+</div>
+
+<script src="public/lib.js"></script>
+<script src="public/app.js"></script>
+
+</body>
+</html>

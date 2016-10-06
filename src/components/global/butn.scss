@@ -1,0 +1,59 @@
+.butn {
+  display: inline-block;
+  background: $primary;
+  color: white;
+  line-height: 30px;
+  height: 30px;
+  padding: 0 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: .2s;
+  white-space: nowrap;
+  text-align: center;
+  font-weight: 600;
+  font-size: 12px;
+
+  &.block {
+    display: block;
+    width: 100%;
+  }
+
+  &.big {
+    line-height: 50px;
+    font-weight: 300;
+    padding: 0 30px;
+    font-size: 24px;
+  }
+
+  &:active {
+    background: darken($primary, 10%);
+  }
+
+  &.red {
+    $butn: $red;
+    background: $butn;
+
+    &:hover {
+      background: darken($butn, 10%);
+    }
+  }
+
+  &.teal {
+    $butn: $teal;
+    background: $butn;
+
+    &:hover {
+      background: darken($butn, 10%);
+    }
+  }
+
+  &.white {
+    $butn: white;
+    color: black;
+    background: $butn;
+
+    &:hover {
+      background: darken($butn, 10%);
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<script type="text/ng-template" id="box.html">
+    <div class="box">
+        <div class="box-header">
+            {{header}}
+
+            <div class="box-expand">
+                <i class="fa fa-minus"></i>
+            </div>
+            <div class="box-butn" ng-if="butnText">{{butnText}} &nbsp; <i class="fa fa-caret-right"></i></div>
+        </div>
+        <div class="box-content" ng-transclude></div>
+    </div>
+</script>

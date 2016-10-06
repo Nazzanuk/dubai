@@ -1,0 +1,14 @@
+announcements-item {
+  .announcements {
+    margin-top: 30px;
+    background: white;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 15px;
+    color: $body;
+    font-weight: bold;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}

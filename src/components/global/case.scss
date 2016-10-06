@@ -1,0 +1,83 @@
+.case-header {
+  background: white;
+  //padding: 0px 0px 15px 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: -15px -15px 0 0;
+
+  .header-field {
+    margin: 15px 15px 0 0;
+    flex: 1 0 200px;
+    display: flex;
+    flex-direction: row;
+
+    &.max {
+      flex: 1 1 100%;
+    }
+  }
+
+  .header-label {
+    flex: 0 0 150px;
+
+    @extend .dp-title;
+    color: white;
+    background: $red;
+    padding: 10px 15px;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+
+  .header-value {
+    @extend .header-label;
+    flex: 1 0 auto;
+    color: $body;
+    background: #f7f7f7;
+    margin-left:0px;
+    text-transform: none;
+  }
+}
+
+.case-documents {
+  margin: -15px 0 0;
+  display: flex;
+  flex-direction: column;
+  //flex-wrap: wrap;
+  .result {
+    //  flex: 1 0 300px;
+    //  //background: #f7f7f7;
+    //  //padding: 15px;
+    display: flex;
+    //flex-direction: row;
+    border-bottom: #eee 1px solid;
+    padding-bottom: 15px;
+    margin-top: 15px;
+
+    &:last-child {
+      border-bottom: #eee 0px solid;
+      padding-bottom: 0px;
+
+    }
+
+    .result-icon {
+      height: 50px;
+    }
+
+    .result-content {
+      display: flex;
+      flex-direction: column;
+      margin-left: 10px;
+      justify-content: center;
+
+      .dp-title {
+        color: $primary;
+        font-size: 14px;
+      }
+
+      p {
+        font-size: 12px;
+        color: #999;
+      }
+    }
+  }
+}

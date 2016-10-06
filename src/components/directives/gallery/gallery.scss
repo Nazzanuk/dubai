@@ -1,0 +1,15 @@
+gallery-item {
+  .gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .gallery-item {
+      flex: 1 0 100px;
+      height: 118px;
+      background-size: cover;
+      background-position: center;
+    }
+
+  }
+}
