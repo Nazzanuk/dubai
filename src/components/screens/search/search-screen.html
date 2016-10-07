@@ -1,4 +1,4 @@
-<script type="text/ng-template" id="search-screen.html">
+<div id="search-screen.html">
     <div screen="search">
         <div class="container">
             <!--<div class="dp-header">Document Search</div>-->
@@ -7,22 +7,24 @@
                 <div class="col-sm-2"></div>
                 <div class="col-sm-8">
                     <div class="search-bar">
-                        <input type="search" placeholder="Search Documents">
+                        <input type="search" placeholder="Search Documents" ng-model="getSearchFilter().$" autofocus autocomplete="on">
                         <div class="search-butn"><i class="fa fa-search"></i></div>
                     </div>
                 </div>
             </div>
-
 
             <div class="row">
                 <div class="col-sm-3">
 
                     <box-item header="Filters">
                         <div class="search-filters">
+                            <!--{{getSearchFilter()}}-->
+
                             <div class="search-filter">
                                 <div class="fa fa-caret-down"></div>
-                                <select>
+                                <select ng-model="getSearchFilter().type" style="text-transform: capitalize">
                                     <option value="">All Types</option>
+                                    <option value="{{type}}" ng-repeat="type in getTypes()">{{type}}</option>
                                 </select>
                             </div>
                             <div class="search-filter">
@@ -63,76 +65,19 @@
 
                 <div class="col-sm-9">
 
-                    <box-item header="Results 1 - 10 of 34">
+                    <box-item header="Results">
                         <div class="search-results">
-                            <div class="result">
-                                <img class="result-icon" src="public/img/doc.svg">
+                            <div class="result" ng-repeat="doc in getDocuments() | filter:getSearchFilter() track by doc.id">
+                                <img ng-if="doc.type == 'document'" class="result-icon" src="public/img/{{doc.ext}}.svg">
+                                <img ng-if="doc.type == 'press-release'" class="result-icon" src="public/img/newspaper.svg">
+                                <img ng-if="doc.type == 'vacancy'" class="result-icon" src="public/img/curriculum-2.svg">
                                 <div class="result-content">
-                                    <div class="dp-title">Internal Staff List 2016</div>
-                                    <p>Error maxime, neque officia praesentium repudiandae similique.</p>
-                                </div>
-                            </div>
-                            <div class="result">
-                                <img class="result-icon" src="public/img/pdf.svg">
-                                <div class="result-content">
-                                    <div class="dp-title">DPG 2015</div>
-                                    <p>Amet autem cumque dolore eaque inventore nostrum obcaecati repudiandae vel voluptas voluptatem!</p>
-                                </div>
-                            </div>
-                            <div class="result">
-                                <img class="result-icon" src="public/img/pdf.svg">
-                                <div class="result-content">
-                                    <div class="dp-title">DPG 2016</div>
-                                    <p>Distinctio ducimus ea enim ipsam nisi sed tempora. Autem libero nemo quibusdam.</p>
-                                </div>
-                            </div>
-                            <div class="result">
-                                <img class="result-icon" src="public/img/xls.svg">
-                                <div class="result-content">
-                                    <div class="dp-title">Budget - Summer Procurement</div>
-                                    <p>Consectetur nam non, nulla optio totam vitae?</p>
-                                </div>
-                            </div>
-                            <div class="result">
-                                <img class="result-icon" src="public/img/doc.svg">
-                                <div class="result-content">
-                                    <div class="dp-title">Information Architecture</div>
-                                    <p>Beatae dicta facilis iure molestiae mollitia natus nisi rerum, sequi soluta tenetur, veritatis vitae. Nulla, quas, tempora!</p>
-                                </div>
-                            </div>
-                            <div class="result">
-                                <img class="result-icon" src="public/img/xls.svg">
-                                <div class="result-content">
-                                    <div class="dp-title">Major Event Calendar</div>
-                                    <p>Error maxime, neque officia praesentium repudiandae similique.</p>
-                                </div>
-                            </div>
-                            <div class="result">
-                                <img class="result-icon" src="public/img/pdf.svg">
-                                <div class="result-content">
-                                    <div class="dp-title">Architecture Guidelines</div>
-                                    <p>Amet autem cumque dolore eaque inventore nostrum obcaecati repudiandae vel voluptas voluptatem!</p>
-                                </div>
-                            </div>
-                            <div class="result">
-                                <img class="result-icon" src="public/img/pdf.svg">
-                                <div class="result-content">
-                                    <div class="dp-title">HR Notes</div>
-                                    <p>Distinctio ducimus ea enim ipsam nisi sed tempora. Autem libero nemo quibusdam.</p>
-                                </div>
-                            </div>
-                            <div class="result">
-                                <img class="result-icon" src="public/img/xls.svg">
-                                <div class="result-content">
-                                    <div class="dp-title">Budget - Spring Procurement</div>
-                                    <p>Consectetur nam non, nulla optio totam vitae?</p>
-                                </div>
-                            </div>
-                            <div class="result">
-                                <img class="result-icon" src="public/img/doc.svg">
-                                <div class="result-content">
-                                    <div class="dp-title">Construction Proposal</div>
-                                    <p>Beatae dicta facilis iure molestiae mollitia natus nisi rerum, sequi soluta tenetur, veritatis vitae. Nulla, quas, tempora!</p>
+                                    <div class="dp-title">
+                                        {{doc.title}}
+                                        <div class="result-updated">Last Updated {{doc.date}}</div>
+                                        <div class="search-type">{{doc.type}}</div>
+                                    </div>
+                                    <p style="text-transform: capitalize">{{doc.description}}</p>
                                 </div>
                             </div>
                         </div>
@@ -143,4 +88,4 @@
 
         </div>
     </div>
-</script>
+</div>

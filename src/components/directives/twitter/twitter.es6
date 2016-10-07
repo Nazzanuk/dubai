@@ -1,5 +1,5 @@
 app.component('twitterItem', {
-    templateUrl: 'twitter.html',
+    templateUrl: 'twitter',
     bindings: {},
     controller: function ($scope) {
 

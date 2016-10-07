@@ -1,5 +1,5 @@
 app.component('vacanciesItem', {
-    templateUrl: 'vacancies.html',
+    templateUrl: 'vacancies',
     bindings: {},
     controller: function ($scope) {
 

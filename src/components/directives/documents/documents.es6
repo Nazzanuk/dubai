@@ -1,5 +1,5 @@
 app.component('documentsItem', {
-    templateUrl: 'documents.html',
+    templateUrl: 'documents',
     bindings: {},
     controller: function ($scope) {
 

@@ -1,5 +1,5 @@
 app.component('footItem', {
-    templateUrl: 'foot.html',
+    templateUrl: 'foot',
     controllerAs: 'foot',
     bindings: {
         img: '@',

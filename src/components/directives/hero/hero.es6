@@ -1,5 +1,5 @@
 app.component('heroItem', {
-    templateUrl: 'hero.html',
+    templateUrl: 'hero',
     bindings: {},
     controller: function ($scope) {
 

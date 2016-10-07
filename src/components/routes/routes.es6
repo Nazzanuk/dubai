@@ -29,7 +29,7 @@ class Route {
         _.extend(this, {
             name,
             url,
-            templateUrl: `${_.kebabCase(name)}-screen.html`,
+            templateUrl: `${_.kebabCase(name)}-screen`,
             controller: _.upperFirst(_.camelCase(`${name}Screen`)),
             resolve
         });

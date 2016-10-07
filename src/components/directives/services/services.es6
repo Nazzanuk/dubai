@@ -1,5 +1,5 @@
 app.component('servicesItem', {
-    templateUrl: 'services.html',
+    templateUrl: 'services',
     bindings: {},
     controller: function ($scope, Menu) {
 

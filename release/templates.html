@@ -1,6 +1,17 @@
-<script type="text/ng-template" id="announcements.html">
-    <div class="announcements">
-        <i class="fa fa-caret-right"></i> &nbsp; DPG on target to deliver Mudon project with competitive mortgage solutions
+<div class="announcements">
+    <i class="fa fa-caret-right"></i> &nbsp; DPG on target to deliver Mudon project with competitive mortgage solutions
+</div>
+<script type="text/ng-template" id="box.html">
+    <div class="box">
+        <div class="box-header">
+            {{header}}
+
+            <div class="box-expand">
+                <i class="fa fa-minus"></i>
+            </div>
+            <div class="box-butn" ng-if="butnText">{{butnText}} &nbsp; <i class="fa fa-caret-right"></i></div>
+        </div>
+        <div class="box-content" ng-transclude></div>
     </div>
 </script>
 <script type="text/ng-template" id="documents.html">
@@ -39,17 +50,46 @@
         </div>
     </box-item>
 </script>
-<script type="text/ng-template" id="box.html">
-    <div class="box">
-        <div class="box-header">
-            {{header}}
+<script type="text/ng-template" id="foot.html">
+    <div class="container">
+        <div class="foot">
+            <div class="foot-top">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <img src="public/img/hewaar-white.png" alt="" style="height:45px;"><br>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="foot-title">Contact Us</div>
+                        <div class="foot-item">
+                            <p>500 oracle parkway</p>
+                            <p>Redwood Shores, 94065</p>
+                            <p>Phone: 800 DPUAE (800 37823)</p>
+                            <p>Email:admin@dp.ae</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="foot-title">Go Social</div>
+                        <div class="foot-item">
+                            <p>
+                                <i class="fa fa-fw fa-facebook"></i>
+                                <i class="fa fa-fw fa-twitter"></i>
+                                <i class="fa fa-fw fa-instagram"></i>
+                                <i class="fa fa-fw fa-linkedin"></i>
+                                <i class="fa fa-fw fa-youtube"></i>
+                            </p>
+                        </div>
+                    </div>
 
-            <div class="box-expand">
-                <i class="fa fa-minus"></i>
+                    <div class="col-sm-3">
+                        <img src="public/img/dp-logo-trans.png" alt="" style="height:50px">
+                    </div>
+                </div>
             </div>
-            <div class="box-butn" ng-if="butnText">{{butnText}} &nbsp; <i class="fa fa-caret-right"></i></div>
+            <div class="foot-bottom">
+                <a href="#">About Dubai Properties</a> &nbsp; | &nbsp; <a>Privacy Statement</a>
+                <p>Copyright © 2016, Dubai Properties and/or its affiliates. All rights reserved.</p>
+            </div>
         </div>
-        <div class="box-content" ng-transclude></div>
     </div>
 </script>
 <script type="text/ng-template" id="events.html">
@@ -98,48 +138,6 @@
         </div>
     </box-item>
 </script>
-<script type="text/ng-template" id="foot.html">
-    <div class="container">
-        <div class="foot">
-            <div class="foot-top">
-                <div class="row">
-                    <div class="col-sm-3">
-                        <img src="public/img/hewaar-white.png" alt="" style="height:45px;"><br>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="foot-title">Contact Us</div>
-                        <div class="foot-item">
-                            <p>500 oracle parkway</p>
-                            <p>Redwood Shores, 94065</p>
-                            <p>Phone: 800 DPUAE (800 37823)</p>
-                            <p>Email:admin@dp.ae</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="foot-title">Go Social</div>
-                        <div class="foot-item">
-                            <p>
-                                <i class="fa fa-fw fa-facebook"></i>
-                                <i class="fa fa-fw fa-twitter"></i>
-                                <i class="fa fa-fw fa-instagram"></i>
-                                <i class="fa fa-fw fa-linkedin"></i>
-                                <i class="fa fa-fw fa-youtube"></i>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-3">
-                        <img src="public/img/dp-logo-trans.png" alt="" style="height:50px">
-                    </div>
-                </div>
-            </div>
-            <div class="foot-bottom">
-                <a href="#">About Dubai Properties</a> &nbsp; | &nbsp; <a>Privacy Statement</a>
-                <p>Copyright © 2016, Dubai Properties and/or its affiliates. All rights reserved.</p>
-            </div>
-        </div>
-    </div>
-</script>
 <script type="text/ng-template" id="gallery.html">
     <box-item header="Latest Gallery Images" butn-text="All Images">
         <div class="gallery">
@@ -174,8 +172,8 @@
                     Ahmed Mahmood
                     <div class="pull-right item-image" style="background-image: url('https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRJ1XFhWAazn6HUs97tdWjgYCPaxzli3TCrFPDxSi1eVAkOkstO')"></div>
                 </div>
-                <div class="bottom-item item-menu pull-right" style="color: black">44°C &nbsp;
-                    <i class="fa fa-sun-o"></i></div>
+                <!--<div class="bottom-item item-menu pull-right" style="color: black">44°C &nbsp;-->
+                    <!--<i class="fa fa-sun-o"></i></div>-->
             </div>
         </div>
         <div class="header-top">
@@ -195,29 +193,6 @@
             </div>
         </div>
     </div>
-</script>
-<script type="text/ng-template" id="polls.html">
-    <box-item header="Polls / Surveys">
-        <img src="http://polart2015.com.au/wp-content/uploads/2014/09/PolArt2015-Chairty-Dinner.jpg" alt="" style="width: calc(100% + 30px);margin: -15px -15px 10px">
-        <p><strong>Spring Fundraising Dinner</strong></p>
-        <p>Which dates will you be available?</p>
-        <div class="checkbox">
-            <label>
-                <input type="checkbox"> &nbsp; 1st Oct 2016
-            </label>
-        </div>
-        <div class="checkbox">
-            <label>
-                <input type="checkbox"> &nbsp; 8th Oct 2016
-            </label>
-        </div>
-        <div class="checkbox">
-            <label>
-                <input type="checkbox"> &nbsp; 15th Oct 2016
-            </label>
-        </div>
-        <p><span class="butn">Submit</span></p>
-    </box-item>
 </script>
 <script type="text/ng-template" id="hero.html">
     <div class="hero">
@@ -246,6 +221,29 @@
             </div>
         </div>
     </div>
+</script>
+<script type="text/ng-template" id="polls.html">
+    <box-item header="Polls / Surveys">
+        <img src="http://polart2015.com.au/wp-content/uploads/2014/09/PolArt2015-Chairty-Dinner.jpg" alt="" style="width: calc(100% + 30px);margin: -15px -15px 10px">
+        <p><strong>Spring Fundraising Dinner</strong></p>
+        <p>Which dates will you be available?</p>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox"> &nbsp; 1st Oct 2016
+            </label>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox"> &nbsp; 8th Oct 2016
+            </label>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox"> &nbsp; 15th Oct 2016
+            </label>
+        </div>
+        <p><span class="butn">Submit</span></p>
+    </box-item>
 </script>
 <script type="text/ng-template" id="promos.html">
     <div class="promos">

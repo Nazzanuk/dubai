@@ -1,5 +1,5 @@
 app.component('boxItem', {
-    templateUrl: 'box.html',
+    templateUrl: 'box',
     bindings: {
         header: '@',
         butnText:'@',

@@ -1,5 +1,5 @@
 app.component('pressReleasesItem', {
-    templateUrl: 'press-releases.html',
+    templateUrl: 'press-releases',
     bindings: {},
     controller: function ($scope) {
 

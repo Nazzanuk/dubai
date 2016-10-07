@@ -1,5 +1,5 @@
 app.component('headerItem', {
-    templateUrl: 'header.html',
+    templateUrl: 'header',
     bindings: {},
     transclude: {
         headerMenu:'headerMenu'

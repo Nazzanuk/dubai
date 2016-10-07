@@ -1,5 +1,5 @@
 app.component('pollsItem', {
-    templateUrl: 'polls.html',
+    templateUrl: 'polls',
     bindings: {},
     controller: function ($scope) {
 

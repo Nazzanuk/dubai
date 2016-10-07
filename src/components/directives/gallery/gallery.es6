@@ -1,5 +1,5 @@
 app.component('galleryItem', {
-    templateUrl: 'gallery.html',
+    templateUrl: 'gallery',
     bindings: {},
     controller: function ($scope) {
 

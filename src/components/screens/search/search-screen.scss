@@ -60,7 +60,15 @@
       //flex-direction: row;
       border-bottom: #eee 1px solid;
       padding-bottom: 15px;
-      margin-top: 15px;
+      padding-top: 15px;
+
+      cursor: pointer;
+      transition: .2s;
+
+      &:hover {
+        padding-left: 5px;
+        background: #f7f7f7;
+      }
 
       &:last-child {
         border-bottom: #eee 0px solid;
@@ -69,10 +77,11 @@
       }
 
       .result-icon {
-        height: 50px;
+        height: 40px;
       }
 
       .result-content {
+        flex: 1 0 auto;
         display: flex;
         flex-direction: column;
         margin-left: 10px;
@@ -89,6 +98,32 @@
         }
       }
     }
+  }
+
+  .search-type {
+    background: #72b330;
+    background: $teal;
+    background: #eee;
+    color: #333;
+    line-height: 1;
+    padding: 4px 10px;
+    font-size: 10px;
+    //margin-left: 5px;
+    display: inline-block;
+    vertical-align: text-top;
+    text-transform: uppercase;
+    //font-weight: 500;
+    margin-left: 10px;
+    float: right;
+  }
+
+  .result-updated {
+    @extend .search-type;
+    float: right;
+    background: none;
+    //color: white;
+    padding: 4px 0px;
+    font-weight: 500;
   }
 
 }

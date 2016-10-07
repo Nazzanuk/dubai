@@ -6,7 +6,8 @@ var gulp = require('gulp'),
     babel = require("gulp-babel"),
     sass = require("gulp-sass"),
     shell = require('gulp-shell'),
-    autoprefixer = require('gulp-autoprefixer');
+    autoprefixer = require('gulp-autoprefixer'),
+    html2js = require('gulp-html2js');
 
 var catchError = function (e) {
     console.log('>>> ERROR', e);
@@ -37,13 +38,19 @@ gulp.task('copy-public', () =>
 );
 
 gulp.task("gen-html", () => {
-    gulp.src(["src/components/directives/**/*.html", "src/components/directives/**/*.html"])
-        .pipe(concat("templates.html"))
-        .pipe(gulp.dest('release'));
+
+    gulp.src(['src/components/directives/**/*.html', 'src/components/screens/**/*.html'])
+        .pipe(html2js('templates.js', {
+            adapter: 'angular',
+            base: '/../../Projects/dubai/src/components/',
+            rename: (moduleName) => moduleName.replace(/.*\//g, '').replace(/.html/g, ''),
+            name: 'app'
+        }))
+        .pipe(gulp.dest('release/public'));
 
     return gulp.src([
             "src/components/head/head.html",
-            "src/components/**/!(footer)*.html",
+            //"src/components/**/!(footer)*.html",
             "src/components/footer/footer.html"
         ])
         .pipe(concat("index.ejs"))

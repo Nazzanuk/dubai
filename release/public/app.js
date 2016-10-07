@@ -16,6 +16,9 @@ app.directive('ngEnter', function () {
     };
 });
 
+app.run(function ($templateCache) {
+    $templateCache.put('test.html', 'Hello {{ test.user.name }}!');
+});
 app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
     //this controls the animations for each transition
@@ -45,7 +48,7 @@ var Route = function Route(name, url, resolve) {
     _.extend(this, {
         name: name,
         url: url,
-        templateUrl: _.kebabCase(name) + '-screen.html',
+        templateUrl: _.kebabCase(name) + '-screen',
         controller: _.upperFirst(_.camelCase(name + 'Screen')),
         resolve: resolve
     });
@@ -82,7 +85,7 @@ app.service('Menu', function ($state, $stateParams, $timeout) {
 });
 
 app.component('announcementsItem', {
-    templateUrl: 'announcements.html',
+    templateUrl: 'announcements',
     bindings: {},
     controller: function controller($scope, Menu) {
 
@@ -99,7 +102,7 @@ app.component('announcementsItem', {
 });
 
 app.component('boxItem', {
-    templateUrl: 'box.html',
+    templateUrl: 'box',
     bindings: {
         header: '@',
         butnText: '@',
@@ -119,7 +122,7 @@ app.component('boxItem', {
 });
 
 app.component('documentsItem', {
-    templateUrl: 'documents.html',
+    templateUrl: 'documents',
     bindings: {},
     controller: function controller($scope) {
 
@@ -131,19 +134,7 @@ app.component('documentsItem', {
     }
 });
 app.component('eventsItem', {
-    templateUrl: 'events.html',
-    bindings: {},
-    controller: function controller($scope) {
-
-        var init = function init() {};
-
-        init();
-
-        _.extend($scope, {});
-    }
-});
-app.component('galleryItem', {
-    templateUrl: 'gallery.html',
+    templateUrl: 'events',
     bindings: {},
     controller: function controller($scope) {
 
@@ -155,7 +146,7 @@ app.component('galleryItem', {
     }
 });
 app.component('footItem', {
-    templateUrl: 'foot.html',
+    templateUrl: 'foot',
     controllerAs: 'foot',
     bindings: {
         img: '@',
@@ -171,8 +162,20 @@ app.component('footItem', {
     }
 });
 
+app.component('galleryItem', {
+    templateUrl: 'gallery',
+    bindings: {},
+    controller: function controller($scope) {
+
+        var init = function init() {};
+
+        init();
+
+        _.extend($scope, {});
+    }
+});
 app.component('headerItem', {
-    templateUrl: 'header.html',
+    templateUrl: 'header',
     bindings: {},
     transclude: {
         headerMenu: 'headerMenu'
@@ -220,7 +223,7 @@ app.component('headerItem', {
 });
 
 app.component('heroItem', {
-    templateUrl: 'hero.html',
+    templateUrl: 'hero',
     bindings: {},
     controller: function controller($scope) {
 
@@ -232,7 +235,7 @@ app.component('heroItem', {
     }
 });
 app.component('pollsItem', {
-    templateUrl: 'polls.html',
+    templateUrl: 'polls',
     bindings: {},
     controller: function controller($scope) {
 
@@ -244,7 +247,7 @@ app.component('pollsItem', {
     }
 });
 app.component('pressReleasesItem', {
-    templateUrl: 'press-releases.html',
+    templateUrl: 'press-releases',
     bindings: {},
     controller: function controller($scope) {
 
@@ -256,7 +259,7 @@ app.component('pressReleasesItem', {
     }
 });
 app.component('promosItem', {
-    templateUrl: 'promos.html',
+    templateUrl: 'promos',
     bindings: {},
     controller: function controller($scope) {
 
@@ -268,7 +271,7 @@ app.component('promosItem', {
     }
 });
 app.component('servicesItem', {
-    templateUrl: 'services.html',
+    templateUrl: 'services',
     bindings: {},
     controller: function controller($scope, Menu) {
 
@@ -285,7 +288,7 @@ app.component('servicesItem', {
 });
 
 app.component('twitterItem', {
-    templateUrl: 'twitter.html',
+    templateUrl: 'twitter',
     bindings: {},
     controller: function controller($scope) {
 
@@ -297,7 +300,7 @@ app.component('twitterItem', {
     }
 });
 app.component('vacanciesItem', {
-    templateUrl: 'vacancies.html',
+    templateUrl: 'vacancies',
     bindings: {},
     controller: function controller($scope) {
 
@@ -309,6 +312,17 @@ app.component('vacanciesItem', {
     }
 });
 app.controller('CaseScreen', function ($element, $timeout, $scope) {
+
+    var init = function init() {
+        //$timeout(() => $element.find('[screen]').addClass('active'), 50);
+    };
+
+    init();
+
+    _.extend($scope, {});
+});
+
+app.controller('HomeScreen', function ($element, $timeout, $scope) {
 
     var init = function init() {
         //$timeout(() => $element.find('[screen]').addClass('active'), 50);
@@ -341,24 +355,51 @@ app.controller('PostScreen', function ($element, $timeout, $scope) {
     _.extend($scope, {});
 });
 
-app.controller('HomeScreen', function ($element, $timeout, $scope) {
-
-    var init = function init() {
-        //$timeout(() => $element.find('[screen]').addClass('active'), 50);
-    };
-
-    init();
-
-    _.extend($scope, {});
-});
-
 app.controller('SearchScreen', function ($element, $timeout, $scope) {
 
+    var documents = [],
+        searchFilter = {};
+
+    var getDocuments = function getDocuments() {
+        return documents;
+    };
+
+    var getSearchFilter = function getSearchFilter() {
+        return searchFilter;
+    };
+
+    var getTypes = function getTypes() {
+        return _.uniq(_.map(documents, 'type'));
+    };
+
+    var genDocuments = function genDocuments() {
+        _.times(50, genDocument);
+    };
+
+    var genDocument = function genDocument() {
+        var obj = {};
+
+        obj.id = Math.random().toString(36).substring(7);
+        obj.date = _.random(1, 28) + '/' + _.random(1, 10) + '/2016';
+        obj.type = _.sample(['document', 'document', 'document', 'document', 'press-release', 'vacancy']);
+        obj.filename = _.sample([]);
+        obj.ext = _.sample(['doc', 'pdf', 'xls']);
+        obj.title = _.sampleSize(['DPG', 'Property', 'Analysis', '2016', 'HR', 'Department', 'Project', 'New', 'Staff', 'Form', 'Modules', 'Component', 'Core'], _.random(2, 5)).join(" ");
+        obj.description = _.sampleSize(['Amet', 'autem', 'cumque', 'dolore', 'eaque inventore', 'nostrum obcaecati', 'repudiandae vel', 'voluptas voluptatem'], 4).join(" ");
+
+        obj.title = obj.type == 'vacancy' ? 'New Position - ' + obj.title : obj.title;
+        documents.push(obj);
+    };
+
     var init = function init() {
-        //$timeout(() => $element.find('[screen]').addClass('active'), 50);
+        genDocuments();
     };
 
     init();
 
-    _.extend($scope, {});
+    _.extend($scope, {
+        getSearchFilter: getSearchFilter,
+        getDocuments: getDocuments,
+        getTypes: getTypes
+    });
 });

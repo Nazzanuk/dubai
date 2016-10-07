@@ -7,3 +7,8 @@ app.directive('ngEnter', () => (scope, element, attrs) => {
         event.preventDefault();
     });
 });
+
+
+app.run( ($templateCache) => {
+    $templateCache.put('test.html', 'Hello {{ test.user.name }}!');
+});
