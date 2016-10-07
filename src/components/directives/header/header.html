@@ -5,23 +5,7 @@
             <div class="container">
                 <div class="bottom-item header-menu">
                     Menu &nbsp; <i class="fa fa-angle-down"></i>
-
-                    <div class="menu-1">
-                        <div class="menu-1-item" ui-sref="home">Home</div>
-                        <div class="menu-1-item">
-                            Human Resources
-                            <i class="fa fa-angle-right pull-right"></i>
-
-                            <div class="menu-2">
-                                <div class="menu-2-item">Documentation</div>
-                                <div class="menu-2-item">Support</div>
-                            </div>
-                        </div>
-                        <div class="menu-1-item">Shield Line</div>
-                        <div class="menu-1-item">Linkit</div>
-                        <div class="menu-1-item" ui-sref="legal">Legal Cases</div>
-                        <div class="menu-1-item">Documents</div>
-                    </div>
+                    <div class="menu-1" ng-transclude="headerMenu"></div>
                 </div>
                 <div class="bottom-item item-menu">DP Destinations</div>
                 <div class="bottom-item item-menu">DP Projects</div>

@@ -170,11 +170,14 @@ hr {
     display: -ms-flexbox;
     display: flex;
     border-bottom: #eee 1px solid;
-    padding-bottom: 15px;
-    margin-top: 15px; }
+    padding: 15px;
+    padding-top: 15px;
+    cursor: pointer;
+    transition: .2s; }
+    .case-documents .result:hover {
+      background: #f7f7f7; }
     .case-documents .result:last-child {
-      border-bottom: #eee 0px solid;
-      padding-bottom: 0px; }
+      border-bottom: #eee 0px solid; }
     .case-documents .result .result-icon {
       height: 50px; }
     .case-documents .result .result-content {
@@ -458,6 +461,20 @@ events-item .events {
     events-item .events .event:nth-child(2n) .event-date {
       background: #e7665d; }
 
+gallery-item .gallery {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+  gallery-item .gallery .gallery-item {
+    -ms-flex: 1 0 100px;
+        flex: 1 0 100px;
+    height: 118px;
+    background-size: cover;
+    background-position: center; }
+
 foot-item .foot {
   margin-top: 30px;
   margin-bottom: 30px;
@@ -486,19 +503,8 @@ foot-item .foot {
       .dark foot-item .foot .foot-bottom a {
         color: white; }
 
-gallery-item .gallery {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: row;
-      flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
-  gallery-item .gallery .gallery-item {
-    -ms-flex: 1 0 100px;
-        flex: 1 0 100px;
-    height: 118px;
-    background-size: cover;
-    background-position: center; }
+header-item header-menu {
+  display: inline; }
 
 header-item .header {
   background: white;
@@ -963,6 +969,8 @@ vacancies-item .vacancies .vacancy {
   margin-left: 5px;
   display: inline-block;
   vertical-align: text-top; }
+  [screen="legal"] .case-status.closed {
+    background: #e03c31; }
 
 [screen="legal"] .case-actions {
   display: -ms-flexbox;

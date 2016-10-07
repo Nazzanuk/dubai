@@ -50,12 +50,19 @@
     display: flex;
     //flex-direction: row;
     border-bottom: #eee 1px solid;
-    padding-bottom: 15px;
-    margin-top: 15px;
+    padding: 15px;
+    padding-top:15px;
+    //margin-top: 15px;
+    cursor: pointer;
+    transition: .2s;
+
+    &:hover {
+      background: #f7f7f7;
+    }
 
     &:last-child {
       border-bottom: #eee 0px solid;
-      padding-bottom: 0px;
+      //padding-bottom: 0px;
 
     }
 

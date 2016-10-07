@@ -18,12 +18,31 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 </head>
-<body data-ng-app="app">
+<body>
 
-<header-item></header-item>
+<div data-ng-app="app">
 
-<div ui-view></div>
+    <header-item>
+        <header-menu>
+            <div class="menu-1-item" ui-sref="home">Home</div>
+            <div class="menu-1-item">
+                Human Resources
+                <i class="fa fa-angle-right pull-right"></i>
 
-<foot-item></foot-item>
+                <div class="menu-2">
+                    <div class="menu-2-item">Documentation</div>
+                    <div class="menu-2-item">Support</div>
+                </div>
+            </div>
+            <div class="menu-1-item">Shield Line</div>
+            <div class="menu-1-item">Linkit</div>
+            <div class="menu-1-item" ui-sref="legal">Legal Cases</div>
+            <div class="menu-1-item">Documents</div>
+        </header-menu>
+    </header-item>
 
-<div angular-templates>
+    <div ui-view></div>
+
+    <foot-item></foot-item>
+
+    <div angular-templates>

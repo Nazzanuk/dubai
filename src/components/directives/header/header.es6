@@ -1,7 +1,8 @@
 app.component('headerItem', {
     templateUrl: 'header.html',
-    bindings: {
-        img: '@'
+    bindings: {},
+    transclude: {
+        headerMenu:'headerMenu'
     },
     controller: function ($scope, Menu, $element, $timeout) {
 

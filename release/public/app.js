@@ -142,6 +142,18 @@ app.component('eventsItem', {
         _.extend($scope, {});
     }
 });
+app.component('galleryItem', {
+    templateUrl: 'gallery.html',
+    bindings: {},
+    controller: function controller($scope) {
+
+        var init = function init() {};
+
+        init();
+
+        _.extend($scope, {});
+    }
+});
 app.component('footItem', {
     templateUrl: 'foot.html',
     controllerAs: 'foot',
@@ -159,22 +171,11 @@ app.component('footItem', {
     }
 });
 
-app.component('galleryItem', {
-    templateUrl: 'gallery.html',
-    bindings: {},
-    controller: function controller($scope) {
-
-        var init = function init() {};
-
-        init();
-
-        _.extend($scope, {});
-    }
-});
 app.component('headerItem', {
     templateUrl: 'header.html',
-    bindings: {
-        img: '@'
+    bindings: {},
+    transclude: {
+        headerMenu: 'headerMenu'
     },
     controller: function controller($scope, Menu, $element, $timeout) {
 
@@ -307,17 +308,6 @@ app.component('vacanciesItem', {
         _.extend($scope, {});
     }
 });
-app.controller('HomeScreen', function ($element, $timeout, $scope) {
-
-    var init = function init() {
-        //$timeout(() => $element.find('[screen]').addClass('active'), 50);
-    };
-
-    init();
-
-    _.extend($scope, {});
-});
-
 app.controller('CaseScreen', function ($element, $timeout, $scope) {
 
     var init = function init() {
@@ -341,6 +331,17 @@ app.controller('LegalScreen', function ($element, $timeout, $scope) {
 });
 
 app.controller('PostScreen', function ($element, $timeout, $scope) {
+
+    var init = function init() {
+        //$timeout(() => $element.find('[screen]').addClass('active'), 50);
+    };
+
+    init();
+
+    _.extend($scope, {});
+});
+
+app.controller('HomeScreen', function ($element, $timeout, $scope) {
 
     var init = function init() {
         //$timeout(() => $element.find('[screen]').addClass('active'), 50);
