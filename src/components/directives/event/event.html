@@ -1,0 +1,36 @@
+<div id="event">
+        <div class="event" ng-click="toggleEvent()" ng-class="{active:isVisible()}">
+            <div class="event-box" ng-click="$event.stopPropagation()">
+                <box-item header="Upcoming Event">
+
+                    <img src="https://images.unsplash.com/photo-1474679294639-dc85e32f2ef0?dpr=2&auto=format&crop=entropy&fit=crop&w=1000&h=350&q=80&cs=tinysrgb" alt="">
+                    <div class="event-context">
+                        <div class="event-date">
+                            <div class="date-number">05</div>
+                            <div class="date-month">Nov</div>
+                        </div>
+                        <div class="event-content">
+                            <div class="content-title">Fundraising Dinner</div>
+                            <div class="content-small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque aut cumque dolorem eos eum expedita ipsam itaque perspiciatis sed. Dicta est incidunt laudantium modi quae quam, quidem quis sunt veritatis!</div>
+                            <div class="content-items">
+                                <div class="row">
+                                    <!--<div class="col-xs-4"><strong>Location:</strong></div>-->
+                                    <!--<div class="col-xs-8">Dubai Office</div>-->
+                                    <div class="col-xs-4"><strong>Location:</strong></div>
+                                    <div class="col-xs-8">Dubai Office</div>
+                                    <div class="col-xs-4"><strong>Date:</strong></div>
+                                    <div class="col-xs-8">05/11/2016</div>
+                                </div>
+                            </div>
+                            <p>
+                                <span class="butn red pull-right"  ng-click="toggleEvent()"><i class="fa fa-angle-left"></i> &nbsp; Back</span>
+                            </p>
+                        </div>
+                    </div>
+
+
+                </box-item>
+            </div>
+
+        </div>
+</div>

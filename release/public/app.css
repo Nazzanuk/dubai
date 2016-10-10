@@ -99,7 +99,11 @@ hr {
   white-space: nowrap;
   text-align: center;
   font-weight: 600;
-  font-size: 12px; }
+  font-size: 12px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
   .butn.block {
     display: block;
     width: 100%; }
@@ -408,6 +412,82 @@ documents-item .projects {
       height: 70px;
       margin-top: 10px; }
 
+event-item .event {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  z-index: 1000;
+  padding: 30px;
+  visibility: hidden;
+  opacity: 0;
+  transition: .2s;
+  cursor: pointer; }
+  event-item .event.active {
+    visibility: visible;
+    opacity: 1; }
+  event-item .event .event-box {
+    width: 600px;
+    margin-top: -100px;
+    cursor: default; }
+  event-item .event .event-context {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+        flex-direction: row; }
+  event-item .event img {
+    max-width: 100%;
+    margin-bottom: 15px; }
+  event-item .event .event-date {
+    background: #e03c31;
+    color: white;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+    width: 70px;
+    height: 70px;
+    margin-right: 15px;
+    margin-bottom: auto;
+    -ms-flex: 0 0 70px;
+        flex: 0 0 70px; }
+    event-item .event .event-date .date-number {
+      font-size: 30px;
+      line-height: 1;
+      font-weight: bold; }
+  event-item .event .event-content {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-pack: center;
+        justify-content: center; }
+    event-item .event .event-content .content-title {
+      font-size: 20px;
+      color: #e03c31;
+      font-weight: bold;
+      line-height: 1; }
+    event-item .event .event-content .content-small {
+      font-size: 12px;
+      font-weight: normal;
+      color: #555;
+      margin-top: 3px;
+      margin-bottom: 7px; }
+  event-item .event:nth-child(2n) .event-date {
+    background: #e7665d; }
+
 events-item .events {
   display: -ms-flexbox;
   display: flex;
@@ -420,7 +500,8 @@ events-item .events {
         flex-direction: row;
     margin-top: 15px;
     padding-top: 15px;
-    border-top: 1px solid #eee; }
+    border-top: 1px solid #eee;
+    cursor: pointer; }
     events-item .events .event:first-child {
       margin-top: 0;
       padding-top: 0;
@@ -962,6 +1043,82 @@ vacancies-item .vacancies .vacancy {
     font-size: 16px;
     color: #83b5c6;
     font-weight: bold; }
+
+[screen="case-form"] .case-status {
+  background: #72b330;
+  color: white;
+  line-height: 1;
+  padding: 5px 10px;
+  font-size: 10px;
+  margin-left: 5px;
+  display: inline-block;
+  vertical-align: text-top; }
+  [screen="case-form"] .case-status.closed {
+    background: #e03c31; }
+
+[screen="case-form"] .case-actions {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center; }
+  [screen="case-form"] .case-actions > * {
+    margin-left: 3px; }
+  [screen="case-form"] .case-actions .butn {
+    width: 100px; }
+    [screen="case-form"] .case-actions .butn .fa {
+      vertical-align: top;
+      font-size: 85%; }
+
+[screen="case-form"] .case-field {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  margin-top: 15px; }
+  [screen="case-form"] .case-field .case-label {
+    line-height: 35px;
+    font-size: 16px;
+    color: #333;
+    font-weight: bold; }
+  [screen="case-form"] .case-field .case-input {
+    cursor: pointer; }
+    [screen="case-form"] .case-field .case-input select, [screen="case-form"] .case-field .case-input input, [screen="case-form"] .case-field .case-input textarea {
+      height: 35px;
+      line-height: 25px;
+      padding: 5px 10px;
+      background: #eee;
+      float: left;
+      width: 100%;
+      outline: none;
+      border: none;
+      -webkit-appearance: none;
+         -moz-appearance: none;
+              appearance: none;
+      border-radius: 0; }
+    [screen="case-form"] .case-field .case-input select {
+      cursor: pointer; }
+    [screen="case-form"] .case-field .case-input textarea {
+      width: 100%;
+      height: 100px; }
+    [screen="case-form"] .case-field .case-input .fa {
+      right: 15px;
+      position: absolute;
+      background: #83b5c6;
+      color: white;
+      font-size: 16px;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+          align-items: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+      height: 35px;
+      width: 35px;
+      pointer-events: none; }
 
 [screen="legal"] .case-status {
   background: #72b330;

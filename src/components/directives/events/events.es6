@@ -1,14 +1,15 @@
 app.component('eventsItem', {
     templateUrl: 'events',
     bindings: {},
-    controller: function ($scope) {
+    controller: function ($scope, Event) {
 
-        var init = () => {};
+        var init = () => {
+        };
 
         init();
 
         _.extend($scope, {
-
+            toggleEvent: Event.toggleEvent
         });
     }
 });

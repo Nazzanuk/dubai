@@ -1,7 +1,5 @@
 'use strict';
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
 var app = angular.module('app', ['ui.router']);
 
 app.directive('ngEnter', function () {
@@ -15,73 +13,57 @@ app.directive('ngEnter', function () {
         });
     };
 });
+app.service('Event', function ($timeout) {
 
-app.run(function ($templateCache) {
-    $templateCache.put('test.html', 'Hello {{ test.user.name }}!');
-});
-app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+    var visible = false;
 
-    //this controls the animations for each transition
-    var resolve = {
-        timeout: function timeout($timeout) {
-            $('[screen]').removeClass('active');
-            $timeout(function () {
-                return $('[screen]').addClass('active');
-            }, 350);
-            return $timeout(300);
-        }
+    var isVisible = function isVisible() {
+        return visible;
     };
 
-    // For any unmatched url, redirect to /
-    $urlRouterProvider.otherwise("/");
-
-    // Now set up the states
-    $stateProvider.state(new Route('home', "/", resolve)).state(new Route('post', "/post", resolve)).state(new Route('search', "/search", resolve)).state(new Route('legal', "/legal", resolve)).state(new Route('case', "/case", resolve));
-
-    //use real urls instead of hashes
-    //$locationProvider.html5Mode(true);
-});
-
-var Route = function Route(name, url, resolve) {
-    _classCallCheck(this, Route);
-
-    _.extend(this, {
-        name: name,
-        url: url,
-        templateUrl: _.kebabCase(name) + '-screen',
-        controller: _.upperFirst(_.camelCase(name + 'Screen')),
-        resolve: resolve
-    });
-};
-
-app.service('Menu', function ($state, $stateParams, $timeout) {
-
-    var currentPage,
-        pages = [{ name: "Home", slug: "home" }, { name: "About", slug: "about" }];
-
-    var setPage = function setPage(slug) {
-        currentPage = slug;
-        $state.go(slug);
+    var toggleEvent = function toggleEvent() {
+        visible = !visible;
     };
 
-    var isCurrentPage = function isCurrentPage(slug) {
-        return slug == (currentPage || $state.current.name);
-    };
-
-    var init = function init() {
-        console.log($state);
-        console.log('$state.get()', $state.get());
-    };
+    var init = function init() {};
 
     init();
 
     return {
-        getPages: function getPages() {
-            return pages;
-        },
-        setPage: setPage,
-        isCurrentPage: isCurrentPage
+        toggleEvent: toggleEvent,
+        isVisible: isVisible
     };
+});
+
+app.service('Menu', function ($timeout) {
+
+    //var currentPage,
+    //    pages = [
+    //        {name: "Home", slug: "home"},
+    //        {name: "About", slug: "about"}
+    //    ];
+    //
+    //var setPage = (slug) => {
+    //    currentPage = slug;
+    //    $state.go(slug);
+    //};
+    //
+    //var isCurrentPage = (slug) => {
+    //    return slug == (currentPage || $state.current.name);
+    //};
+    //
+    //var init = () => {
+    //    console.log($state);
+    //    console.log('$state.get()', $state.get());
+    //};
+    //
+    //init();
+    //
+    //return {
+    //    getPages: () => pages,
+    //    setPage,
+    //    isCurrentPage
+    //}
 });
 
 app.component('announcementsItem', {
@@ -133,16 +115,31 @@ app.component('documentsItem', {
         _.extend($scope, {});
     }
 });
-app.component('eventsItem', {
-    templateUrl: 'events',
+app.component('eventItem', {
+    templateUrl: 'event',
     bindings: {},
-    controller: function controller($scope) {
+    controller: function controller($scope, Event) {
 
         var init = function init() {};
 
         init();
 
+        _.extend($scope, Event);
         _.extend($scope, {});
+    }
+});
+app.component('eventsItem', {
+    templateUrl: 'events',
+    bindings: {},
+    controller: function controller($scope, Event) {
+
+        var init = function init() {};
+
+        init();
+
+        _.extend($scope, {
+            toggleEvent: Event.toggleEvent
+        });
     }
 });
 app.component('footItem', {
@@ -312,6 +309,17 @@ app.component('vacanciesItem', {
     }
 });
 app.controller('CaseScreen', function ($element, $timeout, $scope) {
+
+    var init = function init() {
+        //$timeout(() => $element.find('[screen]').addClass('active'), 50);
+    };
+
+    init();
+
+    _.extend($scope, {});
+});
+
+app.controller('CaseFormScreen', function ($element, $timeout, $scope) {
 
     var init = function init() {
         //$timeout(() => $element.find('[screen]').addClass('active'), 50);

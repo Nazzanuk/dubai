@@ -18,6 +18,7 @@ app.config(($stateProvider, $urlRouterProvider, $locationProvider) => {
         .state(new Route('post', "/post", resolve))
         .state(new Route('search', "/search", resolve))
         .state(new Route('legal', "/legal", resolve))
+        .state(new Route('case-form', "/case-form", resolve))
         .state(new Route('case', "/case", resolve));
 
     //use real urls instead of hashes

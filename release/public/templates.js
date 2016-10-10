@@ -13,9 +13,9 @@ $templateCache.put("box","<div class=\"box\">\n" +
     "    <div class=\"box-header\">\n" +
     "        {{header}}\n" +
     "\n" +
-    "        <div class=\"box-expand\">\n" +
-    "            <i class=\"fa fa-minus\"></i>\n" +
-    "        </div>\n" +
+    "        <!--<div class=\"box-expand\">-->\n" +
+    "            <!--<i class=\"fa fa-minus\"></i>-->\n" +
+    "        <!--</div>-->\n" +
     "        <div class=\"box-butn\" ng-if=\"butnText\">{{butnText}} &nbsp; <i class=\"fa fa-caret-right\"></i></div>\n" +
     "    </div>\n" +
     "    <div class=\"box-content\" ng-transclude></div>\n" +
@@ -58,9 +58,46 @@ $templateCache.put("documents","<div id=\"documents\">\n" +
     "    </box-item>\n" +
     "</div>")
 
+$templateCache.put("event","<div id=\"event\">\n" +
+    "        <div class=\"event\" ng-click=\"toggleEvent()\" ng-class=\"{active:isVisible()}\">\n" +
+    "            <div class=\"event-box\" ng-click=\"$event.stopPropagation()\">\n" +
+    "                <box-item header=\"Upcoming Event\">\n" +
+    "\n" +
+    "                    <img src=\"https://images.unsplash.com/photo-1474679294639-dc85e32f2ef0?dpr=2&auto=format&crop=entropy&fit=crop&w=1000&h=350&q=80&cs=tinysrgb\" alt=\"\">\n" +
+    "                    <div class=\"event-context\">\n" +
+    "                        <div class=\"event-date\">\n" +
+    "                            <div class=\"date-number\">05</div>\n" +
+    "                            <div class=\"date-month\">Nov</div>\n" +
+    "                        </div>\n" +
+    "                        <div class=\"event-content\">\n" +
+    "                            <div class=\"content-title\">Fundraising Dinner</div>\n" +
+    "                            <div class=\"content-small\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque aut cumque dolorem eos eum expedita ipsam itaque perspiciatis sed. Dicta est incidunt laudantium modi quae quam, quidem quis sunt veritatis!</div>\n" +
+    "                            <div class=\"content-items\">\n" +
+    "                                <div class=\"row\">\n" +
+    "                                    <!--<div class=\"col-xs-4\"><strong>Location:</strong></div>-->\n" +
+    "                                    <!--<div class=\"col-xs-8\">Dubai Office</div>-->\n" +
+    "                                    <div class=\"col-xs-4\"><strong>Location:</strong></div>\n" +
+    "                                    <div class=\"col-xs-8\">Dubai Office</div>\n" +
+    "                                    <div class=\"col-xs-4\"><strong>Date:</strong></div>\n" +
+    "                                    <div class=\"col-xs-8\">05/11/2016</div>\n" +
+    "                                </div>\n" +
+    "                            </div>\n" +
+    "                            <p>\n" +
+    "                                <span class=\"butn red pull-right\"  ng-click=\"toggleEvent()\"><i class=\"fa fa-angle-left\"></i> &nbsp; Back</span>\n" +
+    "                            </p>\n" +
+    "                        </div>\n" +
+    "                    </div>\n" +
+    "\n" +
+    "\n" +
+    "                </box-item>\n" +
+    "            </div>\n" +
+    "\n" +
+    "        </div>\n" +
+    "</div>")
+
 $templateCache.put("events","<div id=\"events\">\n" +
     "    <box-item header=\"Upcoming Events\" butn-text=\"All Events\">\n" +
-    "        <div class=\"events\">\n" +
+    "        <div class=\"events\" ng-click=\"toggleEvent()\">\n" +
     "            <div class=\"event teal\">\n" +
     "                <div class=\"event-date\">\n" +
     "                    <div class=\"date-number\">05</div>\n" +
@@ -164,35 +201,6 @@ $templateCache.put("gallery","<div id=\"gallery\">\n" +
     "    </box-item>\n" +
     "</div>")
 
-$templateCache.put("hero","<div id=\"hero\">\n" +
-    "    <div class=\"hero\">\n" +
-    "        <div class=\"hero-main\">\n" +
-    "            <div class=\"main-img\" style=\"background-image: url('http://www.highwaytourism.net/sites/default/files/burj_al_arab_jumeirah_dubai-wide.jpg')\"></div>\n" +
-    "            <div class=\"main-overlay\"></div>\n" +
-    "            <div class=\"main-cat\">Intranet</div>\n" +
-    "            <div class=\"main-title\">Hewaar Intranet is Live</div>\n" +
-    "            <div class=\"main-text\">Alias debitis dicta fugit odit perferendis rerum vitae! Architecto culpa dolor explicabo nobis placeat? Aliquid eos, rerum.</div>\n" +
-    "        </div>\n" +
-    "\n" +
-    "        <div class=\"hero-items\">\n" +
-    "            <div class=\"hero-main\">\n" +
-    "                <div class=\"main-img\" style=\"background-image: url('http://www.arthurweill.fr/img/unsplash/images_1280/tumblr_mnh17lfd9R1st5lhmo1_1280.jpg')\"></div>\n" +
-    "                <div class=\"main-overlay\"></div>\n" +
-    "                <div class=\"main-cat\">Human Resources</div>\n" +
-    "                <div class=\"main-title\">Consectetur adipisicing elit</div>\n" +
-    "                <div class=\"main-text\">Assumenda et impedit natus nisi. Atque exercitationem expedita porro quibusdam ullam vitae.</div>\n" +
-    "            </div>\n" +
-    "            <div class=\"hero-main\">\n" +
-    "                <div class=\"main-img\" style=\"background-image: url('http://www.arthurweill.fr/img/unsplash/images_1280/7dwwcdv7wc4_1280.jpg')\"></div>\n" +
-    "                <div class=\"main-overlay\"></div>\n" +
-    "                <div class=\"main-cat\">Corporate</div>\n" +
-    "                <div class=\"main-title\">New London Sales Office</div>\n" +
-    "                <div class=\"main-text\">Facere fugit itaque iusto modi omnis perferendis quis quod reiciendis totam voluptatem.</div>\n" +
-    "            </div>\n" +
-    "        </div>\n" +
-    "    </div>\n" +
-    "</div>")
-
 $templateCache.put("header","<div id=\"header\">\n" +
     "\n" +
     "    <div class=\"header\">\n" +
@@ -230,6 +238,35 @@ $templateCache.put("header","<div id=\"header\">\n" +
     "                    <i class=\"fa fa-search\" ui-sref=\"search\"></i>\n" +
     "                    <input type=\"text\" placeholder=\"Search Hewaar\">\n" +
     "                </div>\n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "</div>")
+
+$templateCache.put("hero","<div id=\"hero\">\n" +
+    "    <div class=\"hero\">\n" +
+    "        <div class=\"hero-main\">\n" +
+    "            <div class=\"main-img\" style=\"background-image: url('http://www.highwaytourism.net/sites/default/files/burj_al_arab_jumeirah_dubai-wide.jpg')\"></div>\n" +
+    "            <div class=\"main-overlay\"></div>\n" +
+    "            <div class=\"main-cat\">Intranet</div>\n" +
+    "            <div class=\"main-title\">Hewaar Intranet is Live</div>\n" +
+    "            <div class=\"main-text\">Alias debitis dicta fugit odit perferendis rerum vitae! Architecto culpa dolor explicabo nobis placeat? Aliquid eos, rerum.</div>\n" +
+    "        </div>\n" +
+    "\n" +
+    "        <div class=\"hero-items\">\n" +
+    "            <div class=\"hero-main\">\n" +
+    "                <div class=\"main-img\" style=\"background-image: url('http://www.arthurweill.fr/img/unsplash/images_1280/tumblr_mnh17lfd9R1st5lhmo1_1280.jpg')\"></div>\n" +
+    "                <div class=\"main-overlay\"></div>\n" +
+    "                <div class=\"main-cat\">Human Resources</div>\n" +
+    "                <div class=\"main-title\">Consectetur adipisicing elit</div>\n" +
+    "                <div class=\"main-text\">Assumenda et impedit natus nisi. Atque exercitationem expedita porro quibusdam ullam vitae.</div>\n" +
+    "            </div>\n" +
+    "            <div class=\"hero-main\">\n" +
+    "                <div class=\"main-img\" style=\"background-image: url('http://www.arthurweill.fr/img/unsplash/images_1280/7dwwcdv7wc4_1280.jpg')\"></div>\n" +
+    "                <div class=\"main-overlay\"></div>\n" +
+    "                <div class=\"main-cat\">Corporate</div>\n" +
+    "                <div class=\"main-title\">New London Sales Office</div>\n" +
+    "                <div class=\"main-text\">Facere fugit itaque iusto modi omnis perferendis quis quod reiciendis totam voluptatem.</div>\n" +
     "            </div>\n" +
     "        </div>\n" +
     "    </div>\n" +
@@ -425,8 +462,8 @@ $templateCache.put("case-screen","<div id=\"case-screen.html\">\n" +
     "        <div class=\"container\">\n" +
     "\n" +
     "            <div class=\"pull-right\" style=\"margin-top: 30px;\">\n" +
-    "                <div class=\"butn\" ui-sref=\"legal\">My Cases &nbsp; <i class=\"fa fa-list-ul\"></i></div>\n" +
-    "                <div class=\"butn\">Raise a Case &nbsp; +</div>\n" +
+    "                <div class=\"butn teal\" ui-sref=\"legal\">My Cases &nbsp; <i class=\"fa fa-list-ul\"></i></div>\n" +
+    "                <div class=\"butn\" ui-sref=\"case-form\">Raise a Case &nbsp; +</div>\n" +
     "            </div>\n" +
     "\n" +
     "            <div class=\"dp-header\">Legal Case Management</div>\n" +
@@ -503,6 +540,119 @@ $templateCache.put("case-screen","<div id=\"case-screen.html\">\n" +
     "    </div>\n" +
     "</div>")
 
+$templateCache.put("case-form-screen","<div id=\"case-form-screen.html\">\n" +
+    "    <div screen=\"case-form\">\n" +
+    "        <div class=\"container\">\n" +
+    "\n" +
+    "\n" +
+    "            <div class=\"pull-right\" style=\"margin-top: 30px;\">\n" +
+    "                <div class=\"butn teal\" ui-sref=\"legal\">My Cases &nbsp; <i class=\"fa fa-list-ul\"></i></div>\n" +
+    "                <div class=\"butn\" ui-sref=\"case-form\">Raise a Case &nbsp; +</div>\n" +
+    "            </div>\n" +
+    "\n" +
+    "            <div class=\"dp-header\">Legal Case Management</div>\n" +
+    "\n" +
+    "            <box-item header=\"Submit A Legal Case\">\n" +
+    "                <div class=\"row\">\n" +
+    "                    <div class=\"col-md-6\">\n" +
+    "                        <div class=\"case-field\">\n" +
+    "                            <div class=\"case-label\">Request type</div>\n" +
+    "                            <div class=\"case-input\">\n" +
+    "                                <select>\n" +
+    "                                    <option value=\"\">Select type</option>\n" +
+    "                                </select>\n" +
+    "                                <div class=\"fa fa-angle-down\"></div>\n" +
+    "                            </div>\n" +
+    "                            <div class=\"case-label\" style=\"margin-top: 15px\">Date: 07/10/2016</div>\n" +
+    "                        </div>\n" +
+    "                    </div>\n" +
+    "                    <div class=\"col-md-6\">\n" +
+    "                        <div class=\"case-field\">\n" +
+    "                            <div class=\"case-label\">Download a template (optional)</div>\n" +
+    "                            <div class=\"case-input\">\n" +
+    "                                <select>\n" +
+    "                                    <option value=\"\">Select template</option>\n" +
+    "                                </select>\n" +
+    "                                <div class=\"fa fa-angle-down\"></div>\n" +
+    "                            </div>\n" +
+    "                        </div>\n" +
+    "                    </div>\n" +
+    "                </div>\n" +
+    "\n" +
+    "                <div class=\"row\">\n" +
+    "                    <div class=\"col-md-6\">\n" +
+    "                        <div class=\"case-field\">\n" +
+    "                            <div class=\"case-label\">Name of individual requesting legal services</div>\n" +
+    "                            <div class=\"case-input\">\n" +
+    "                                <input type=\"text\">\n" +
+    "                            </div>\n" +
+    "                        </div>\n" +
+    "                    </div>\n" +
+    "                    <div class=\"col-md-6\">\n" +
+    "                        <div class=\"case-field\">\n" +
+    "                            <div class=\"case-label\">Contact details</div>\n" +
+    "                            <div class=\"case-input\">\n" +
+    "                                <input type=\"text\">\n" +
+    "                            </div>\n" +
+    "                        </div>\n" +
+    "                    </div>\n" +
+    "                </div>\n" +
+    "\n" +
+    "                <div class=\"row\">\n" +
+    "                    <div class=\"col-md-6\">\n" +
+    "                        <div class=\"case-field\">\n" +
+    "                            <div class=\"case-label\">Name of department or business unit</div>\n" +
+    "                            <div class=\"case-input\">\n" +
+    "                                <select>\n" +
+    "                                    <option value=\"\">Select department</option>\n" +
+    "                                </select>\n" +
+    "                                <div class=\"fa fa-angle-down\"></div>\n" +
+    "                            </div>\n" +
+    "                        </div>\n" +
+    "                    </div>\n" +
+    "                    <div class=\"col-md-6\">\n" +
+    "                        <div class=\"case-field\">\n" +
+    "                            <div class=\"case-label\">Priority</div>\n" +
+    "                            <div class=\"case-input\">\n" +
+    "                                <select>\n" +
+    "                                    <option value=\"\">High</option>\n" +
+    "                                </select>\n" +
+    "                                <div class=\"fa fa-angle-down\"></div>\n" +
+    "                            </div>\n" +
+    "                        </div>\n" +
+    "                    </div>\n" +
+    "                </div>\n" +
+    "\n" +
+    "\n" +
+    "                <div class=\"case-field\">\n" +
+    "                    <div class=\"case-label\">Detailed Description</div>\n" +
+    "                    <div class=\"case-input\">\n" +
+    "                        <textarea textarea=\"We require a standard NDA...\"></textarea>\n" +
+    "                    </div>\n" +
+    "                </div>\n" +
+    "                \n" +
+    "                <div class=\"row\">\n" +
+    "                    <div class=\"col-md-6\">\n" +
+    "                        <div class=\"case-field\">\n" +
+    "                            <div class=\"case-label\">Please upload relevant documents</div>\n" +
+    "                            <div class=\"case-input\">\n" +
+    "                                <input type=\"file\">\n" +
+    "                            </div>\n" +
+    "                        </div>\n" +
+    "                    </div>\n" +
+    "                </div>\n" +
+    "                <p>&nbsp;</p>\n" +
+    "                <p>\n" +
+    "                    <span class=\"butn teal\"><i class=\"fa fa-angle-left\"></i> &nbsp; Cancel</span>\n" +
+    "                    <span class=\"butn\">Submit &nbsp; <i class=\"fa fa-check\"></i></span>\n" +
+    "                </p>\n" +
+    "        </box-item>\n" +
+    "\n" +
+    "\n" +
+    "    </div>\n" +
+    "</div>\n" +
+    "</div>")
+
 $templateCache.put("home-screen","<div id=\"home-screen.html\">\n" +
     "    <div screen=\"home\">\n" +
     "        <div class=\"container\">\n" +
@@ -544,8 +694,8 @@ $templateCache.put("legal-screen","<div id=\"legal-screen.html\">\n" +
     "\n" +
     "\n" +
     "            <div class=\"pull-right\" style=\"margin-top: 30px;\">\n" +
-    "                <div class=\"butn\" ui-sref=\"legal\">My Cases &nbsp; <i class=\"fa fa-list-ul\"></i></div>\n" +
-    "                <div class=\"butn\">Raise a Case &nbsp; +</div>\n" +
+    "                <div class=\"butn teal\" ui-sref=\"legal\">My Cases &nbsp; <i class=\"fa fa-list-ul\"></i></div>\n" +
+    "                <div class=\"butn\" ui-sref=\"case-form\">Raise a Case &nbsp; +</div>\n" +
     "            </div>\n" +
     "\n" +
     "            <div class=\"dp-header\">Legal Case Management</div>\n" +
@@ -878,19 +1028,12 @@ $templateCache.put("search-screen","<div id=\"search-screen.html\">\n" +
     "\n" +
     "                    <box-item header=\"Filters\">\n" +
     "                        <div class=\"search-filters\">\n" +
-    "                            <!--{{getSearchFilter()}}-->\n" +
     "\n" +
     "                            <div class=\"search-filter\">\n" +
     "                                <div class=\"fa fa-caret-down\"></div>\n" +
     "                                <select ng-model=\"getSearchFilter().type\" style=\"text-transform: capitalize\">\n" +
     "                                    <option value=\"\">All Types</option>\n" +
     "                                    <option value=\"{{type}}\" ng-repeat=\"type in getTypes()\">{{type}}</option>\n" +
-    "                                </select>\n" +
-    "                            </div>\n" +
-    "                            <div class=\"search-filter\">\n" +
-    "                                <div class=\"fa fa-caret-down\"></div>\n" +
-    "                                <select>\n" +
-    "                                    <option value=\"\">All Subtypes</option>\n" +
     "                                </select>\n" +
     "                            </div>\n" +
     "                            <div class=\"search-filter\">\n" +
@@ -908,7 +1051,13 @@ $templateCache.put("search-screen","<div id=\"search-screen.html\">\n" +
     "                            <div class=\"search-filter\">\n" +
     "                                <div class=\"fa fa-caret-down\"></div>\n" +
     "                                <select>\n" +
-    "                                    <option value=\"\">All Functions</option>\n" +
+    "                                    <option value=\"\">All Document Types</option>\n" +
+    "                                </select>\n" +
+    "                            </div>\n" +
+    "                            <div class=\"search-filter\">\n" +
+    "                                <div class=\"fa fa-caret-down\"></div>\n" +
+    "                                <select>\n" +
+    "                                    <option value=\"\">All Document Subtypes</option>\n" +
     "                                </select>\n" +
     "                            </div>\n" +
     "                            <div class=\"search-filter\">\n" +
@@ -944,7 +1093,6 @@ $templateCache.put("search-screen","<div id=\"search-screen.html\">\n" +
     "                    </box-item>\n" +
     "                </div>\n" +
     "            </div>\n" +
-    "\n" +
     "\n" +
     "        </div>\n" +
     "    </div>\n" +

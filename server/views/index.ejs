@@ -36,7 +36,15 @@
             </div>
             <div class="menu-1-item">Shield Line</div>
             <div class="menu-1-item">Linkit</div>
-            <div class="menu-1-item" ui-sref="legal">Legal Cases</div>
+            <div class="menu-1-item">
+                Legal Cases
+                <i class="fa fa-angle-right pull-right"></i>
+
+                <div class="menu-2">
+                    <a href="#" class="menu-2-item" ui-sref="legal">Legal Case Management</a>
+                    <a href="#" class="menu-2-item" ui-sref="case-form">New Case</a>
+                </div>
+            </div>
             <div class="menu-1-item">Documents</div>
         </header-menu>
     </header-item>
@@ -47,12 +55,11 @@
     <div ui-view></div>
 
     <foot-item></foot-item>
+    <event-item></event-item>
 
-    <div angular-templates>
-</div>
 </div>
 <script src="public/lib.js"></script>
-<script src="public/app.js"></script>
+<script src="public/app-standard.js"></script>
 <script src="public/templates.js"></script>
 
 </body>

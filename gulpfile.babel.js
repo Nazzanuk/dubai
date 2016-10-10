@@ -59,13 +59,20 @@ gulp.task("gen-html", () => {
         .pipe(gulp.dest('release'));
 });
 
-gulp.task('gen-js', () =>
+gulp.task('gen-js', () => {
     gulp.src(['src/components/app.es6', 'src/components/**/*.es6'])
+        .pipe(concat('app-standard.js'))
+        .pipe(babel())
+        .on('error', catchError)
+        .pipe(gulp.dest("release/public"));
+
+
+    return gulp.src(['src/components/app.es6', 'src/components/**/!(routes)*.es6'])
         .pipe(concat('app.js'))
         .pipe(babel())
         .on('error', catchError)
-        .pipe(gulp.dest("release/public"))
-);
+        .pipe(gulp.dest("release/public"));
+});
 
 gulp.task('gen-css', () =>
     gulp.src([

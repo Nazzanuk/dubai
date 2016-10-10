@@ -1,0 +1,97 @@
+[screen="case-form"] {
+
+  .case-status {
+    background: $green;
+    color: white;
+    line-height: 1;
+    padding: 5px 10px;
+    font-size: 10px;
+    margin-left: 5px;
+    display: inline-block;
+    vertical-align: text-top;
+
+    &.closed {
+      background: $red;
+    }
+  }
+
+  .case-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    > * {
+      margin-left: 3px;
+    }
+
+    .butn {
+      width: 100px;
+      .fa {
+        vertical-align: top;
+        font-size: 85%;
+      }
+    }
+  }
+
+  .case-field {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+
+    .case-label {
+      line-height: 35px;
+      font-size: 16px;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .case-input {
+      cursor: pointer;
+
+      select, input, textarea {
+        height: 35px;
+        line-height: 25px;
+        padding: 5px 10px;
+        background: #eee;
+        float: left;
+        width: 100%;
+
+        //font-size: 18px;
+        outline: none;
+        //border: 1px solid #ccc;
+        border: none;
+        //border-right: 0;
+        //-webkit-appearance: none;
+        appearance: none;
+        border-radius: 0;
+      }
+
+      select {
+        cursor: pointer;
+      }
+
+      textarea {
+        width: 100%;
+        height: 100px;
+      }
+
+      .fa {
+        right: 15px;
+        position: absolute;
+        background: $teal;
+        //background: $red;
+        color: white;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        //line-height: 50px;
+        height: 35px;
+        width: 35px;
+        pointer-events: none;
+      }
+    }
+  }
+}

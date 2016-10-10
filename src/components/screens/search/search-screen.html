@@ -18,19 +18,12 @@
 
                     <box-item header="Filters">
                         <div class="search-filters">
-                            <!--{{getSearchFilter()}}-->
 
                             <div class="search-filter">
                                 <div class="fa fa-caret-down"></div>
                                 <select ng-model="getSearchFilter().type" style="text-transform: capitalize">
                                     <option value="">All Types</option>
                                     <option value="{{type}}" ng-repeat="type in getTypes()">{{type}}</option>
-                                </select>
-                            </div>
-                            <div class="search-filter">
-                                <div class="fa fa-caret-down"></div>
-                                <select>
-                                    <option value="">All Subtypes</option>
                                 </select>
                             </div>
                             <div class="search-filter">
@@ -48,7 +41,13 @@
                             <div class="search-filter">
                                 <div class="fa fa-caret-down"></div>
                                 <select>
-                                    <option value="">All Functions</option>
+                                    <option value="">All Document Types</option>
+                                </select>
+                            </div>
+                            <div class="search-filter">
+                                <div class="fa fa-caret-down"></div>
+                                <select>
+                                    <option value="">All Document Subtypes</option>
                                 </select>
                             </div>
                             <div class="search-filter">
@@ -84,7 +83,6 @@
                     </box-item>
                 </div>
             </div>
-
 
         </div>
     </div>
