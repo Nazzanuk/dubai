@@ -1,4 +1,4 @@
-app.service('Menu', ($timeout) => {
+//app.service('Menu', ($timeout) => {
 
     //var currentPage,
     //    pages = [
@@ -27,5 +27,5 @@ app.service('Menu', ($timeout) => {
     //    setPage,
     //    isCurrentPage
     //}
-});
+//});
 

@@ -7,7 +7,7 @@ app.component('boxItem', {
         butnColor:'@'
     },
     transclude: true,
-    controller: function ($scope, Menu) {
+    controller: function ($scope) {
 
         var init = () => {
         };

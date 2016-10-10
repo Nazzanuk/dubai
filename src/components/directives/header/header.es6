@@ -4,7 +4,7 @@ app.component('headerItem', {
     transclude: {
         headerMenu:'headerMenu'
     },
-    controller: function ($scope, Menu, $element, $timeout) {
+    controller: function ($scope, $element, $timeout) {
 
         var $menu, $subMenus;
 
@@ -36,9 +36,6 @@ app.component('headerItem', {
         init();
 
         _.extend($scope, {
-            getPages: Menu.getPages,
-            setPage: Menu.setPage,
-            isCurrentPage: Menu.isCurrentPage,
             showSubMenu,
             toggleMenu,
             showMenu

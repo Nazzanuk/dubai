@@ -21,6 +21,43 @@ $templateCache.put("box","<div class=\"box\">\n" +
     "    <div class=\"box-content\" ng-transclude></div>\n" +
     "</div>")
 
+$templateCache.put("event","<div id=\"event\">\n" +
+    "        <div class=\"event\" ng-click=\"toggleEvent()\" ng-class=\"{active:isVisible()}\">\n" +
+    "            <div class=\"event-box\" ng-click=\"$event.stopPropagation()\">\n" +
+    "                <box-item header=\"Upcoming Event\">\n" +
+    "\n" +
+    "                    <img src=\"https://images.unsplash.com/photo-1474679294639-dc85e32f2ef0?dpr=2&auto=format&crop=entropy&fit=crop&w=1000&h=350&q=80&cs=tinysrgb\" alt=\"\">\n" +
+    "                    <div class=\"event-context\">\n" +
+    "                        <div class=\"event-date\">\n" +
+    "                            <div class=\"date-number\">05</div>\n" +
+    "                            <div class=\"date-month\">Nov</div>\n" +
+    "                        </div>\n" +
+    "                        <div class=\"event-content\">\n" +
+    "                            <div class=\"content-title\">Fundraising Dinner</div>\n" +
+    "                            <div class=\"content-small\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque aut cumque dolorem eos eum expedita ipsam itaque perspiciatis sed. Dicta est incidunt laudantium modi quae quam, quidem quis sunt veritatis!</div>\n" +
+    "                            <div class=\"content-items\">\n" +
+    "                                <div class=\"row\">\n" +
+    "                                    <!--<div class=\"col-xs-4\"><strong>Location:</strong></div>-->\n" +
+    "                                    <!--<div class=\"col-xs-8\">Dubai Office</div>-->\n" +
+    "                                    <div class=\"col-xs-4\"><strong>Location:</strong></div>\n" +
+    "                                    <div class=\"col-xs-8\">Dubai Office</div>\n" +
+    "                                    <div class=\"col-xs-4\"><strong>Date:</strong></div>\n" +
+    "                                    <div class=\"col-xs-8\">05/11/2016</div>\n" +
+    "                                </div>\n" +
+    "                            </div>\n" +
+    "                            <p>\n" +
+    "                                <span class=\"butn red pull-right\"  ng-click=\"toggleEvent()\"><i class=\"fa fa-angle-left\"></i> &nbsp; Back</span>\n" +
+    "                            </p>\n" +
+    "                        </div>\n" +
+    "                    </div>\n" +
+    "\n" +
+    "\n" +
+    "                </box-item>\n" +
+    "            </div>\n" +
+    "\n" +
+    "        </div>\n" +
+    "</div>")
+
 $templateCache.put("documents","<div id=\"documents\">\n" +
     "    <box-item header=\"Projects\" butn-text=\"All Projects\">\n" +
     "        <div class=\"projects\">\n" +
@@ -58,41 +95,47 @@ $templateCache.put("documents","<div id=\"documents\">\n" +
     "    </box-item>\n" +
     "</div>")
 
-$templateCache.put("event","<div id=\"event\">\n" +
-    "        <div class=\"event\" ng-click=\"toggleEvent()\" ng-class=\"{active:isVisible()}\">\n" +
-    "            <div class=\"event-box\" ng-click=\"$event.stopPropagation()\">\n" +
-    "                <box-item header=\"Upcoming Event\">\n" +
-    "\n" +
-    "                    <img src=\"https://images.unsplash.com/photo-1474679294639-dc85e32f2ef0?dpr=2&auto=format&crop=entropy&fit=crop&w=1000&h=350&q=80&cs=tinysrgb\" alt=\"\">\n" +
-    "                    <div class=\"event-context\">\n" +
-    "                        <div class=\"event-date\">\n" +
-    "                            <div class=\"date-number\">05</div>\n" +
-    "                            <div class=\"date-month\">Nov</div>\n" +
+$templateCache.put("foot","<div id=\"foot\">\n" +
+    "    <div class=\"container\">\n" +
+    "        <div class=\"foot\">\n" +
+    "            <div class=\"foot-top\">\n" +
+    "                <div class=\"row\">\n" +
+    "                    <div class=\"col-sm-3\">\n" +
+    "                        <img src=\"public/img/hewaar-white.png\" alt=\"\" style=\"height:45px;\"><br>\n" +
+    "                    </div>\n" +
+    "                    <div class=\"col-sm-3\">\n" +
+    "                        <div class=\"foot-title\">Contact Us</div>\n" +
+    "                        <div class=\"foot-item\">\n" +
+    "                            <p>500 oracle parkway</p>\n" +
+    "                            <p>Redwood Shores, 94065</p>\n" +
+    "                            <p>Phone: 800 DPUAE (800 37823)</p>\n" +
+    "                            <p>Email:admin@dp.ae</p>\n" +
     "                        </div>\n" +
-    "                        <div class=\"event-content\">\n" +
-    "                            <div class=\"content-title\">Fundraising Dinner</div>\n" +
-    "                            <div class=\"content-small\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque aut cumque dolorem eos eum expedita ipsam itaque perspiciatis sed. Dicta est incidunt laudantium modi quae quam, quidem quis sunt veritatis!</div>\n" +
-    "                            <div class=\"content-items\">\n" +
-    "                                <div class=\"row\">\n" +
-    "                                    <!--<div class=\"col-xs-4\"><strong>Location:</strong></div>-->\n" +
-    "                                    <!--<div class=\"col-xs-8\">Dubai Office</div>-->\n" +
-    "                                    <div class=\"col-xs-4\"><strong>Location:</strong></div>\n" +
-    "                                    <div class=\"col-xs-8\">Dubai Office</div>\n" +
-    "                                    <div class=\"col-xs-4\"><strong>Date:</strong></div>\n" +
-    "                                    <div class=\"col-xs-8\">05/11/2016</div>\n" +
-    "                                </div>\n" +
-    "                            </div>\n" +
+    "                    </div>\n" +
+    "                    <div class=\"col-sm-3\">\n" +
+    "                        <div class=\"foot-title\">Go Social</div>\n" +
+    "                        <div class=\"foot-item\">\n" +
     "                            <p>\n" +
-    "                                <span class=\"butn red pull-right\"  ng-click=\"toggleEvent()\"><i class=\"fa fa-angle-left\"></i> &nbsp; Back</span>\n" +
+    "                                <i class=\"fa fa-fw fa-facebook\"></i>\n" +
+    "                                <i class=\"fa fa-fw fa-twitter\"></i>\n" +
+    "                                <i class=\"fa fa-fw fa-instagram\"></i>\n" +
+    "                                <i class=\"fa fa-fw fa-linkedin\"></i>\n" +
+    "                                <i class=\"fa fa-fw fa-youtube\"></i>\n" +
     "                            </p>\n" +
     "                        </div>\n" +
     "                    </div>\n" +
     "\n" +
-    "\n" +
-    "                </box-item>\n" +
+    "                    <div class=\"col-sm-3\">\n" +
+    "                        <img src=\"public/img/dp-logo-trans.png\" alt=\"\" style=\"height:50px\">\n" +
+    "                    </div>\n" +
+    "                </div>\n" +
     "            </div>\n" +
-    "\n" +
+    "            <div class=\"foot-bottom\">\n" +
+    "                <a href=\"#\">About Dubai Properties</a> &nbsp; | &nbsp; <a>Privacy Statement</a>\n" +
+    "                <p>Copyright © 2016, Dubai Properties and/or its affiliates. All rights reserved.</p>\n" +
+    "            </div>\n" +
     "        </div>\n" +
+    "    </div>\n" +
     "</div>")
 
 $templateCache.put("events","<div id=\"events\">\n" +
@@ -142,65 +185,6 @@ $templateCache.put("events","<div id=\"events\">\n" +
     "    </box-item>\n" +
     "</div>")
 
-$templateCache.put("foot","<div id=\"foot\">\n" +
-    "    <div class=\"container\">\n" +
-    "        <div class=\"foot\">\n" +
-    "            <div class=\"foot-top\">\n" +
-    "                <div class=\"row\">\n" +
-    "                    <div class=\"col-sm-3\">\n" +
-    "                        <img src=\"public/img/hewaar-white.png\" alt=\"\" style=\"height:45px;\"><br>\n" +
-    "                    </div>\n" +
-    "                    <div class=\"col-sm-3\">\n" +
-    "                        <div class=\"foot-title\">Contact Us</div>\n" +
-    "                        <div class=\"foot-item\">\n" +
-    "                            <p>500 oracle parkway</p>\n" +
-    "                            <p>Redwood Shores, 94065</p>\n" +
-    "                            <p>Phone: 800 DPUAE (800 37823)</p>\n" +
-    "                            <p>Email:admin@dp.ae</p>\n" +
-    "                        </div>\n" +
-    "                    </div>\n" +
-    "                    <div class=\"col-sm-3\">\n" +
-    "                        <div class=\"foot-title\">Go Social</div>\n" +
-    "                        <div class=\"foot-item\">\n" +
-    "                            <p>\n" +
-    "                                <i class=\"fa fa-fw fa-facebook\"></i>\n" +
-    "                                <i class=\"fa fa-fw fa-twitter\"></i>\n" +
-    "                                <i class=\"fa fa-fw fa-instagram\"></i>\n" +
-    "                                <i class=\"fa fa-fw fa-linkedin\"></i>\n" +
-    "                                <i class=\"fa fa-fw fa-youtube\"></i>\n" +
-    "                            </p>\n" +
-    "                        </div>\n" +
-    "                    </div>\n" +
-    "\n" +
-    "                    <div class=\"col-sm-3\">\n" +
-    "                        <img src=\"public/img/dp-logo-trans.png\" alt=\"\" style=\"height:50px\">\n" +
-    "                    </div>\n" +
-    "                </div>\n" +
-    "            </div>\n" +
-    "            <div class=\"foot-bottom\">\n" +
-    "                <a href=\"#\">About Dubai Properties</a> &nbsp; | &nbsp; <a>Privacy Statement</a>\n" +
-    "                <p>Copyright © 2016, Dubai Properties and/or its affiliates. All rights reserved.</p>\n" +
-    "            </div>\n" +
-    "        </div>\n" +
-    "    </div>\n" +
-    "</div>")
-
-$templateCache.put("gallery","<div id=\"gallery\">\n" +
-    "    <box-item header=\"Latest Gallery Images\" butn-text=\"All Images\">\n" +
-    "        <div class=\"gallery\">\n" +
-    "            <div class=\"gallery-item\" style=\"background-image: url('https://unsplash.it/400/?random&1')\"></div>\n" +
-    "            <div class=\"gallery-item\" style=\"background-image: url('https://unsplash.it/400/?random&2')\"></div>\n" +
-    "            <div class=\"gallery-item\" style=\"background-image: url('https://unsplash.it/400/?random&23')\"></div>\n" +
-    "            <div class=\"gallery-item\" style=\"background-image: url('https://unsplash.it/400/?random&234')\"></div>\n" +
-    "            <div class=\"gallery-item\" style=\"background-image: url('https://unsplash.it/400/?random&235')\"></div>\n" +
-    "            <div class=\"gallery-item\" style=\"background-image: url('https://unsplash.it/400/?random&236')\"></div>\n" +
-    "            <div class=\"gallery-item\" style=\"background-image: url('https://unsplash.it/400/?random&237')\"></div>\n" +
-    "            <div class=\"gallery-item\" style=\"background-image: url('https://unsplash.it/400/?random&244')\"></div>\n" +
-    "            <div class=\"gallery-item\" style=\"background-image: url('https://unsplash.it/400/?random&21')\"></div>\n" +
-    "        </div>\n" +
-    "    </box-item>\n" +
-    "</div>")
-
 $templateCache.put("header","<div id=\"header\">\n" +
     "\n" +
     "    <div class=\"header\">\n" +
@@ -241,6 +225,22 @@ $templateCache.put("header","<div id=\"header\">\n" +
     "            </div>\n" +
     "        </div>\n" +
     "    </div>\n" +
+    "</div>")
+
+$templateCache.put("gallery","<div id=\"gallery\">\n" +
+    "    <box-item header=\"Latest Gallery Images\" butn-text=\"All Images\">\n" +
+    "        <div class=\"gallery\">\n" +
+    "            <div class=\"gallery-item\" style=\"background-image: url('https://unsplash.it/400/?random&1')\"></div>\n" +
+    "            <div class=\"gallery-item\" style=\"background-image: url('https://unsplash.it/400/?random&2')\"></div>\n" +
+    "            <div class=\"gallery-item\" style=\"background-image: url('https://unsplash.it/400/?random&23')\"></div>\n" +
+    "            <div class=\"gallery-item\" style=\"background-image: url('https://unsplash.it/400/?random&234')\"></div>\n" +
+    "            <div class=\"gallery-item\" style=\"background-image: url('https://unsplash.it/400/?random&235')\"></div>\n" +
+    "            <div class=\"gallery-item\" style=\"background-image: url('https://unsplash.it/400/?random&236')\"></div>\n" +
+    "            <div class=\"gallery-item\" style=\"background-image: url('https://unsplash.it/400/?random&237')\"></div>\n" +
+    "            <div class=\"gallery-item\" style=\"background-image: url('https://unsplash.it/400/?random&244')\"></div>\n" +
+    "            <div class=\"gallery-item\" style=\"background-image: url('https://unsplash.it/400/?random&21')\"></div>\n" +
+    "        </div>\n" +
+    "    </box-item>\n" +
     "</div>")
 
 $templateCache.put("hero","<div id=\"hero\">\n" +

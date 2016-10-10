@@ -35,53 +35,37 @@ app.service('Event', function ($timeout) {
     };
 });
 
-app.service('Menu', function ($timeout) {
+//app.service('Menu', ($timeout) => {
 
-    //var currentPage,
-    //    pages = [
-    //        {name: "Home", slug: "home"},
-    //        {name: "About", slug: "about"}
-    //    ];
-    //
-    //var setPage = (slug) => {
-    //    currentPage = slug;
-    //    $state.go(slug);
-    //};
-    //
-    //var isCurrentPage = (slug) => {
-    //    return slug == (currentPage || $state.current.name);
-    //};
-    //
-    //var init = () => {
-    //    console.log($state);
-    //    console.log('$state.get()', $state.get());
-    //};
-    //
-    //init();
-    //
-    //return {
-    //    getPages: () => pages,
-    //    setPage,
-    //    isCurrentPage
-    //}
-});
+//var currentPage,
+//    pages = [
+//        {name: "Home", slug: "home"},
+//        {name: "About", slug: "about"}
+//    ];
+//
+//var setPage = (slug) => {
+//    currentPage = slug;
+//    $state.go(slug);
+//};
+//
+//var isCurrentPage = (slug) => {
+//    return slug == (currentPage || $state.current.name);
+//};
+//
+//var init = () => {
+//    console.log($state);
+//    console.log('$state.get()', $state.get());
+//};
+//
+//init();
+//
+//return {
+//    getPages: () => pages,
+//    setPage,
+//    isCurrentPage
+//}
+//});
 
-app.component('announcementsItem', {
-    templateUrl: 'announcements',
-    bindings: {},
-    controller: function controller($scope, Menu) {
-
-        var init = function init() {};
-
-        init();
-
-        _.extend($scope, {
-            getPages: Menu.getPages,
-            setPage: Menu.setPage,
-            isCurrentPage: Menu.isCurrentPage
-        });
-    }
-});
 
 app.component('boxItem', {
     templateUrl: 'box',
@@ -92,13 +76,26 @@ app.component('boxItem', {
         butnColor: '@'
     },
     transclude: true,
-    controller: function controller($scope, Menu) {
+    controller: function controller($scope) {
 
         var init = function init() {};
 
         init();
 
         _.extend($scope, this);
+        _.extend($scope, {});
+    }
+});
+
+app.component('announcementsItem', {
+    templateUrl: 'announcements',
+    bindings: {},
+    controller: function controller($scope) {
+
+        var init = function init() {};
+
+        init();
+
         _.extend($scope, {});
     }
 });
@@ -125,6 +122,18 @@ app.component('eventItem', {
         init();
 
         _.extend($scope, Event);
+        _.extend($scope, {});
+    }
+});
+app.component('galleryItem', {
+    templateUrl: 'gallery',
+    bindings: {},
+    controller: function controller($scope) {
+
+        var init = function init() {};
+
+        init();
+
         _.extend($scope, {});
     }
 });
@@ -159,25 +168,13 @@ app.component('footItem', {
     }
 });
 
-app.component('galleryItem', {
-    templateUrl: 'gallery',
-    bindings: {},
-    controller: function controller($scope) {
-
-        var init = function init() {};
-
-        init();
-
-        _.extend($scope, {});
-    }
-});
 app.component('headerItem', {
     templateUrl: 'header',
     bindings: {},
     transclude: {
         headerMenu: 'headerMenu'
     },
-    controller: function controller($scope, Menu, $element, $timeout) {
+    controller: function controller($scope, $element, $timeout) {
 
         var $menu, $subMenus;
 
@@ -209,9 +206,6 @@ app.component('headerItem', {
         init();
 
         _.extend($scope, {
-            getPages: Menu.getPages,
-            setPage: Menu.setPage,
-            isCurrentPage: Menu.isCurrentPage,
             showSubMenu: showSubMenu,
             toggleMenu: toggleMenu,
             showMenu: showMenu
@@ -231,8 +225,8 @@ app.component('heroItem', {
         _.extend($scope, {});
     }
 });
-app.component('pollsItem', {
-    templateUrl: 'polls',
+app.component('pressReleasesItem', {
+    templateUrl: 'press-releases',
     bindings: {},
     controller: function controller($scope) {
 
@@ -243,8 +237,8 @@ app.component('pollsItem', {
         _.extend($scope, {});
     }
 });
-app.component('pressReleasesItem', {
-    templateUrl: 'press-releases',
+app.component('pollsItem', {
+    templateUrl: 'polls',
     bindings: {},
     controller: function controller($scope) {
 
@@ -270,17 +264,13 @@ app.component('promosItem', {
 app.component('servicesItem', {
     templateUrl: 'services',
     bindings: {},
-    controller: function controller($scope, Menu) {
+    controller: function controller($scope) {
 
         var init = function init() {};
 
         init();
 
-        _.extend($scope, {
-            getPages: Menu.getPages,
-            setPage: Menu.setPage,
-            isCurrentPage: Menu.isCurrentPage
-        });
+        _.extend($scope, {});
     }
 });
 
