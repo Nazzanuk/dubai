@@ -1,5 +1,6 @@
 app.component('servicesItem', {
     templateUrl: 'services',
+    restrict: 'ECA',
     bindings: {},
     controller: function ($scope) {
 

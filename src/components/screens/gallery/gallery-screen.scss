@@ -1,0 +1,72 @@
+[screen="gallery"] {
+
+  .gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: -15px -15px 0px 0px;
+
+    .discount {
+      position: relative;
+      flex: 1 0 250px;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      background: #eee;
+      //border-radius: 0;
+      margin: 15px 15px 0 0;
+      background-size: cover;
+      background-position: center;
+
+      &:nth-child(2n) {
+        .discount-content {
+          //border-bottom: 2px dashed lighten($teal, 10%);
+
+        }
+        .discount-butn {
+          background: lighten($teal, 0%);
+        }
+
+      }
+    }
+
+    .discount-content {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 15px 20px;
+      color: white;
+      //border: 3px dashed #ddd;
+      text-align: left;
+      height: 180px;
+      display: flex;
+      flex-direction: column;
+      //align-items: center;
+      justify-content: center;
+      //border-bottom: 2px dashed $teal;
+      //margin-bottom: 3px;
+      text-align: center;
+      //background: darken($teal, 5%);
+      //background: darken(#eee, 0%);
+      //color: #333;
+
+      strong {
+      }
+
+      .discount-title {
+        font-size: 16px;
+        font-weight: 600;
+        //color: $teal;
+
+      }
+    }
+
+    .discount-butn {
+      //margin-top: -3px;
+      background: $teal;
+      padding: 15px;
+      color: white;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+
+}

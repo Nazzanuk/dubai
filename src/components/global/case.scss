@@ -4,16 +4,21 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: -15px -15px 0 0;
+  margin: -5px -15px 0 0;
 
   .header-field {
-    margin: 15px 15px 0 0;
-    flex: 1 0 200px;
+    margin: 5px 15px 0 0;
+    flex: 1 1 40%;
+    min-width: 280px;
     display: flex;
     flex-direction: row;
 
     &.max {
       flex: 1 1 100%;
+    }
+
+    &.flush {
+      margin-top: 0;
     }
   }
 
@@ -22,10 +27,11 @@
 
     @extend .dp-title;
     color: white;
-    background: $red;
+    background: $teal;
     padding: 10px 15px;
-    font-size: 14px;
+    font-size: 12px;
     text-transform: uppercase;
+    font-weight: 500;
   }
 
   .header-value {
@@ -35,6 +41,12 @@
     background: #f7f7f7;
     margin-left:0px;
     text-transform: none;
+  }
+
+  .header-textarea {
+    @extend .header-value;
+    flex: 0 1 auto;
+    line-height: 1.6;
   }
 }
 
@@ -67,7 +79,8 @@
     }
 
     .result-icon {
-      height: 50px;
+      height: 40px;
+      margin-right: 5px;
     }
 
     .result-content {

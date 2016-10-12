@@ -1,5 +1,6 @@
 app.component('pollsItem', {
     templateUrl: 'polls',
+    restrict: 'ECA',
     bindings: {},
     controller: function ($scope) {
 

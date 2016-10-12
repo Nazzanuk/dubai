@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ui.router']);
+var app = app || angular.module('app', []);
 
 app.directive('ngEnter', () => (scope, element, attrs) => {
     element.bind('keypress', (event) => {

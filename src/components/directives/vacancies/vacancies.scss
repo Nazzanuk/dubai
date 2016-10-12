@@ -1,4 +1,4 @@
-vacancies-item {
+vacancies-item, .vacancies-item {
 
   .vacancies {
     .vacancy {
@@ -8,6 +8,7 @@ vacancies-item {
       display: flex;
       flex-direction: row;
       background: #f7f7f7;
+      cursor: pointer;
 
       &:first-child {
         margin-top: 0;

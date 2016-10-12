@@ -1,45 +1,50 @@
 <div id="services">
     <div class="services">
-        <div class="service">
-            <div class="service-overlay"></div>
-            <div class="service-icon">
-                <img src="public/img/group.svg"/>
+        <div class="service service-menu">
+            <div class="service-icon"><img src="public/img/group.svg"/></div>
+            <div class="service-content">Human Resources &nbsp; <i class="fa fa-angle-down"></i></div>
+
+            <div class="menu-1">
+                <a href="#" class="menu-1-item" ui-sref="home">HRMS</a>
+                <a href="#" class="menu-1-item" ui-sref="home">Biometric</a>
+                <a href="#" class="menu-1-item" ui-sref="home">Timesheet</a>
             </div>
-            <div class="service-content">Human Resources</div>
+
         </div>
-        <div class="service">
-            <div class="service-overlay"></div>
-            <div class="service-icon">
-                <img src="public/img/magnifier.svg"/>
-            </div>
+        <a class="service service-menu" ng-href="#/search">
+            <div class="service-icon"><img src="public/img/magnifier.svg"/></div>
             <div class="service-content">Vacancies</div>
-        </div>
-        <div class="service">
-            <div class="service-overlay"></div>
-            <div class="service-icon">
-                <img src="public/img/security-shield.svg"/>
+        </a>
+        <div class="service service-menu">
+            <div class="service-icon"><img src="public/img/security-shield.svg"/></div>
+            <div class="service-content">Governance &nbsp; <i class="fa fa-angle-down"></i></div>
+            <div class="menu-1">
+                <a href="#" class="menu-1-item" ui-sref="home">DMS</a>
+                <a href="#" class="menu-1-item" ui-sref="home">ShieldLine</a>
+                <a href="#" class="menu-1-item" ui-sref="home">Performance Management System</a>
+                <a href="#" class="menu-1-item" ui-sref="home">Brand Guidelines</a>
+                <a href="#" class="menu-1-item" ui-sref="home">Process & Policies</a>
+                <a href="#" class="menu-1-item" ui-sref="home">BCM</a>
+
+
+                <a href="#" class="menu-1-item" ui-sref="home">HRMS</a>
+                <div class="menu-1-item">
+                    Third Level Nav
+                    <i class="fa fa-angle-right pull-right"></i>
+
+                    <div class="menu-2">
+                        <a href="#" class="menu-2-item">Documentation</a>
+                        <a href="#" class="menu-2-item">Support</a>
+                    </div>
+                </div>
             </div>
-            <div class="service-content">Shield Line</div>
         </div>
-        <div class="service">
-            <div class="service-overlay"></div>
-            <div class="service-icon">
-                <img src="public/img/web-link.svg"/>
-            </div>
-            <div class="service-content">Linkit</div>
-        </div>
-        <div class="service" ui-sref="legal">
-            <div class="service-overlay"></div>
-            <div class="service-icon">
-                <img src="public/img/hammer-legal-tool-symbol.svg"/>
-            </div>
+        <div class="service service-menu" ui-sref="legal">
+            <div class="service-icon"><img src="public/img/hammer-legal-tool-symbol.svg"/></div>
             <div class="service-content">Legal Cases</div>
         </div>
-        <div class="service">
-            <div class="service-overlay"></div>
-            <div class="service-icon">
-                <img src="public/img/files.svg"/>
-            </div>
+        <div class="service service-menu">
+            <div class="service-icon"><img src="public/img/files.svg"/></div>
             <div class="service-content">Document Manager</div>
         </div>
     </div>

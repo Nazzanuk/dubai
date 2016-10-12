@@ -1,0 +1,62 @@
+[screen="vacancy"] {
+
+  .vacancy-hero {
+    height: 100px;
+    margin-top: 30px;
+    display: flex;
+    background:$teal;
+  }
+
+  .vacancy-date, .vacancy-cat {
+    background: $primary;
+    color: white;
+    padding: 5px 10px;
+    display: inline-block;
+    font-weight: bold;
+  }
+
+  .vacancy-cat {
+    font-size: 12px;
+    line-height: 1;
+    background: $red;
+    float:right;
+    text-transform: uppercase;
+  }
+
+  .vacancy-screen-content {
+    margin-top: 30px;
+    padding: 30px;
+    background: white;
+
+    p {
+      margin: 20px 0 0;
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    h2 {
+      font-weight: 600;
+      margin: 30px 0 0;
+      font-size: 22px;
+      //color: #999;
+    }
+
+    img {
+      width: 100%;
+      height:auto;
+    }
+  }
+
+  .vacancy-summary {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 20px;
+    //color: $teal;
+    color: #999;
+    margin: 15px 0 0;
+
+  }
+
+
+
+}

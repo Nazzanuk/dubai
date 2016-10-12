@@ -16,7 +16,7 @@
             <div class="row">
                 <div class="col-sm-3">
 
-                    <box-item header="Filters">
+                    <div class="box-item" header="Filters">
                         <div class="search-filters">
 
                             <div class="search-filter">
@@ -57,14 +57,14 @@
                                 </select>
                             </div>
                         </div>
-                    </box-item>
+                    </div>
 
-                    <box-item header="Advanced Filters"></box-item>
+                    <div class="box-item" header="Advanced Filters"></div>
                 </div>
 
                 <div class="col-sm-9">
 
-                    <box-item header="Results">
+                    <div class="box-item" header="Results">
                         <div class="search-results">
                             <div class="result" ng-repeat="doc in getDocuments() | filter:getSearchFilter() track by doc.id">
                                 <img ng-if="doc.type == 'document'" class="result-icon" src="public/img/{{doc.ext}}.svg">
@@ -80,7 +80,7 @@
                                 </div>
                             </div>
                         </div>
-                    </box-item>
+                    </div>
                 </div>
             </div>
 

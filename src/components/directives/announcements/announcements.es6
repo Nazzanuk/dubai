@@ -1,13 +1,14 @@
 app.component('announcementsItem', {
     templateUrl: 'announcements',
+    restrict: 'ECA',
     bindings: {},
     controller: function ($scope) {
 
-        var init = () => {};
+        var init = () => {
+        };
 
         init();
 
-        _.extend($scope, {
-        });
+        _.extend($scope, {});
     }
 });

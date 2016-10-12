@@ -60,7 +60,7 @@ gulp.task("gen-html", () => {
 });
 
 gulp.task('gen-js', () => {
-    gulp.src(['src/components/app.es6', 'src/components/**/*.es6'])
+    gulp.src(['src/components/app-standard.es6', 'src/components/**/*.es6'])
         .pipe(concat('app-standard.js'))
         .pipe(babel())
         .on('error', catchError)
@@ -93,16 +93,24 @@ gulp.task('gen-css', () =>
         .pipe(gulp.dest("release/public"))
 );
 
-gulp.task('gen-lib-js', () =>
+gulp.task('gen-lib-js', () => {
     gulp.src([
+            'src/bower-components/jquery/dist/jquery.min.js',
+            'src/bower-components/angular/angular.min.js',
+            'src/bower-components/lodash/dist/lodash.min.js'
+        ])
+        .pipe(concat('lib.js'))
+        .pipe(gulp.dest("release/public"));
+
+    return gulp.src([
             'src/bower-components/jquery/dist/jquery.min.js',
             'src/bower-components/angular/angular.min.js',
             'src/bower-components/angular-ui-router/release/angular-ui-router.min.js',
             'src/bower-components/lodash/dist/lodash.min.js'
         ])
-        .pipe(concat('lib.js'))
+        .pipe(concat('lib-standard.js'))
         .pipe(gulp.dest("release/public"))
-);
+});
 
 gulp.task('gen-lib-css', () =>
     gulp.src([

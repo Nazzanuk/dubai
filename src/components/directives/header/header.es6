@@ -1,8 +1,9 @@
 app.component('headerItem', {
     templateUrl: 'header',
+    restrict: "C",
     bindings: {},
     transclude: {
-        headerMenu:'headerMenu'
+        headerMenu:'?headerMenu'
     },
     controller: function ($scope, $element, $timeout) {
 

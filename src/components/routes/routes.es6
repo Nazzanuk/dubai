@@ -16,8 +16,12 @@ app.config(($stateProvider, $urlRouterProvider, $locationProvider) => {
     $stateProvider
         .state(new Route('home', "/", resolve))
         .state(new Route('post', "/post", resolve))
+        .state(new Route('vacancy', "/vacancy", resolve))
         .state(new Route('search', "/search", resolve))
         .state(new Route('legal', "/legal", resolve))
+        .state(new Route('gallery', "/gallery", resolve))
+        .state(new Route('gallery-folder', "/gallery-folder", resolve))
+        .state(new Route('discounts', "/discounts", resolve))
         .state(new Route('case-form', "/case-form", resolve))
         .state(new Route('case', "/case", resolve));
 

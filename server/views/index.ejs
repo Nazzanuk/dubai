@@ -22,7 +22,7 @@
 
 <div data-ng-app="app">
 
-    <header-item>
+    <div class="header-item">
         <header-menu>
             <a href="#" class="menu-1-item" ui-sref="home">Home</a>
             <div class="menu-1-item">
@@ -47,18 +47,17 @@
             </div>
             <div class="menu-1-item">Documents</div>
         </header-menu>
-    </header-item>
+    </div>
 
 
-    <!--<script>(function(t,e,c,n){var o,s,a;t.SMCX=t.SMCX||[],e.getElementById(n)||(o=e.getElementsByTagName(c),s=o[o.length-1],a=e.createElement(c),a.type="text/javascript",a.async=!0,a.id=n,a.src=["https:"===location.protocol?"https://":"http://","widget.surveymonkey.com/collect/website/js/dDMSyR8BR9csewvaaowXS2SHb1vMr5PGAxt_2FST7JFwD0QnO6F1mfQCcZFC7ONvxm.js"].join(""),s.parentNode.insertBefore(a,s))})(window,document,"script","smcx-sdk");</script>-->
 
     <div ui-view></div>
 
-    <foot-item></foot-item>
-    <event-item></event-item>
+    <div foot-item></div>
+    <div event-item></div>
 
 </div>
-<script src="public/lib.js"></script>
+<script src="public/lib-standard.js"></script>
 <script src="public/app-standard.js"></script>
 <script src="public/templates.js"></script>
 

@@ -1,0 +1,29 @@
+<div id="gallery-folder-screen.html">
+    <div screen="gallery-folder">
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-sm-8">
+                    <div class="dp-header">Human Resources</div>
+
+                    <div class="box-item">
+                        <div class="gallery-folder">
+                            <div class="folder-image" ng-repeat="image in getImages() track by $index">
+                                <div class="image-image" style="background-image:url('http://placeimg.com/600/400?random={{$index}}');" alt=""></div>
+                                <div class="image-title">HR_{{image}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <vacancies-item></vacancies-item>
+                    <!--<gallery-item></gallery-item>-->
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

@@ -1,6 +1,6 @@
 app.component('footItem', {
     templateUrl: 'foot',
-    controllerAs: 'foot',
+    restrict:"A",
     bindings: {
         img: '@',
         heading: '@'

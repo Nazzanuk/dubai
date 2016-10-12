@@ -1,5 +1,6 @@
 app.component('boxItem', {
     templateUrl: 'box',
+    restrict: 'ECA',
     bindings: {
         header: '@',
         butnText:'@',

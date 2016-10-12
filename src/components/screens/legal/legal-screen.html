@@ -12,7 +12,7 @@
 
             <div class="row">
                 <div class="col-md-3">
-                    <box-item header="Filter Cases">
+                    <div class="box-item" header="Filter Cases">
                         <div class="search-filters">
                             <div class="search-filter">
                                 <input type="text" placeholder="Search Cases">
@@ -20,229 +20,73 @@
                             <div class="search-filter">
                                 <div class="fa fa-caret-down"></div>
                                 <select>
-                                    <option value="">Order By Date</option>
+                                    <option value="">Select Department</option>
                                 </select>
                             </div>
                             <div class="search-filter">
                                 <div class="fa fa-caret-down"></div>
                                 <select>
-                                    <option value="">All Categories</option>
+                                    <option value="">All Sections</option>
                                 </select>
                             </div>
                             <div class="search-filter">
                                 <div class="fa fa-caret-down"></div>
                                 <select>
-                                    <option value="">All Subtypes</option>
+                                    <option value="">All Request Types</option>
+                                </select>
+                            </div>
+                            <div class="search-filter">
+                                <div class="fa fa-caret-down"></div>
+                                <select>
+                                    <option value="">All Document Types</option>
+                                </select>
+                            </div>
+                            <div class="search-filter">
+                                <div class="fa fa-caret-down"></div>
+                                <select>
+                                    <option value="">All Statuses</option>
+                                </select>
+                            </div>
+                            <div class="search-filter">
+                                <div class="fa fa-caret-down"></div>
+                                <select>
+                                    <option value="">All Priorities</option>
+                                </select>
+                            </div>
+                            <div class="search-filter">
+                                <div class="fa fa-caret-down"></div>
+                                <select>
+                                    <option value="">All Legal Reps</option>
                                 </select>
                             </div>
                         </div>
-                    </box-item>
+                    </div>
 
                 </div>
+
                 <div class="col-md-9">
-                    <box-item header="My Cases">
+                    <div class="box-item" header="My Cases">
                         <div class="case-documents" ui-sref="case">
-                            <div class="result">
+                            <div class="result" ng-repeat="case in getCases()">
                                 <img class="result-icon" src="public/img/folder (2).svg">
                                 <div class="result-content">
                                     <div class="dp-title">
-                                        Internal Staff List 2016
-                                        <span class="case-status">OPEN</span>
+                                        {{case.id}}
+                                        <span class="case-status" ng-if="case.open">OPEN</span>
+                                        <span class="case-status closed" ng-if="!case.open">CLOSED</span>
                                     </div>
-                                    <p>Error maxime, neque officia praesentium repudiandae similique.</p>
+                                    <p><span class="fa fa-caret-right"></span> &nbsp; <strong>Department: </strong> {{case.department}}</p>
                                 </div>
                                 <div class="case-actions" style="margin-left: auto">
-                                    <div class="butn" ui-sref="case">View &nbsp; <i class="fa fa-arrow-right"></i></div>
-                                </div>
-                            </div>
-                            <div class="result">
-                                <img class="result-icon" src="public/img/folder (2).svg">
-                                <div class="result-content">
-                                    <div class="dp-title">
-                                        Excepturi Optio
-                                        <span class="case-status closed">CLOSED</span>
-                                    </div>
-                                    <p>Amet autem cumque dolore eaque inventore nostrum obcaecati repudiandae vel voluptas voluptatem!</p>
-                                </div>
-                                <div class="case-actions" style="margin-left: auto">
-                                    <div class="butn" ui-sref="case">View &nbsp; <i class="fa fa-arrow-right"></i></div>
-                                </div>
-                            </div>
-                            <div class="result">
-                                <img class="result-icon" src="public/img/folder (2).svg">
-                                <div class="result-content">
-                                    <div class="dp-title">
-                                        Illo Ipsam Recusandae Saepe
-                                        <span class="case-status closed">CLOSED</span>
-                                    </div>
-                                    <p>Distinctio ducimus ea enim ipsam nisi sed tempora. Autem libero nemo quibusdam.</p>
-                                </div>
-                                <div class="case-actions" style="margin-left: auto">
-                                    <div class="butn" ui-sref="case">View &nbsp; <i class="fa fa-arrow-right"></i></div>
-                                </div>
-                            </div>
-                            <div class="result">
-                                <img class="result-icon" src="public/img/folder (2).svg">
-                                <div class="result-content">
-                                    <div class="dp-title">
-                                        Internal Staff List 2016
-                                        <span class="case-status">OPEN</span>
-                                    </div>
-                                    <p>Error maxime, neque officia praesentium repudiandae similique.</p>
-                                </div>
-                                <div class="case-actions" style="margin-left: auto">
-                                    <div class="butn" ui-sref="case">View &nbsp; <i class="fa fa-arrow-right"></i></div>
-                                </div>
-                            </div>
-                            <div class="result">
-                                <img class="result-icon" src="public/img/folder (2).svg">
-                                <div class="result-content">
-                                    <div class="dp-title">
-                                        DPG 2015
-                                        <span class="case-status">OPEN</span>
-                                    </div>
-                                    <p>Amet autem cumque dolore eaque inventore nostrum obcaecati repudiandae vel voluptas voluptatem!</p>
-                                </div>
-                                <div class="case-actions" style="margin-left: auto">
-                                    <div class="butn" ui-sref="case">View &nbsp; <i class="fa fa-arrow-right"></i></div>
-                                </div>
-                            </div>
-                            <div class="result">
-                                <img class="result-icon" src="public/img/folder (2).svg">
-                                <div class="result-content">
-                                    <div class="dp-title">
-                                        DPG 2016
-                                        <span class="case-status">OPEN</span>
-                                    </div>
-                                    <p>Distinctio ducimus ea enim ipsam nisi sed tempora. Autem libero nemo quibusdam.</p>
-                                </div>
-                                <div class="case-actions" style="margin-left: auto">
-                                    <div class="butn" ui-sref="case">View &nbsp; <i class="fa fa-arrow-right"></i></div>
-                                </div>
-                            </div>
-                            <div class="result">
-                                <img class="result-icon" src="public/img/folder (2).svg">
-                                <div class="result-content">
-                                    <div class="dp-title">
-                                        Internal Staff List 2016
-                                        <span class="case-status">OPEN</span>
-                                    </div>
-                                    <p>Error maxime, neque officia praesentium repudiandae similique.</p>
-                                </div>
-                                <div class="case-actions" style="margin-left: auto">
-                                    <div class="butn" ui-sref="case">View &nbsp; <i class="fa fa-arrow-right"></i></div>
-                                </div>
-                            </div>
-                            <div class="result">
-                                <img class="result-icon" src="public/img/folder (2).svg">
-                                <div class="result-content">
-                                    <div class="dp-title">
-                                        DPG 2015
-                                        <span class="case-status">OPEN</span>
-                                    </div>
-                                    <p>Amet autem cumque dolore eaque inventore nostrum obcaecati repudiandae vel voluptas voluptatem!</p>
-                                </div>
-                                <div class="case-actions" style="margin-left: auto">
-                                    <div class="butn" ui-sref="case">View &nbsp; <i class="fa fa-arrow-right"></i></div>
-                                </div>
-                            </div>
-                            <div class="result">
-                                <img class="result-icon" src="public/img/folder (2).svg">
-                                <div class="result-content">
-                                    <div class="dp-title">
-                                        DPG 2016
-                                        <span class="case-status">OPEN</span>
-                                    </div>
-                                    <p>Distinctio ducimus ea enim ipsam nisi sed tempora. Autem libero nemo quibusdam.</p>
-                                </div>
-                                <div class="case-actions" style="margin-left: auto">
-                                    <div class="butn" ui-sref="case">View &nbsp; <i class="fa fa-arrow-right"></i></div>
-                                </div>
-                            </div>
-                            <div class="result">
-                                <img class="result-icon" src="public/img/folder (2).svg">
-                                <div class="result-content">
-                                    <div class="dp-title">
-                                        Internal Staff List 2016
-                                        <span class="case-status">OPEN</span>
-                                    </div>
-                                    <p>Error maxime, neque officia praesentium repudiandae similique.</p>
-                                </div>
-                                <div class="case-actions" style="margin-left: auto">
-                                    <div class="butn" ui-sref="case">View &nbsp; <i class="fa fa-arrow-right"></i></div>
-                                </div>
-                            </div>
-                            <div class="result">
-                                <img class="result-icon" src="public/img/folder (2).svg">
-                                <div class="result-content">
-                                    <div class="dp-title">
-                                        DPG 2015
-                                        <span class="case-status">OPEN</span>
-                                    </div>
-                                    <p>Amet autem cumque dolore eaque inventore nostrum obcaecati repudiandae vel voluptas voluptatem!</p>
-                                </div>
-                                <div class="case-actions" style="margin-left: auto">
-                                    <div class="butn" ui-sref="case">View &nbsp; <i class="fa fa-arrow-right"></i></div>
-                                </div>
-                            </div>
-                            <div class="result">
-                                <img class="result-icon" src="public/img/folder (2).svg">
-                                <div class="result-content">
-                                    <div class="dp-title">
-                                        DPG 2016
-                                        <span class="case-status">OPEN</span>
-                                    </div>
-                                    <p>Distinctio ducimus ea enim ipsam nisi sed tempora. Autem libero nemo quibusdam.</p>
-                                </div>
-                                <div class="case-actions" style="margin-left: auto">
-                                    <div class="butn" ui-sref="case">View &nbsp; <i class="fa fa-arrow-right"></i></div>
-                                </div>
-                            </div>
-                            <div class="result">
-                                <img class="result-icon" src="public/img/folder (2).svg">
-                                <div class="result-content">
-                                    <div class="dp-title">
-                                        Internal Staff List 2016
-                                        <span class="case-status">OPEN</span>
-                                    </div>
-                                    <p>Error maxime, neque officia praesentium repudiandae similique.</p>
-                                </div>
-                                <div class="case-actions" style="margin-left: auto">
-                                    <div class="butn" ui-sref="case">View &nbsp; <i class="fa fa-arrow-right"></i></div>
-                                </div>
-                            </div>
-                            <div class="result">
-                                <img class="result-icon" src="public/img/folder (2).svg">
-                                <div class="result-content">
-                                    <div class="dp-title">
-                                        DPG 2015
-                                        <span class="case-status">OPEN</span>
-                                    </div>
-                                    <p>Amet autem cumque dolore eaque inventore nostrum obcaecati repudiandae vel voluptas voluptatem!</p>
-                                </div>
-                                <div class="case-actions" style="margin-left: auto">
-                                    <div class="butn" ui-sref="case">View &nbsp; <i class="fa fa-arrow-right"></i></div>
-                                </div>
-                            </div>
-                            <div class="result">
-                                <img class="result-icon" src="public/img/folder (2).svg">
-                                <div class="result-content">
-                                    <div class="dp-title">
-                                        DPG 2016
-                                        <span class="case-status">OPEN</span>
-                                    </div>
-                                    <p>Distinctio ducimus ea enim ipsam nisi sed tempora. Autem libero nemo quibusdam.</p>
-                                </div>
-                                <div class="case-actions" style="margin-left: auto">
+                                    <div class="butn teal" ui-sref="case">Reply &nbsp; <i class="fa fa-pencil"></i></div>
                                     <div class="butn" ui-sref="case">View &nbsp; <i class="fa fa-arrow-right"></i></div>
                                 </div>
                             </div>
                         </div>
-                    </box-item>
+                    </div>
                 </div>
+
             </div>
-
-
         </div>
     </div>
 </div>

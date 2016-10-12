@@ -1,0 +1,41 @@
+.projects {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: -15px -15px 0 0;
+  //display: block;
+
+  .project {
+    display: flex;
+    flex: 1 0 220px;
+    //height: 130px;
+    margin: 15px 15px 0 0;
+    background: #f7f7f7;
+
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 15px;
+    text-align: center;
+
+    .project-title {
+      color: darken($teal, 10%);
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .project-subtitle {
+      margin-top: 10px;
+      font-size: 12px;
+      color: #999;
+      font-weight: 400;
+      padding: 0 30px;
+    }
+
+    img {
+      height: 70px;
+      margin-top: 10px;
+
+    }
+  }
+}

@@ -1,5 +1,6 @@
 app.component('eventItem', {
     templateUrl: 'event',
+    restrict: 'EA',
     bindings: {},
     controller: function ($scope, Event) {
 
