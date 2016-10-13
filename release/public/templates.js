@@ -9,6 +9,18 @@ $templateCache.put("announcements","<div class=\"announcements\">\n" +
     "    <i class=\"fa fa-caret-right\"></i> &nbsp; DPG on target to deliver Mudon project with competitive mortgage solutions\n" +
     "</div>")
 
+$templateCache.put("box","<div class=\"box\">\n" +
+    "    <div class=\"box-header\">\n" +
+    "        {{header}}\n" +
+    "\n" +
+    "        <!--<div class=\"box-expand\">-->\n" +
+    "            <!--<i class=\"fa fa-minus\"></i>-->\n" +
+    "        <!--</div>-->\n" +
+    "        <div class=\"box-butn\" ng-if=\"butnText\">{{butnText}} &nbsp; <i class=\"fa fa-caret-right\"></i></div>\n" +
+    "    </div>\n" +
+    "    <div class=\"box-content\" ng-transclude></div>\n" +
+    "</div>")
+
 $templateCache.put("documents","<div id=\"documents\">\n" +
     "    <div class=\"box-item\" header=\"Projects\">\n" +
     "\n" +
@@ -65,18 +77,6 @@ $templateCache.put("documents","<div id=\"documents\">\n" +
     "            </div>\n" +
     "        </div>\n" +
     "    </div>\n" +
-    "</div>")
-
-$templateCache.put("box","<div class=\"box\">\n" +
-    "    <div class=\"box-header\">\n" +
-    "        {{header}}\n" +
-    "\n" +
-    "        <!--<div class=\"box-expand\">-->\n" +
-    "            <!--<i class=\"fa fa-minus\"></i>-->\n" +
-    "        <!--</div>-->\n" +
-    "        <div class=\"box-butn\" ng-if=\"butnText\">{{butnText}} &nbsp; <i class=\"fa fa-caret-right\"></i></div>\n" +
-    "    </div>\n" +
-    "    <div class=\"box-content\" ng-transclude></div>\n" +
     "</div>")
 
 $templateCache.put("event","<div id=\"event\">\n" +
@@ -238,11 +238,11 @@ $templateCache.put("header","<div id=\"header\">\n" +
     "        <div class=\"header-top\">\n" +
     "            <div class=\"container\">\n" +
     "                <div class=\"logo\" ui-sref=\"home\">\n" +
-    "                    <img src=\"http://nathans.zone/sandbox/dubai/public/img/hewaar-white.png\" alt=\"hewaar logo\"/>\n" +
+    "                    <img src=\"https://cdn.rawgit.com/Nazzanuk/dubai/0.1.4/src/public/img/hewaar-white.png\" alt=\"hewaar logo\"/>\n" +
     "                </div>\n" +
     "\n" +
     "                <div class=\"logo right\" ui-sref=\"home\">\n" +
-    "                    <img src=\"http://nathans.zone/sandbox/dubai/public/img/dp-logo-trans.png\" style=\"height: 60px;margin-top: 0\" alt=\"dp logo\"/>\n" +
+    "                    <img src=\"https://cdn.rawgit.com/Nazzanuk/dubai/0.1.4/src/public/img/dp-logo-trans.png\" style=\"height: 60px;margin-top: 0\" alt=\"dp logo\"/>\n" +
     "                </div>\n" +
     "\n" +
     "                <div class=\"menu-search\">\n" +
@@ -355,46 +355,6 @@ $templateCache.put("promos","<div id=\"promos\">\n" +
     "    </div>\n" +
     "</div>")
 
-$templateCache.put("twitter","<div id=\"twitter\">\n" +
-    "    <div class=\"box-item\" header=\"Tweet Feed\" butn-text=\"@DPGplc\">\n" +
-    "\n" +
-    "        <div class=\"twitter\">\n" +
-    "            <div class=\"tweet\">\n" +
-    "                <div class=\"tweet-icon\">\n" +
-    "                    <img src=\"https://pbs.twimg.com/profile_images/783221121583898624/61fegpZf_400x400.jpg\" alt=\"\">\n" +
-    "                </div>\n" +
-    "                <div class=\"tweet-content\">\n" +
-    "                    Latest\n" +
-    "                    <a href=\"\">@TowardsMaturity</a> report shows how transforming formal #learning can bring #business results:\n" +
-    "                    <a href=\"\">http://bit.ly/2cADHPM</a> supported by DPG\n" +
-    "                </div>\n" +
-    "            </div>\n" +
-    "            <div class=\"tweet\">\n" +
-    "                <div class=\"tweet-icon\">\n" +
-    "                    <img src=\"https://pbs.twimg.com/profile_images/783221121583898624/61fegpZf_400x400.jpg\" alt=\"\">\n" +
-    "                </div>\n" +
-    "                <div class=\"tweet-content\">\n" +
-    "                    A fantastic and inspiring video about self development through CPD\n" +
-    "                    <a href=\"\">#loveCPD</a>\n" +
-    "                </div>\n" +
-    "            </div>\n" +
-    "            <div class=\"tweet\">\n" +
-    "                <div class=\"tweet-icon\">\n" +
-    "                    <img src=\"https://pbs.twimg.com/profile_images/783221121583898624/61fegpZf_400x400.jpg\" alt=\"\">\n" +
-    "                </div>\n" +
-    "                <div class=\"tweet-content\">\n" +
-    "                    Excited for\n" +
-    "                    <a href=\"\">#PMAs16</a>? One of DPG's participants have been shortlisted for the Michael Kelly Outstanding Student Award\n" +
-    "                    <a href=\"\">http://bit.ly/2djb87v</a>\n" +
-    "                </div>\n" +
-    "            </div>\n" +
-    "        </div>\n" +
-    "        <!--<p style=\"margin-top: 15px\">-->\n" +
-    "            <!--<span class=\"butn\"><i class=\"fa fa-twitter\"></i> &nbsp; @DPGplc</span>-->\n" +
-    "        <!--</p>-->\n" +
-    "    </div>\n" +
-    "</div>")
-
 $templateCache.put("services","<div id=\"services\">\n" +
     "    <div class=\"services\">\n" +
     "        <div class=\"service service-menu\">\n" +
@@ -441,6 +401,46 @@ $templateCache.put("services","<div id=\"services\">\n" +
     "            <div class=\"service-icon\"><img src=\"public/img/files.svg\"/></div>\n" +
     "            <div class=\"service-content\">Document Manager</div>\n" +
     "        </div>\n" +
+    "    </div>\n" +
+    "</div>")
+
+$templateCache.put("twitter","<div id=\"twitter\">\n" +
+    "    <div class=\"box-item\" header=\"Tweet Feed\" butn-text=\"@DPGplc\">\n" +
+    "\n" +
+    "        <div class=\"twitter\">\n" +
+    "            <div class=\"tweet\">\n" +
+    "                <div class=\"tweet-icon\">\n" +
+    "                    <img src=\"https://pbs.twimg.com/profile_images/783221121583898624/61fegpZf_400x400.jpg\" alt=\"\">\n" +
+    "                </div>\n" +
+    "                <div class=\"tweet-content\">\n" +
+    "                    Latest\n" +
+    "                    <a href=\"\">@TowardsMaturity</a> report shows how transforming formal #learning can bring #business results:\n" +
+    "                    <a href=\"\">http://bit.ly/2cADHPM</a> supported by DPG\n" +
+    "                </div>\n" +
+    "            </div>\n" +
+    "            <div class=\"tweet\">\n" +
+    "                <div class=\"tweet-icon\">\n" +
+    "                    <img src=\"https://pbs.twimg.com/profile_images/783221121583898624/61fegpZf_400x400.jpg\" alt=\"\">\n" +
+    "                </div>\n" +
+    "                <div class=\"tweet-content\">\n" +
+    "                    A fantastic and inspiring video about self development through CPD\n" +
+    "                    <a href=\"\">#loveCPD</a>\n" +
+    "                </div>\n" +
+    "            </div>\n" +
+    "            <div class=\"tweet\">\n" +
+    "                <div class=\"tweet-icon\">\n" +
+    "                    <img src=\"https://pbs.twimg.com/profile_images/783221121583898624/61fegpZf_400x400.jpg\" alt=\"\">\n" +
+    "                </div>\n" +
+    "                <div class=\"tweet-content\">\n" +
+    "                    Excited for\n" +
+    "                    <a href=\"\">#PMAs16</a>? One of DPG's participants have been shortlisted for the Michael Kelly Outstanding Student Award\n" +
+    "                    <a href=\"\">http://bit.ly/2djb87v</a>\n" +
+    "                </div>\n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "        <!--<p style=\"margin-top: 15px\">-->\n" +
+    "            <!--<span class=\"butn\"><i class=\"fa fa-twitter\"></i> &nbsp; @DPGplc</span>-->\n" +
+    "        <!--</p>-->\n" +
     "    </div>\n" +
     "</div>")
 
@@ -532,7 +532,7 @@ $templateCache.put("case-screen","<div id=\"case-screen.html\">\n" +
     "                </div>\n" +
     "                <div class=\"clearfix\">\n" +
     "                    <p style=\"margin-top:15px;\"></p>\n" +
-    "                    <div class=\"butn pull-right\" ui-sref=\"case-form\">Reply &nbsp; <i class=\"fa fa-pencil\"></i></div>\n" +
+    "                    <div class=\"butn teal pull-right\" ui-sref=\"case-form\">Reply &nbsp; <i class=\"fa fa-pencil\"></i></div>\n" +
     "                </div>\n" +
     "            </div>\n" +
     "\n" +
@@ -613,7 +613,7 @@ $templateCache.put("case-screen","<div id=\"case-screen.html\">\n" +
     "                            </div>\n" +
     "\n" +
     "                            <p class=\"pull-right\" style=\"margin-top: 15px\">\n" +
-    "                                <span class=\"butn\">Reply &nbsp; <i class=\"fa fa-pencil\"></i></span>\n" +
+    "                                <span class=\"butn teal\">Reply &nbsp; <i class=\"fa fa-pencil\"></i></span>\n" +
     "                            </p>\n" +
     "                        </div>\n" +
     "                    </div>\n" +
@@ -946,77 +946,6 @@ $templateCache.put("home-screen","<div id=\"home-screen.html\">\n" +
     "    </div>\n" +
     "</div>")
 
-$templateCache.put("post-screen","<div id=\"post-screen.html\">\n" +
-    "    <div screen=\"post\">\n" +
-    "        <div class=\"container\">\n" +
-    "\n" +
-    "            <div class=\"row\">\n" +
-    "\n" +
-    "                <div class=\"col-sm-8\">\n" +
-    "\n" +
-    "                    <div class=\"post-hero\">\n" +
-    "                        <div class=\"hero-main large\">\n" +
-    "                            <div class=\"main-img\" style=\"background-image: url('http://www.arthurweill.fr/img/unsplash/images_1280/7dwwcdv7wc4_1280.jpg')\"></div>\n" +
-    "                            <div class=\"main-overlay\"></div>\n" +
-    "                            <div class=\"main-title\">New London Sales Office</div>\n" +
-    "                            <!--<div class=\"main-text\">Facere fugit itaque iusto modi omnis perferendis quis quod reiciendis totam voluptatem.</div>-->\n" +
-    "                        </div>\n" +
-    "                    </div>\n" +
-    "\n" +
-    "\n" +
-    "                    <div class=\"post-content\">\n" +
-    "                        <div class=\"post-cat\">Corporate</div>\n" +
-    "                        <div class=\"post-date\">12th October 2016</div>\n" +
-    "                        <div class=\"post-summary\">Accusamus adipisci assumenda, beatae dignissimos ipsum iste laudantium natus quas quos sed.</div>\n" +
-    "\n" +
-    "                        <h2>Building the Future</h2>\n" +
-    "\n" +
-    "                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>\n" +
-    "\n" +
-    "                        <p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>\n" +
-    "\n" +
-    "                        <p>In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</p>\n" +
-    "\n" +
-    "                        <p>Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.</p>\n" +
-    "\n" +
-    "                        <p>\n" +
-    "                            Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.\n" +
-    "\n" +
-    "                            In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.\n" +
-    "                        </p>\n" +
-    "\n" +
-    "                        <p>Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cumque ducimus, eveniet excepturi explicabo, id, laboriosam maiores minima nemo neque nihil nostrum officia provident qui sequi similique sit sunt voluptates.</p>\n" +
-    "\n" +
-    "                        <h2>A Different Approach</h2>\n" +
-    "\n" +
-    "                        <p>Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.</p>\n" +
-    "\n" +
-    "                        <p>\n" +
-    "                            <img src=\"https://www.architectsjournal.co.uk/pictures/2000x2000fit/9/4/2/1369942_London_Skyline.jpg\">\n" +
-    "                        </p>\n" +
-    "\n" +
-    "                        <p>Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,</p>\n" +
-    "\n" +
-    "                        <p>In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</p>\n" +
-    "\n" +
-    "                        <p>Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.</p>\n" +
-    "\n" +
-    "\n" +
-    "                    </div>\n" +
-    "                </div>\n" +
-    "\n" +
-    "                <div class=\"col-sm-4\">\n" +
-    "                    <events-item></events-item>\n" +
-    "                    <vacancies-item></vacancies-item>\n" +
-    "                    <gallery-item></gallery-item>\n" +
-    "                </div>\n" +
-    "            </div>\n" +
-    "\n" +
-    "\n" +
-    "        </div>\n" +
-    "    </div>\n" +
-    "</div>")
-
 $templateCache.put("legal-screen","<div id=\"legal-screen.html\">\n" +
     "    <div screen=\"legal\">\n" +
     "        <div class=\"container\">\n" +
@@ -1112,6 +1041,140 @@ $templateCache.put("legal-screen","<div id=\"legal-screen.html\">\n" +
     "    </div>\n" +
     "</div>")
 
+$templateCache.put("post-screen","<div id=\"post-screen.html\">\n" +
+    "    <div screen=\"post\">\n" +
+    "        <div class=\"container\">\n" +
+    "\n" +
+    "            <div class=\"row\">\n" +
+    "\n" +
+    "                <div class=\"col-sm-8\">\n" +
+    "\n" +
+    "                    <div class=\"post-hero\">\n" +
+    "                        <div class=\"hero-main large\">\n" +
+    "                            <div class=\"main-img\" style=\"background-image: url('http://www.arthurweill.fr/img/unsplash/images_1280/7dwwcdv7wc4_1280.jpg')\"></div>\n" +
+    "                            <div class=\"main-overlay\"></div>\n" +
+    "                            <div class=\"main-title\">New London Sales Office</div>\n" +
+    "                            <!--<div class=\"main-text\">Facere fugit itaque iusto modi omnis perferendis quis quod reiciendis totam voluptatem.</div>-->\n" +
+    "                        </div>\n" +
+    "                    </div>\n" +
+    "\n" +
+    "\n" +
+    "                    <div class=\"post-content\">\n" +
+    "                        <div class=\"post-cat\">Corporate</div>\n" +
+    "                        <div class=\"post-date\">12th October 2016</div>\n" +
+    "                        <div class=\"post-summary\">Accusamus adipisci assumenda, beatae dignissimos ipsum iste laudantium natus quas quos sed.</div>\n" +
+    "\n" +
+    "                        <h2>Building the Future</h2>\n" +
+    "\n" +
+    "                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>\n" +
+    "\n" +
+    "                        <p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>\n" +
+    "\n" +
+    "                        <p>In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</p>\n" +
+    "\n" +
+    "                        <p>Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.</p>\n" +
+    "\n" +
+    "                        <p>\n" +
+    "                            Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.\n" +
+    "\n" +
+    "                            In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.\n" +
+    "                        </p>\n" +
+    "\n" +
+    "                        <p>Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cumque ducimus, eveniet excepturi explicabo, id, laboriosam maiores minima nemo neque nihil nostrum officia provident qui sequi similique sit sunt voluptates.</p>\n" +
+    "\n" +
+    "                        <h2>A Different Approach</h2>\n" +
+    "\n" +
+    "                        <p>Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.</p>\n" +
+    "\n" +
+    "                        <p>\n" +
+    "                            <img src=\"https://www.architectsjournal.co.uk/pictures/2000x2000fit/9/4/2/1369942_London_Skyline.jpg\">\n" +
+    "                        </p>\n" +
+    "\n" +
+    "                        <p>Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,</p>\n" +
+    "\n" +
+    "                        <p>In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</p>\n" +
+    "\n" +
+    "                        <p>Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.</p>\n" +
+    "\n" +
+    "\n" +
+    "                    </div>\n" +
+    "                </div>\n" +
+    "\n" +
+    "                <div class=\"col-sm-4\">\n" +
+    "                    <events-item></events-item>\n" +
+    "                    <vacancies-item></vacancies-item>\n" +
+    "                    <gallery-item></gallery-item>\n" +
+    "                </div>\n" +
+    "            </div>\n" +
+    "\n" +
+    "\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "</div>")
+
+$templateCache.put("vacancy-screen","<div id=\"vacancy-screen.html\">\n" +
+    "    <div screen=\"vacancy\">\n" +
+    "        <div class=\"container\">\n" +
+    "\n" +
+    "            <div class=\"row\">\n" +
+    "\n" +
+    "                <div class=\"col-sm-8\">\n" +
+    "\n" +
+    "                    <!--<div class=\"vacancy-hero\">-->\n" +
+    "                        <!--<div class=\"hero-main large\">-->\n" +
+    "                            <!--&lt;!&ndash;<div class=\"main-img\" style=\"background-image: url('http://www.arthurweill.fr/img/unsplash/images_1280/7dwwcdv7wc4_1280.jpg')\"></div>&ndash;&gt;-->\n" +
+    "                            <!--&lt;!&ndash;<div class=\"main-overlay\"></div>&ndash;&gt;-->\n" +
+    "                            <!--<div class=\"main-title\">Front End Developer</div>-->\n" +
+    "                            <!--&lt;!&ndash;<div class=\"main-text\">Facere fugit itaque iusto modi omnis perferendis quis quod reiciendis totam voluptatem.</div>&ndash;&gt;-->\n" +
+    "                        <!--</div>-->\n" +
+    "                    <!--</div>-->\n" +
+    "\n" +
+    "                    <div class=\"vacancy-date pull-right\" style=\"margin-top: 30px\">12th October 2016</div>\n" +
+    "                    <div class=\"dp-header\">Data Analyst</div>\n" +
+    "\n" +
+    "                    <div class=\"vacancy-screen-content\">\n" +
+    "                        <!--<div class=\"vacancy-cat\">Corporate</div>-->\n" +
+    "                        <div class=\"vacancy-summary\" style=\"margin-top: 0\">\n" +
+    "                            Data Analyst - Business Intelligence This is initially a 12 month contract based in The City of London...\n" +
+    "                        </div>\n" +
+    "\n" +
+    "                        <h2>Full Job Spec</h2>\n" +
+    "\n" +
+    "                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>\n" +
+    "\n" +
+    "                        <p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>\n" +
+    "\n" +
+    "                        <p>In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</p>\n" +
+    "\n" +
+    "                        <p>Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.</p>\n" +
+    "\n" +
+    "                        <h2>Working At DPG</h2>\n" +
+    "\n" +
+    "                        <p>Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.</p>\n" +
+    "\n" +
+    "                        <p>Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,</p>\n" +
+    "\n" +
+    "                        <p>In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</p>\n" +
+    "\n" +
+    "                        <p>Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.</p>\n" +
+    "\n" +
+    "                        <p><span class=\"butn\">Apply Via Email &nbsp; <i class=\"fa fa-angle-right\"></i></span></p>\n" +
+    "\n" +
+    "\n" +
+    "                    </div>\n" +
+    "                </div>\n" +
+    "\n" +
+    "                <div class=\"col-sm-4\">\n" +
+    "                    <vacancies-item></vacancies-item>\n" +
+    "                    <gallery-item></gallery-item>\n" +
+    "                </div>\n" +
+    "            </div>\n" +
+    "\n" +
+    "\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "</div>")
+
 $templateCache.put("search-screen","<div id=\"search-screen.html\">\n" +
     "    <div screen=\"search\">\n" +
     "        <div class=\"container\">\n" +
@@ -1197,69 +1260,6 @@ $templateCache.put("search-screen","<div id=\"search-screen.html\">\n" +
     "                    </div>\n" +
     "                </div>\n" +
     "            </div>\n" +
-    "\n" +
-    "        </div>\n" +
-    "    </div>\n" +
-    "</div>")
-
-$templateCache.put("vacancy-screen","<div id=\"vacancy-screen.html\">\n" +
-    "    <div screen=\"vacancy\">\n" +
-    "        <div class=\"container\">\n" +
-    "\n" +
-    "            <div class=\"row\">\n" +
-    "\n" +
-    "                <div class=\"col-sm-8\">\n" +
-    "\n" +
-    "                    <!--<div class=\"vacancy-hero\">-->\n" +
-    "                        <!--<div class=\"hero-main large\">-->\n" +
-    "                            <!--&lt;!&ndash;<div class=\"main-img\" style=\"background-image: url('http://www.arthurweill.fr/img/unsplash/images_1280/7dwwcdv7wc4_1280.jpg')\"></div>&ndash;&gt;-->\n" +
-    "                            <!--&lt;!&ndash;<div class=\"main-overlay\"></div>&ndash;&gt;-->\n" +
-    "                            <!--<div class=\"main-title\">Front End Developer</div>-->\n" +
-    "                            <!--&lt;!&ndash;<div class=\"main-text\">Facere fugit itaque iusto modi omnis perferendis quis quod reiciendis totam voluptatem.</div>&ndash;&gt;-->\n" +
-    "                        <!--</div>-->\n" +
-    "                    <!--</div>-->\n" +
-    "\n" +
-    "                    <div class=\"vacancy-date pull-right\" style=\"margin-top: 30px\">12th October 2016</div>\n" +
-    "                    <div class=\"dp-header\">Data Analyst</div>\n" +
-    "\n" +
-    "                    <div class=\"vacancy-screen-content\">\n" +
-    "                        <!--<div class=\"vacancy-cat\">Corporate</div>-->\n" +
-    "                        <div class=\"vacancy-summary\" style=\"margin-top: 0\">\n" +
-    "                            Data Analyst - Business Intelligence This is initially a 12 month contract based in The City of London...\n" +
-    "                        </div>\n" +
-    "\n" +
-    "                        <h2>Full Job Spec</h2>\n" +
-    "\n" +
-    "                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>\n" +
-    "\n" +
-    "                        <p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>\n" +
-    "\n" +
-    "                        <p>In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</p>\n" +
-    "\n" +
-    "                        <p>Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.</p>\n" +
-    "\n" +
-    "                        <h2>Working At DPG</h2>\n" +
-    "\n" +
-    "                        <p>Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.</p>\n" +
-    "\n" +
-    "                        <p>Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,</p>\n" +
-    "\n" +
-    "                        <p>In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</p>\n" +
-    "\n" +
-    "                        <p>Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.</p>\n" +
-    "\n" +
-    "                        <p><span class=\"butn\">Apply Via Email &nbsp; <i class=\"fa fa-angle-right\"></i></span></p>\n" +
-    "\n" +
-    "\n" +
-    "                    </div>\n" +
-    "                </div>\n" +
-    "\n" +
-    "                <div class=\"col-sm-4\">\n" +
-    "                    <vacancies-item></vacancies-item>\n" +
-    "                    <gallery-item></gallery-item>\n" +
-    "                </div>\n" +
-    "            </div>\n" +
-    "\n" +
     "\n" +
     "        </div>\n" +
     "    </div>\n" +

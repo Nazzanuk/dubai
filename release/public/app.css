@@ -194,7 +194,6 @@ hr {
       margin-top: 0; }
     .case-comments .case-comment .comment-author {
       font-weight: 600;
-      color: #253d98;
       font-weight: 600;
       background: #eee;
       margin: -5px -5px 5px;
@@ -444,6 +443,18 @@ hr {
       width: 35px;
       pointer-events: none; }
 
+announcements-item .announcements, .announcements-item .announcements {
+  margin-top: 30px;
+  background: white;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 15px;
+  color: #000;
+  font-weight: bold;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap; }
+
 box-item, .box-item {
   margin: 30px 0 0;
   padding: 15px;
@@ -502,18 +513,6 @@ box-item, .box-item {
     border: 1px solid #ddd;
     line-height: 20px;
     padding: 5px 10px; }
-
-announcements-item .announcements, .announcements-item .announcements {
-  margin-top: 30px;
-  background: white;
-  height: 30px;
-  line-height: 30px;
-  padding: 0 15px;
-  color: #000;
-  font-weight: bold;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap; }
 
 documents-item .more-projects, .documents-item .more-projects {
   position: relative; }
@@ -745,6 +744,44 @@ gallery-item .gallery, [gallery-item] .gallery {
     background-size: cover;
     background-position: center; }
 
+hero-item .hero, .hero-item .hero {
+  height: 450px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  position: relative;
+  overflow: hidden;
+  margin-top: 30px;
+  background: white;
+  color: black; }
+  @media (max-width: 767px) {
+    hero-item .hero, .hero-item .hero {
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+      height: auto; } }
+  hero-item .hero .hero-main, .hero-item .hero .hero-main {
+    padding-bottom: 30px; }
+    @media (max-width: 767px) {
+      hero-item .hero .hero-main, .hero-item .hero .hero-main {
+        min-height: 250px; } }
+    hero-item .hero .hero-main .main-title, .hero-item .hero .hero-main .main-title {
+      font-size: 40px;
+      padding: 0 30px; }
+    hero-item .hero .hero-main .main-text, .hero-item .hero .hero-main .main-text {
+      padding: 5px 30px 00px; }
+    hero-item .hero .hero-main .main-cat, .hero-item .hero .hero-main .main-cat {
+      margin-left: 30px; }
+  hero-item .hero .hero-items, .hero-item .hero .hero-items {
+    -ms-flex: 0 3 100%;
+        flex: 0 3 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column; }
+    hero-item .hero .hero-items .hero-main .main-title, .hero-item .hero .hero-items .hero-main .main-title {
+      font-size: 18px; }
+
 header-item header-menu {
   display: inline; }
 
@@ -877,43 +914,21 @@ header-item .header {
     header-item .header .logo.right {
       right: 15px; }
 
-hero-item .hero, .hero-item .hero {
-  height: 450px;
+press-releases-item .press-releases, .press-releases-item .press-releases {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
       flex-direction: row;
-  position: relative;
-  overflow: hidden;
-  margin-top: 30px;
-  background: white;
-  color: black; }
+  height: 250px;
+  margin: -15px; }
   @media (max-width: 767px) {
-    hero-item .hero, .hero-item .hero {
+    press-releases-item .press-releases, .press-releases-item .press-releases {
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
       height: auto; } }
-  hero-item .hero .hero-main, .hero-item .hero .hero-main {
-    padding-bottom: 30px; }
-    @media (max-width: 767px) {
-      hero-item .hero .hero-main, .hero-item .hero .hero-main {
-        min-height: 250px; } }
-    hero-item .hero .hero-main .main-title, .hero-item .hero .hero-main .main-title {
-      font-size: 40px;
-      padding: 0 30px; }
-    hero-item .hero .hero-main .main-text, .hero-item .hero .hero-main .main-text {
-      padding: 5px 30px 00px; }
-    hero-item .hero .hero-main .main-cat, .hero-item .hero .hero-main .main-cat {
-      margin-left: 30px; }
-  hero-item .hero .hero-items, .hero-item .hero .hero-items {
-    -ms-flex: 0 3 100%;
-        flex: 0 3 100%;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-        flex-direction: column; }
-    hero-item .hero .hero-items .hero-main .main-title, .hero-item .hero .hero-items .hero-main .main-title {
-      font-size: 18px; }
+  @media (max-width: 767px) {
+    press-releases-item .press-releases .hero-main, .press-releases-item .press-releases .hero-main {
+      min-height: 150px; } }
 
 polls-item .polls .tweet, .polls-item .polls .tweet {
   display: -ms-flexbox;
@@ -934,22 +949,6 @@ polls-item .polls .tweet, .polls-item .polls .tweet {
   polls-item .polls .tweet a, .polls-item .polls .tweet a {
     color: #253d98;
     font-weight: bold; }
-
-press-releases-item .press-releases, .press-releases-item .press-releases {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: row;
-      flex-direction: row;
-  height: 250px;
-  margin: -15px; }
-  @media (max-width: 767px) {
-    press-releases-item .press-releases, .press-releases-item .press-releases {
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
-      height: auto; } }
-  @media (max-width: 767px) {
-    press-releases-item .press-releases .hero-main, .press-releases-item .press-releases .hero-main {
-      min-height: 150px; } }
 
 promos-item .promos, .promos-item .promos {
   margin-top: 0;
@@ -1113,26 +1112,6 @@ services-item .service-menu, .services-item .service-menu {
             padding-left: 20px;
             padding-right: 10px; }
 
-twitter-item .twitter .tweet, .twitter-item .twitter .tweet {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: row;
-      flex-direction: row;
-  margin-top: 15px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid #eee; }
-  twitter-item .twitter .tweet:first-child, .twitter-item .twitter .tweet:first-child {
-    margin-top: 0; }
-  twitter-item .twitter .tweet:last-child, .twitter-item .twitter .tweet:last-child {
-    border-bottom: 0px solid #eee;
-    padding-bottom: 0px; }
-  twitter-item .twitter .tweet img, .twitter-item .twitter .tweet img {
-    height: 50px;
-    margin-right: 10px; }
-  twitter-item .twitter .tweet a, .twitter-item .twitter .tweet a {
-    color: #253d98;
-    font-weight: bold; }
-
 vacancies-item .vacancies .vacancy, .vacancies-item .vacancies .vacancy {
   color: #000;
   margin-top: 15px;
@@ -1167,6 +1146,26 @@ vacancies-item .vacancies .vacancy, .vacancies-item .vacancies .vacancy {
   vacancies-item .vacancies .vacancy .vacancy-header, .vacancies-item .vacancies .vacancy .vacancy-header {
     font-size: 16px;
     color: #83b5c6;
+    font-weight: bold; }
+
+twitter-item .twitter .tweet, .twitter-item .twitter .tweet {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  margin-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee; }
+  twitter-item .twitter .tweet:first-child, .twitter-item .twitter .tweet:first-child {
+    margin-top: 0; }
+  twitter-item .twitter .tweet:last-child, .twitter-item .twitter .tweet:last-child {
+    border-bottom: 0px solid #eee;
+    padding-bottom: 0px; }
+  twitter-item .twitter .tweet img, .twitter-item .twitter .tweet img {
+    height: 50px;
+    margin-right: 10px; }
+  twitter-item .twitter .tweet a, .twitter-item .twitter .tweet a {
+    color: #253d98;
     font-weight: bold; }
 
 [screen="case-form"] .case-status {
