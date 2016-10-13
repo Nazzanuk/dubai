@@ -121,6 +121,27 @@ app.service('Event', function ($timeout) {
 //});
 
 
+app.component('boxItem', {
+    templateUrl: 'box',
+    restrict: 'ECA',
+    bindings: {
+        header: '@',
+        butnText: '@',
+        butnLink: '@',
+        butnColor: '@'
+    },
+    transclude: true,
+    controller: function controller($scope) {
+
+        var init = function init() {};
+
+        init();
+
+        _.extend($scope, this);
+        _.extend($scope, {});
+    }
+});
+
 app.component('announcementsItem', {
     templateUrl: 'announcements',
     restrict: 'ECA',
@@ -148,27 +169,6 @@ app.component('documentsItem', {
         _.extend($scope, {});
     }
 });
-app.component('boxItem', {
-    templateUrl: 'box',
-    restrict: 'ECA',
-    bindings: {
-        header: '@',
-        butnText: '@',
-        butnLink: '@',
-        butnColor: '@'
-    },
-    transclude: true,
-    controller: function controller($scope) {
-
-        var init = function init() {};
-
-        init();
-
-        _.extend($scope, this);
-        _.extend($scope, {});
-    }
-});
-
 app.component('eventItem', {
     templateUrl: 'event',
     restrict: 'EA',
@@ -337,17 +337,6 @@ app.component('vacanciesItem', {
         _.extend($scope, {});
     }
 });
-app.controller('CaseScreen', function ($element, $timeout, $scope) {
-
-    var init = function init() {
-        //$timeout(() => $element.find('[screen]').addClass('active'), 50);
-    };
-
-    init();
-
-    _.extend($scope, {});
-});
-
 app.controller('CaseFormScreen', function ($element, $timeout, $scope) {
 
     var init = function init() {
@@ -359,7 +348,7 @@ app.controller('CaseFormScreen', function ($element, $timeout, $scope) {
     _.extend($scope, {});
 });
 
-app.controller('GalleryScreen', function ($element, $timeout, $scope) {
+app.controller('CaseScreen', function ($element, $timeout, $scope) {
 
     var init = function init() {
         //$timeout(() => $element.find('[screen]').addClass('active'), 50);
@@ -371,6 +360,17 @@ app.controller('GalleryScreen', function ($element, $timeout, $scope) {
 });
 
 app.controller('DiscountsScreen', function ($element, $timeout, $scope) {
+
+    var init = function init() {
+        //$timeout(() => $element.find('[screen]').addClass('active'), 50);
+    };
+
+    init();
+
+    _.extend($scope, {});
+});
+
+app.controller('GalleryScreen', function ($element, $timeout, $scope) {
 
     var init = function init() {
         //$timeout(() => $element.find('[screen]').addClass('active'), 50);
