@@ -206,22 +206,6 @@ $templateCache.put("foot","<div id=\"foot\">\n" +
     "    </div>\n" +
     "</div>")
 
-$templateCache.put("gallery","<div id=\"gallery\">\n" +
-    "    <div class=\"box-item\" header=\"Latest Gallery Images\" butn-text=\"All Images\">\n" +
-    "        <div class=\"gallery\" ui-sref=\"gallery\" style=\"cursor:pointer\">\n" +
-    "            <div class=\"gallery-item\" style=\"background-image: url('https://unsplash.it/400/?random&1')\"></div>\n" +
-    "            <div class=\"gallery-item\" style=\"background-image: url('https://unsplash.it/400/?random&2')\"></div>\n" +
-    "            <div class=\"gallery-item\" style=\"background-image: url('https://unsplash.it/400/?random&23')\"></div>\n" +
-    "            <div class=\"gallery-item\" style=\"background-image: url('https://unsplash.it/400/?random&234')\"></div>\n" +
-    "            <div class=\"gallery-item\" style=\"background-image: url('https://unsplash.it/400/?random&235')\"></div>\n" +
-    "            <div class=\"gallery-item\" style=\"background-image: url('https://unsplash.it/400/?random&236')\"></div>\n" +
-    "            <div class=\"gallery-item\" style=\"background-image: url('https://unsplash.it/400/?random&237')\"></div>\n" +
-    "            <div class=\"gallery-item\" style=\"background-image: url('https://unsplash.it/400/?random&244')\"></div>\n" +
-    "            <div class=\"gallery-item\" style=\"background-image: url('https://unsplash.it/400/?random&21')\"></div>\n" +
-    "        </div>\n" +
-    "    </div>\n" +
-    "</div>")
-
 $templateCache.put("header","<div ng-controller=\"headerCtrl\">\n" +
     "    <div class=\"header\">\n" +
     "        <div class=\"header-bottom\">\n" +
@@ -258,6 +242,22 @@ $templateCache.put("header","<div ng-controller=\"headerCtrl\">\n" +
     "                    <input type=\"text\" placeholder=\"Search Hewaar\">\n" +
     "                </div>\n" +
     "            </div>\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "</div>")
+
+$templateCache.put("gallery","<div id=\"gallery\">\n" +
+    "    <div class=\"box-item\" header=\"Latest Gallery Images\" butn-text=\"All Images\">\n" +
+    "        <div class=\"gallery\" ui-sref=\"gallery\" style=\"cursor:pointer\">\n" +
+    "            <div class=\"gallery-item\" style=\"background-image: url('https://unsplash.it/400/?random&1')\"></div>\n" +
+    "            <div class=\"gallery-item\" style=\"background-image: url('https://unsplash.it/400/?random&2')\"></div>\n" +
+    "            <div class=\"gallery-item\" style=\"background-image: url('https://unsplash.it/400/?random&23')\"></div>\n" +
+    "            <div class=\"gallery-item\" style=\"background-image: url('https://unsplash.it/400/?random&234')\"></div>\n" +
+    "            <div class=\"gallery-item\" style=\"background-image: url('https://unsplash.it/400/?random&235')\"></div>\n" +
+    "            <div class=\"gallery-item\" style=\"background-image: url('https://unsplash.it/400/?random&236')\"></div>\n" +
+    "            <div class=\"gallery-item\" style=\"background-image: url('https://unsplash.it/400/?random&237')\"></div>\n" +
+    "            <div class=\"gallery-item\" style=\"background-image: url('https://unsplash.it/400/?random&244')\"></div>\n" +
+    "            <div class=\"gallery-item\" style=\"background-image: url('https://unsplash.it/400/?random&21')\"></div>\n" +
     "        </div>\n" +
     "    </div>\n" +
     "</div>")
@@ -343,26 +343,6 @@ $templateCache.put("press-releases","<div id=\"press-releases\">\n" +
     "    </div>\n" +
     "</div>")
 
-$templateCache.put("promos","<div id=\"promos\">\n" +
-    "    <div class=\"promos\">\n" +
-    "        <div class=\"promo\">\n" +
-    "            <img src=\"public/img/books-stack-of-three.svg\">\n" +
-    "            <div>Book Club</div>\n" +
-    "        </div>\n" +
-    "        <div class=\"promo\" style=\"background-image: url('http://images.twistmagazine.com/uploads/posts/image/8722/b9d4e806b4.jpg')\">\n" +
-    "            <div class=\"promo-overlay\">\n" +
-    "                <i class=\"fa fa-play\" style=\"opacity: 0.8\"></i>\n" +
-    "                <div>Embrace Activities</div>\n" +
-    "\n" +
-    "            </div>\n" +
-    "        </div>\n" +
-    "        <div class=\"promo\" ui-sref=\"discounts\">\n" +
-    "            <img src=\"public/img/discount-sticker-with-percentage.svg\">\n" +
-    "            <div>Offers & Discounts</div>\n" +
-    "        </div>\n" +
-    "    </div>\n" +
-    "</div>")
-
 $templateCache.put("services","<div id=\"services\">\n" +
     "    <div class=\"services\">\n" +
     "        <div class=\"service service-menu\">\n" +
@@ -408,6 +388,26 @@ $templateCache.put("services","<div id=\"services\">\n" +
     "        <div class=\"service service-menu\">\n" +
     "            <div class=\"service-icon\"><img src=\"public/img/files.svg\"/></div>\n" +
     "            <div class=\"service-content\">Document Manager</div>\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "</div>")
+
+$templateCache.put("promos","<div id=\"promos\">\n" +
+    "    <div class=\"promos\">\n" +
+    "        <div class=\"promo\">\n" +
+    "            <img src=\"public/img/books-stack-of-three.svg\">\n" +
+    "            <div>Book Club</div>\n" +
+    "        </div>\n" +
+    "        <div class=\"promo\" style=\"background-image: url('http://images.twistmagazine.com/uploads/posts/image/8722/b9d4e806b4.jpg')\">\n" +
+    "            <div class=\"promo-overlay\">\n" +
+    "                <i class=\"fa fa-play\" style=\"opacity: 0.8\"></i>\n" +
+    "                <div>Embrace Activities</div>\n" +
+    "\n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "        <div class=\"promo\" ui-sref=\"discounts\">\n" +
+    "            <img src=\"public/img/discount-sticker-with-percentage.svg\">\n" +
+    "            <div>Offers & Discounts</div>\n" +
     "        </div>\n" +
     "    </div>\n" +
     "</div>")
@@ -836,6 +836,36 @@ $templateCache.put("gallery-screen","<div id=\"gallery-screen.html\">\n" +
     "    </div>\n" +
     "</div>")
 
+$templateCache.put("gallery-folder-screen","<div id=\"gallery-folder-screen.html\">\n" +
+    "    <div screen=\"gallery-folder\">\n" +
+    "        <div class=\"container\">\n" +
+    "\n" +
+    "            <div class=\"row\">\n" +
+    "\n" +
+    "                <div class=\"col-sm-8\">\n" +
+    "                    <div class=\"dp-header\">Human Resources</div>\n" +
+    "\n" +
+    "                    <div class=\"box-item\">\n" +
+    "                        <div class=\"gallery-folder\">\n" +
+    "                            <div class=\"folder-image\" ng-repeat=\"image in getImages() track by $index\">\n" +
+    "                                <div class=\"image-image\" style=\"background-image:url('http://placeimg.com/600/400?random={{$index}}');\" alt=\"\"></div>\n" +
+    "                                <div class=\"image-title\">HR_{{image}}</div>\n" +
+    "                            </div>\n" +
+    "                        </div>\n" +
+    "                    </div>\n" +
+    "                </div>\n" +
+    "\n" +
+    "                <div class=\"col-sm-4\">\n" +
+    "                    <vacancies-item></vacancies-item>\n" +
+    "                    <!--<gallery-item></gallery-item>-->\n" +
+    "                </div>\n" +
+    "            </div>\n" +
+    "\n" +
+    "\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "</div>")
+
 $templateCache.put("home-screen","<div id=\"home-screen.html\">\n" +
     "    <div screen=\"home\">\n" +
     "        <div class=\"container\">\n" +
@@ -881,36 +911,6 @@ $templateCache.put("home-screen","<div id=\"home-screen.html\">\n" +
     "            </div>\n" +
     "        </div>\n" +
     "\n" +
-    "    </div>\n" +
-    "</div>")
-
-$templateCache.put("gallery-folder-screen","<div id=\"gallery-folder-screen.html\">\n" +
-    "    <div screen=\"gallery-folder\">\n" +
-    "        <div class=\"container\">\n" +
-    "\n" +
-    "            <div class=\"row\">\n" +
-    "\n" +
-    "                <div class=\"col-sm-8\">\n" +
-    "                    <div class=\"dp-header\">Human Resources</div>\n" +
-    "\n" +
-    "                    <div class=\"box-item\">\n" +
-    "                        <div class=\"gallery-folder\">\n" +
-    "                            <div class=\"folder-image\" ng-repeat=\"image in getImages() track by $index\">\n" +
-    "                                <div class=\"image-image\" style=\"background-image:url('http://placeimg.com/600/400?random={{$index}}');\" alt=\"\"></div>\n" +
-    "                                <div class=\"image-title\">HR_{{image}}</div>\n" +
-    "                            </div>\n" +
-    "                        </div>\n" +
-    "                    </div>\n" +
-    "                </div>\n" +
-    "\n" +
-    "                <div class=\"col-sm-4\">\n" +
-    "                    <vacancies-item></vacancies-item>\n" +
-    "                    <!--<gallery-item></gallery-item>-->\n" +
-    "                </div>\n" +
-    "            </div>\n" +
-    "\n" +
-    "\n" +
-    "        </div>\n" +
     "    </div>\n" +
     "</div>")
 

@@ -131,19 +131,6 @@ app.component('announcementsItem', {
     }
 });
 
-app.component('documentsItem', {
-    templateUrl: 'documents',
-    restrict: 'ECA',
-    bindings: {},
-    controller: function controller($scope) {
-
-        var init = function init() {};
-
-        init();
-
-        _.extend($scope, {});
-    }
-});
 app.component('boxItem', {
     templateUrl: 'box',
     restrict: 'ECA',
@@ -165,17 +152,16 @@ app.component('boxItem', {
     }
 });
 
-app.component('eventItem', {
-    templateUrl: 'event',
-    restrict: 'EA',
+app.component('documentsItem', {
+    templateUrl: 'documents',
+    restrict: 'ECA',
     bindings: {},
-    controller: function controller($scope, Event) {
+    controller: function controller($scope) {
 
         var init = function init() {};
 
         init();
 
-        _.extend($scope, Event);
         _.extend($scope, {});
     }
 });
@@ -228,16 +214,16 @@ var headerCtrl = function headerCtrl($scope, $element, $timeout) {
 
 app.component('headerItem', {
     templateUrl: 'header',
-    restrict: "C",
     bindings: {},
     transclude: {}
 });
 
 app.controller('headerCtrl', headerCtrl);
 
-app.component('heroItem', {
-    templateUrl: 'hero',
-    restrict: 'ECA',
+app.component('galleryItem', {
+    templateUrl: 'gallery',
+    restrict: 'EA',
+    //restrict: 'ECA',
     bindings: {},
     controller: function controller($scope) {
 
@@ -248,10 +234,9 @@ app.component('heroItem', {
         _.extend($scope, {});
     }
 });
-app.component('galleryItem', {
-    templateUrl: 'gallery',
-    restrict: 'EA',
-    //restrict: 'ECA',
+app.component('heroItem', {
+    templateUrl: 'hero',
+    restrict: 'ECA',
     bindings: {},
     controller: function controller($scope) {
 
@@ -275,8 +260,35 @@ app.component('pollsItem', {
         _.extend($scope, {});
     }
 });
+app.component('eventItem', {
+    templateUrl: 'event',
+    restrict: 'EA',
+    bindings: {},
+    controller: function controller($scope, Event) {
+
+        var init = function init() {};
+
+        init();
+
+        _.extend($scope, Event);
+        _.extend($scope, {});
+    }
+});
 app.component('pressReleasesItem', {
     templateUrl: 'press-releases',
+    restrict: 'ECA',
+    bindings: {},
+    controller: function controller($scope) {
+
+        var init = function init() {};
+
+        init();
+
+        _.extend($scope, {});
+    }
+});
+app.component('promosItem', {
+    templateUrl: 'promos',
     restrict: 'ECA',
     bindings: {},
     controller: function controller($scope) {
@@ -302,32 +314,6 @@ app.component('servicesItem', {
     }
 });
 
-app.component('vacanciesItem', {
-    templateUrl: 'vacancies',
-    restrict: 'ECA',
-    bindings: {},
-    controller: function controller($scope) {
-
-        var init = function init() {};
-
-        init();
-
-        _.extend($scope, {});
-    }
-});
-app.component('promosItem', {
-    templateUrl: 'promos',
-    restrict: 'ECA',
-    bindings: {},
-    controller: function controller($scope) {
-
-        var init = function init() {};
-
-        init();
-
-        _.extend($scope, {});
-    }
-});
 app.component('twitterItem', {
     templateUrl: 'twitter',
     restrict: 'ECA',
@@ -341,17 +327,19 @@ app.component('twitterItem', {
         _.extend($scope, {});
     }
 });
-app.controller('CaseFormScreen', function ($element, $timeout, $scope) {
+app.component('vacanciesItem', {
+    templateUrl: 'vacancies',
+    restrict: 'ECA',
+    bindings: {},
+    controller: function controller($scope) {
 
-    var init = function init() {
-        //$timeout(() => $element.find('[screen]').addClass('active'), 50);
-    };
+        var init = function init() {};
 
-    init();
+        init();
 
-    _.extend($scope, {});
+        _.extend($scope, {});
+    }
 });
-
 app.controller('CaseScreen', function ($element, $timeout, $scope) {
 
     var init = function init() {
@@ -363,7 +351,7 @@ app.controller('CaseScreen', function ($element, $timeout, $scope) {
     _.extend($scope, {});
 });
 
-app.controller('DiscountsScreen', function ($element, $timeout, $scope) {
+app.controller('CaseFormScreen', function ($element, $timeout, $scope) {
 
     var init = function init() {
         //$timeout(() => $element.find('[screen]').addClass('active'), 50);
@@ -374,7 +362,7 @@ app.controller('DiscountsScreen', function ($element, $timeout, $scope) {
     _.extend($scope, {});
 });
 
-app.controller('GalleryScreen', function ($element, $timeout, $scope) {
+app.controller('DiscountsScreen', function ($element, $timeout, $scope) {
 
     var init = function init() {
         //$timeout(() => $element.find('[screen]').addClass('active'), 50);
@@ -412,6 +400,17 @@ app.controller('GalleryFolderScreen', function ($element, $timeout, $scope) {
 });
 
 app.controller('HomeScreen', function ($element, $timeout, $scope) {
+
+    var init = function init() {
+        //$timeout(() => $element.find('[screen]').addClass('active'), 50);
+    };
+
+    init();
+
+    _.extend($scope, {});
+});
+
+app.controller('GalleryScreen', function ($element, $timeout, $scope) {
 
     var init = function init() {
         //$timeout(() => $element.find('[screen]').addClass('active'), 50);
@@ -487,17 +486,6 @@ app.controller('PostScreen', function ($element, $timeout, $scope) {
     _.extend($scope, {});
 });
 
-app.controller('VacancyScreen', function ($element, $timeout, $scope) {
-
-    var init = function init() {
-        //$timeout(() => $element.find('[screen]').addClass('active'), 50);
-    };
-
-    init();
-
-    _.extend($scope, {});
-});
-
 app.controller('SearchScreen', function ($element, $timeout, $scope) {
 
     var documents = [],
@@ -545,4 +533,15 @@ app.controller('SearchScreen', function ($element, $timeout, $scope) {
         getDocuments: getDocuments,
         getTypes: getTypes
     });
+});
+
+app.controller('VacancyScreen', function ($element, $timeout, $scope) {
+
+    var init = function init() {
+        //$timeout(() => $element.find('[screen]').addClass('active'), 50);
+    };
+
+    init();
+
+    _.extend($scope, {});
 });
