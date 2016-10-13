@@ -222,15 +222,15 @@ $templateCache.put("gallery","<div id=\"gallery\">\n" +
     "    </div>\n" +
     "</div>")
 
-$templateCache.put("header","<div id=\"header\">\n" +
-    "\n" +
+$templateCache.put("header","<div ng-controller=\"headerCtrl\">\n" +
     "    <div class=\"header\">\n" +
     "        <div class=\"header-bottom\">\n" +
     "            <div class=\"container\">\n" +
-    "                <!--<div class=\"bottom-item header-menu\">-->\n" +
-    "                    <!--Menu &nbsp; <i class=\"fa fa-angle-down\"></i>-->\n" +
-    "                    <!--<div class=\"menu-1\" ng-transclude=\"headerMenu\"></div>-->\n" +
-    "                <!--</div>-->\n" +
+    "\n" +
+    "                <div ng-repeat=\"test in getTest() track by $index\" class=\"bottom-item item-menu\">\n" +
+    "                    {{test}}\n" +
+    "                </div>\n" +
+    "\n" +
     "                <div class=\"bottom-item item-menu\">DP Destinations</div>\n" +
     "                <div class=\"bottom-item item-menu\">DP Projects</div>\n" +
     "                <div class=\"bottom-item item-menu\">DP Management</div>\n" +
@@ -241,8 +241,6 @@ $templateCache.put("header","<div id=\"header\">\n" +
     "                    Ahmed Mahmood\n" +
     "                    <div class=\"pull-right item-image\" style=\"background-image: url('https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRJ1XFhWAazn6HUs97tdWjgYCPaxzli3TCrFPDxSi1eVAkOkstO')\"></div>\n" +
     "                </div>\n" +
-    "                <!--<div class=\"bottom-item item-menu pull-right\" style=\"color: black\">44°C &nbsp;-->\n" +
-    "                    <!--<i class=\"fa fa-sun-o\"></i></div>-->\n" +
     "            </div>\n" +
     "        </div>\n" +
     "        <div class=\"header-top\">\n" +
@@ -365,6 +363,55 @@ $templateCache.put("promos","<div id=\"promos\">\n" +
     "    </div>\n" +
     "</div>")
 
+$templateCache.put("services","<div id=\"services\">\n" +
+    "    <div class=\"services\">\n" +
+    "        <div class=\"service service-menu\">\n" +
+    "            <div class=\"service-icon\"><img src=\"public/img/group.svg\"/></div>\n" +
+    "            <div class=\"service-content\">Human Resources &nbsp; <i class=\"fa fa-angle-down\"></i></div>\n" +
+    "\n" +
+    "            <div class=\"menu-1\">\n" +
+    "                <a href=\"#\" class=\"menu-1-item\" ui-sref=\"home\">HRMS</a>\n" +
+    "                <a href=\"#\" class=\"menu-1-item\" ui-sref=\"home\">Biometric Timesheet</a>\n" +
+    "                <a href=\"#\" class=\"menu-1-item\" ui-sref=\"home\">People Manual</a>\n" +
+    "            </div>\n" +
+    "\n" +
+    "        </div>\n" +
+    "        <a class=\"service service-menu\" ng-href=\"#/search\">\n" +
+    "            <div class=\"service-icon\"><img src=\"public/img/magnifier.svg\"/></div>\n" +
+    "            <div class=\"service-content\">Vacancies</div>\n" +
+    "        </a>\n" +
+    "        <div class=\"service service-menu\">\n" +
+    "            <div class=\"service-icon\"><img src=\"public/img/security-shield.svg\"/></div>\n" +
+    "            <div class=\"service-content\">Governance &nbsp; <i class=\"fa fa-angle-down\"></i></div>\n" +
+    "            <div class=\"menu-1\">\n" +
+    "                <a href=\"#\" class=\"menu-1-item\" ui-sref=\"home\">DMS</a>\n" +
+    "                <a href=\"#\" class=\"menu-1-item\" ui-sref=\"home\">ShieldLine</a>\n" +
+    "                <a href=\"#\" class=\"menu-1-item\" ui-sref=\"home\">Performance Management System</a>\n" +
+    "                <a href=\"#\" class=\"menu-1-item\" ui-sref=\"home\">Brand Guidelines</a>\n" +
+    "                <a href=\"#\" class=\"menu-1-item\" ui-sref=\"home\">Process & Policies</a>\n" +
+    "                <a href=\"#\" class=\"menu-1-item\" ui-sref=\"home\">BCM</a>\n" +
+    "                <div class=\"menu-1-item\">\n" +
+    "                    Third Level Nav\n" +
+    "                    <i class=\"fa fa-angle-right pull-right\"></i>\n" +
+    "\n" +
+    "                    <div class=\"menu-2\">\n" +
+    "                        <a href=\"#\" class=\"menu-2-item\">Documentation</a>\n" +
+    "                        <a href=\"#\" class=\"menu-2-item\">Support</a>\n" +
+    "                    </div>\n" +
+    "                </div>\n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "        <div class=\"service service-menu\" ui-sref=\"legal\">\n" +
+    "            <div class=\"service-icon\"><img src=\"public/img/hammer-legal-tool-symbol.svg\"/></div>\n" +
+    "            <div class=\"service-content\">Legal Cases</div>\n" +
+    "        </div>\n" +
+    "        <div class=\"service service-menu\">\n" +
+    "            <div class=\"service-icon\"><img src=\"public/img/files.svg\"/></div>\n" +
+    "            <div class=\"service-content\">Document Manager</div>\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "</div>")
+
 $templateCache.put("twitter","<div id=\"twitter\">\n" +
     "    <div class=\"box-item\" header=\"Tweet Feed\" butn-text=\"@DPGplc\">\n" +
     "\n" +
@@ -405,58 +452,6 @@ $templateCache.put("twitter","<div id=\"twitter\">\n" +
     "    </div>\n" +
     "</div>")
 
-$templateCache.put("services","<div id=\"services\">\n" +
-    "    <div class=\"services\">\n" +
-    "        <div class=\"service service-menu\">\n" +
-    "            <div class=\"service-icon\"><img src=\"public/img/group.svg\"/></div>\n" +
-    "            <div class=\"service-content\">Human Resources &nbsp; <i class=\"fa fa-angle-down\"></i></div>\n" +
-    "\n" +
-    "            <div class=\"menu-1\">\n" +
-    "                <a href=\"#\" class=\"menu-1-item\" ui-sref=\"home\">HRMS</a>\n" +
-    "                <a href=\"#\" class=\"menu-1-item\" ui-sref=\"home\">Biometric</a>\n" +
-    "                <a href=\"#\" class=\"menu-1-item\" ui-sref=\"home\">Timesheet</a>\n" +
-    "            </div>\n" +
-    "\n" +
-    "        </div>\n" +
-    "        <a class=\"service service-menu\" ng-href=\"#/search\">\n" +
-    "            <div class=\"service-icon\"><img src=\"public/img/magnifier.svg\"/></div>\n" +
-    "            <div class=\"service-content\">Vacancies</div>\n" +
-    "        </a>\n" +
-    "        <div class=\"service service-menu\">\n" +
-    "            <div class=\"service-icon\"><img src=\"public/img/security-shield.svg\"/></div>\n" +
-    "            <div class=\"service-content\">Governance &nbsp; <i class=\"fa fa-angle-down\"></i></div>\n" +
-    "            <div class=\"menu-1\">\n" +
-    "                <a href=\"#\" class=\"menu-1-item\" ui-sref=\"home\">DMS</a>\n" +
-    "                <a href=\"#\" class=\"menu-1-item\" ui-sref=\"home\">ShieldLine</a>\n" +
-    "                <a href=\"#\" class=\"menu-1-item\" ui-sref=\"home\">Performance Management System</a>\n" +
-    "                <a href=\"#\" class=\"menu-1-item\" ui-sref=\"home\">Brand Guidelines</a>\n" +
-    "                <a href=\"#\" class=\"menu-1-item\" ui-sref=\"home\">Process & Policies</a>\n" +
-    "                <a href=\"#\" class=\"menu-1-item\" ui-sref=\"home\">BCM</a>\n" +
-    "\n" +
-    "\n" +
-    "                <a href=\"#\" class=\"menu-1-item\" ui-sref=\"home\">HRMS</a>\n" +
-    "                <div class=\"menu-1-item\">\n" +
-    "                    Third Level Nav\n" +
-    "                    <i class=\"fa fa-angle-right pull-right\"></i>\n" +
-    "\n" +
-    "                    <div class=\"menu-2\">\n" +
-    "                        <a href=\"#\" class=\"menu-2-item\">Documentation</a>\n" +
-    "                        <a href=\"#\" class=\"menu-2-item\">Support</a>\n" +
-    "                    </div>\n" +
-    "                </div>\n" +
-    "            </div>\n" +
-    "        </div>\n" +
-    "        <div class=\"service service-menu\" ui-sref=\"legal\">\n" +
-    "            <div class=\"service-icon\"><img src=\"public/img/hammer-legal-tool-symbol.svg\"/></div>\n" +
-    "            <div class=\"service-content\">Legal Cases</div>\n" +
-    "        </div>\n" +
-    "        <div class=\"service service-menu\">\n" +
-    "            <div class=\"service-icon\"><img src=\"public/img/files.svg\"/></div>\n" +
-    "            <div class=\"service-content\">Document Manager</div>\n" +
-    "        </div>\n" +
-    "    </div>\n" +
-    "</div>")
-
 $templateCache.put("vacancies","<div id=\"vacancies\">\n" +
     "    <div class=\"vacancies\">\n" +
     "        <div class=\"box-item\" header=\"Internal Vacancies\" butn-text=\"All Vacancies\">\n" +
@@ -492,7 +487,7 @@ $templateCache.put("case-screen","<div id=\"case-screen.html\">\n" +
     "        <div class=\"container\">\n" +
     "\n" +
     "            <div class=\"pull-right\" style=\"margin-top: 30px;\">\n" +
-    "                <div class=\"butn teal\" ui-sref=\"legal\">My Cases &nbsp; <i class=\"fa fa-list-ul\"></i></div>\n" +
+    "                <div class=\"butn teal\" ui-sref=\"legal\">All Cases &nbsp; <i class=\"fa fa-list-ul\"></i></div>\n" +
     "                <div class=\"butn\" ui-sref=\"case-form\">Raise a Case &nbsp; +</div>\n" +
     "            </div>\n" +
     "\n" +
@@ -604,7 +599,7 @@ $templateCache.put("case-form-screen","<div id=\"case-form-screen.html\">\n" +
     "\n" +
     "\n" +
     "            <div class=\"pull-right\" style=\"margin-top: 30px;\">\n" +
-    "                <div class=\"butn teal\" ui-sref=\"legal\">My Cases &nbsp; <i class=\"fa fa-list-ul\"></i></div>\n" +
+    "                <div class=\"butn teal\" ui-sref=\"legal\">All Cases &nbsp; <i class=\"fa fa-list-ul\"></i></div>\n" +
     "                <div class=\"butn\" ui-sref=\"case-form\">Raise a Case &nbsp; +</div>\n" +
     "            </div>\n" +
     "\n" +
@@ -789,7 +784,7 @@ $templateCache.put("gallery-screen","<div id=\"gallery-screen.html\">\n" +
     "                    <div class=\"dp-header\">Image Gallery</div>\n" +
     "\n" +
     "                    <div class=\"box-item\">\n" +
-    "                        <div class=\"projects\">\n" +
+    "                        <div class=\"projects\" style=\"cursor: pointer\" ui-sref=\"gallery-folder\">\n" +
     "                            <div class=\"project\">\n" +
     "                                <div class=\"project-title\">Human Resources</div>\n" +
     "                                <img src=\"public/img/folder-2.svg\" alt=\"\">\n" +
@@ -841,6 +836,54 @@ $templateCache.put("gallery-screen","<div id=\"gallery-screen.html\">\n" +
     "    </div>\n" +
     "</div>")
 
+$templateCache.put("home-screen","<div id=\"home-screen.html\">\n" +
+    "    <div screen=\"home\">\n" +
+    "        <div class=\"container\">\n" +
+    "\n" +
+    "            <div class=\"announcements-item\"></div>\n" +
+    "            <div class=\"services-item\"></div>\n" +
+    "            <div class=\"hero-item\"></div>\n" +
+    "            <!--<announcements-item></announcements-item>-->\n" +
+    "            <!--<services-item></services-item>-->\n" +
+    "            <!--<hero-item></hero-item>-->\n" +
+    "\n" +
+    "            <div class=\"row\">\n" +
+    "                <div class=\"col-md-8\">\n" +
+    "                    <div class=\"press-releases-item\"></div>\n" +
+    "                    <div class=\"documents-item\"></div>\n" +
+    "                    <div class=\"promos-item\"></div>\n" +
+    "                    <!--<press-releases-item></press-releases-item>-->\n" +
+    "                    <!--<documents-item></documents-item>-->\n" +
+    "                    <!--<promos-item></promos-item>-->\n" +
+    "\n" +
+    "                    <div class=\"row\">\n" +
+    "                        <div class=\"col-md-6\">\n" +
+    "                            <div class=\"vacancies-item\"></div>\n" +
+    "                        </div>\n" +
+    "                        <div class=\"col-md-6\">\n" +
+    "                            <div class=\"polls-item\"></div>\n" +
+    "                        </div>\n" +
+    "                    </div>\n" +
+    "                </div>\n" +
+    "\n" +
+    "                <div class=\"col-md-4\">\n" +
+    "                    <div class=\"events-item\"></div>\n" +
+    "                    <div class=\"twitter-item\"></div>\n" +
+    "                    <div gallery-item></div>\n" +
+    "\n" +
+    "                    <div class=\"promos\">\n" +
+    "                        <div class=\"promo teal\" style=\"height:126px;\">\n" +
+    "                            <img src=\"public/img/notebook.svg\">\n" +
+    "                            <div>Policies & Procedures</div>\n" +
+    "                        </div>\n" +
+    "                    </div>\n" +
+    "                </div>\n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "\n" +
+    "    </div>\n" +
+    "</div>")
+
 $templateCache.put("gallery-folder-screen","<div id=\"gallery-folder-screen.html\">\n" +
     "    <div screen=\"gallery-folder\">\n" +
     "        <div class=\"container\">\n" +
@@ -877,7 +920,7 @@ $templateCache.put("legal-screen","<div id=\"legal-screen.html\">\n" +
     "\n" +
     "\n" +
     "            <div class=\"pull-right\" style=\"margin-top: 30px;\">\n" +
-    "                <div class=\"butn teal\" ui-sref=\"legal\">My Cases &nbsp; <i class=\"fa fa-list-ul\"></i></div>\n" +
+    "                <div class=\"butn teal\" ui-sref=\"legal\">All Cases &nbsp; <i class=\"fa fa-list-ul\"></i></div>\n" +
     "                <div class=\"butn\" ui-sref=\"case-form\">Raise a Case &nbsp; +</div>\n" +
     "            </div>\n" +
     "\n" +
@@ -938,7 +981,7 @@ $templateCache.put("legal-screen","<div id=\"legal-screen.html\">\n" +
     "                </div>\n" +
     "\n" +
     "                <div class=\"col-md-9\">\n" +
-    "                    <div class=\"box-item\" header=\"My Cases\">\n" +
+    "                    <div class=\"box-item\" header=\"All Cases\">\n" +
     "                        <div class=\"case-documents\" ui-sref=\"case\">\n" +
     "                            <div class=\"result\" ng-repeat=\"case in getCases()\">\n" +
     "                                <img class=\"result-icon\" src=\"public/img/folder (2).svg\">\n" +
@@ -964,51 +1007,74 @@ $templateCache.put("legal-screen","<div id=\"legal-screen.html\">\n" +
     "    </div>\n" +
     "</div>")
 
-$templateCache.put("home-screen","<div id=\"home-screen.html\">\n" +
-    "    <div screen=\"home\">\n" +
+$templateCache.put("post-screen","<div id=\"post-screen.html\">\n" +
+    "    <div screen=\"post\">\n" +
     "        <div class=\"container\">\n" +
     "\n" +
-    "            <div class=\"announcements-item\"></div>\n" +
-    "            <div class=\"services-item\"></div>\n" +
-    "            <div class=\"hero-item\"></div>\n" +
-    "            <!--<announcements-item></announcements-item>-->\n" +
-    "            <!--<services-item></services-item>-->\n" +
-    "            <!--<hero-item></hero-item>-->\n" +
-    "\n" +
     "            <div class=\"row\">\n" +
-    "                <div class=\"col-md-8\">\n" +
-    "                    <div class=\"press-releases-item\"></div>\n" +
-    "                    <div class=\"documents-item\"></div>\n" +
-    "                    <div class=\"promos-item\"></div>\n" +
-    "                    <!--<press-releases-item></press-releases-item>-->\n" +
-    "                    <!--<documents-item></documents-item>-->\n" +
-    "                    <!--<promos-item></promos-item>-->\n" +
     "\n" +
-    "                    <div class=\"row\">\n" +
-    "                        <div class=\"col-md-6\">\n" +
-    "                            <div class=\"vacancies-item\"></div>\n" +
+    "                <div class=\"col-sm-8\">\n" +
+    "\n" +
+    "                    <div class=\"post-hero\">\n" +
+    "                        <div class=\"hero-main large\">\n" +
+    "                            <div class=\"main-img\" style=\"background-image: url('http://www.arthurweill.fr/img/unsplash/images_1280/7dwwcdv7wc4_1280.jpg')\"></div>\n" +
+    "                            <div class=\"main-overlay\"></div>\n" +
+    "                            <div class=\"main-title\">New London Sales Office</div>\n" +
+    "                            <!--<div class=\"main-text\">Facere fugit itaque iusto modi omnis perferendis quis quod reiciendis totam voluptatem.</div>-->\n" +
     "                        </div>\n" +
-    "                        <div class=\"col-md-6\">\n" +
-    "                            <div class=\"polls-item\"></div>\n" +
-    "                        </div>\n" +
+    "                    </div>\n" +
+    "\n" +
+    "\n" +
+    "                    <div class=\"post-content\">\n" +
+    "                        <div class=\"post-cat\">Corporate</div>\n" +
+    "                        <div class=\"post-date\">12th October 2016</div>\n" +
+    "                        <div class=\"post-summary\">Accusamus adipisci assumenda, beatae dignissimos ipsum iste laudantium natus quas quos sed.</div>\n" +
+    "\n" +
+    "                        <h2>Building the Future</h2>\n" +
+    "\n" +
+    "                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>\n" +
+    "\n" +
+    "                        <p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>\n" +
+    "\n" +
+    "                        <p>In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</p>\n" +
+    "\n" +
+    "                        <p>Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.</p>\n" +
+    "\n" +
+    "                        <p>\n" +
+    "                            Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.\n" +
+    "\n" +
+    "                            In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.\n" +
+    "                        </p>\n" +
+    "\n" +
+    "                        <p>Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cumque ducimus, eveniet excepturi explicabo, id, laboriosam maiores minima nemo neque nihil nostrum officia provident qui sequi similique sit sunt voluptates.</p>\n" +
+    "\n" +
+    "                        <h2>A Different Approach</h2>\n" +
+    "\n" +
+    "                        <p>Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.</p>\n" +
+    "\n" +
+    "                        <p>\n" +
+    "                            <img src=\"https://www.architectsjournal.co.uk/pictures/2000x2000fit/9/4/2/1369942_London_Skyline.jpg\">\n" +
+    "                        </p>\n" +
+    "\n" +
+    "                        <p>Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,</p>\n" +
+    "\n" +
+    "                        <p>In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</p>\n" +
+    "\n" +
+    "                        <p>Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.</p>\n" +
+    "\n" +
+    "\n" +
     "                    </div>\n" +
     "                </div>\n" +
     "\n" +
-    "                <div class=\"col-md-4\">\n" +
-    "                    <div class=\"events-item\"></div>\n" +
-    "                    <div class=\"twitter-item\"></div>\n" +
-    "                    <div gallery-item></div>\n" +
-    "\n" +
-    "                    <div class=\"promos\">\n" +
-    "                        <div class=\"promo teal\" style=\"height:126px;\">\n" +
-    "                            <img src=\"public/img/notebook.svg\">\n" +
-    "                            <div>Policies & Procedures</div>\n" +
-    "                        </div>\n" +
-    "                    </div>\n" +
+    "                <div class=\"col-sm-4\">\n" +
+    "                    <events-item></events-item>\n" +
+    "                    <vacancies-item></vacancies-item>\n" +
+    "                    <gallery-item></gallery-item>\n" +
     "                </div>\n" +
     "            </div>\n" +
-    "        </div>\n" +
     "\n" +
+    "\n" +
+    "        </div>\n" +
     "    </div>\n" +
     "</div>")
 
@@ -1097,77 +1163,6 @@ $templateCache.put("search-screen","<div id=\"search-screen.html\">\n" +
     "                    </div>\n" +
     "                </div>\n" +
     "            </div>\n" +
-    "\n" +
-    "        </div>\n" +
-    "    </div>\n" +
-    "</div>")
-
-$templateCache.put("post-screen","<div id=\"post-screen.html\">\n" +
-    "    <div screen=\"post\">\n" +
-    "        <div class=\"container\">\n" +
-    "\n" +
-    "            <div class=\"row\">\n" +
-    "\n" +
-    "                <div class=\"col-sm-8\">\n" +
-    "\n" +
-    "                    <div class=\"post-hero\">\n" +
-    "                        <div class=\"hero-main large\">\n" +
-    "                            <div class=\"main-img\" style=\"background-image: url('http://www.arthurweill.fr/img/unsplash/images_1280/7dwwcdv7wc4_1280.jpg')\"></div>\n" +
-    "                            <div class=\"main-overlay\"></div>\n" +
-    "                            <div class=\"main-title\">New London Sales Office</div>\n" +
-    "                            <!--<div class=\"main-text\">Facere fugit itaque iusto modi omnis perferendis quis quod reiciendis totam voluptatem.</div>-->\n" +
-    "                        </div>\n" +
-    "                    </div>\n" +
-    "\n" +
-    "\n" +
-    "                    <div class=\"post-content\">\n" +
-    "                        <div class=\"post-cat\">Corporate</div>\n" +
-    "                        <div class=\"post-date\">12th October 2016</div>\n" +
-    "                        <div class=\"post-summary\">Accusamus adipisci assumenda, beatae dignissimos ipsum iste laudantium natus quas quos sed.</div>\n" +
-    "\n" +
-    "                        <h2>Building the Future</h2>\n" +
-    "\n" +
-    "                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>\n" +
-    "\n" +
-    "                        <p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>\n" +
-    "\n" +
-    "                        <p>In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</p>\n" +
-    "\n" +
-    "                        <p>Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.</p>\n" +
-    "\n" +
-    "                        <p>\n" +
-    "                            Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.\n" +
-    "\n" +
-    "                            In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.\n" +
-    "                        </p>\n" +
-    "\n" +
-    "                        <p>Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cumque ducimus, eveniet excepturi explicabo, id, laboriosam maiores minima nemo neque nihil nostrum officia provident qui sequi similique sit sunt voluptates.</p>\n" +
-    "\n" +
-    "                        <h2>A Different Approach</h2>\n" +
-    "\n" +
-    "                        <p>Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.</p>\n" +
-    "\n" +
-    "                        <p>\n" +
-    "                            <img src=\"https://www.architectsjournal.co.uk/pictures/2000x2000fit/9/4/2/1369942_London_Skyline.jpg\">\n" +
-    "                        </p>\n" +
-    "\n" +
-    "                        <p>Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,</p>\n" +
-    "\n" +
-    "                        <p>In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</p>\n" +
-    "\n" +
-    "                        <p>Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.</p>\n" +
-    "\n" +
-    "\n" +
-    "                    </div>\n" +
-    "                </div>\n" +
-    "\n" +
-    "                <div class=\"col-sm-4\">\n" +
-    "                    <events-item></events-item>\n" +
-    "                    <vacancies-item></vacancies-item>\n" +
-    "                    <gallery-item></gallery-item>\n" +
-    "                </div>\n" +
-    "            </div>\n" +
-    "\n" +
     "\n" +
     "        </div>\n" +
     "    </div>\n" +

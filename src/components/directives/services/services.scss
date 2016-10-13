@@ -67,18 +67,12 @@ services-item, .services-item {
 
   .service-menu {
     position: relative;
-
-    //border-left: 1px solid #eee;
-    //border-right: 1px solid #eee;
     cursor: pointer;
-    //background: darken($primary, 0%) !important;
     color: white !important;
     user-select: none;
     transition-delay: .2s;
 
     &:hover {
-      //color: white !important;
-      //transition-delay: 0s;
 
       .menu-1 {
         visibility: visible;
@@ -91,19 +85,15 @@ services-item, .services-item {
     .menu-1 {
       position: absolute;
       top: 100%;
-      left: 0px;
-      //background: white;
+      left: 0;
       display: flex;
       flex-direction: column;
       z-index: 100;
-      //border: 1px solid #999;
-      //box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
       visibility: hidden;
       opacity: 0;
       transition: .2s;
       transition-delay: .2s;
       transform: translateX(-10px);
-      //border: 1px solid rgba(0,0,0,0.15);
       border-top: 0;
       text-align: left;
 
@@ -146,20 +136,13 @@ services-item, .services-item {
           z-index: -1;
           top: -1px;
           left: calc(100%);
-          //background: white;
           display: flex;
           flex-direction: column;
-          //z-index: 100;
-          //border: 1px solid #999;
-          //box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
-          //border-top: 0;
           transform: translateX(-10px);
           visibility: hidden;
           opacity: 0;
           transition: .2s;
           transition-delay: .2s;
-
-          //border: 1px solid #eee;
           border: 1px solid rgba(0, 0, 0, 0.05);
           border-left: 0;
 
@@ -167,7 +150,6 @@ services-item, .services-item {
             height: 30px;
             line-height: 30px;
             padding: 0 15px;
-            //color: #555;
             min-width: 170px;
             font-weight: 400;
             font-size: 13px;

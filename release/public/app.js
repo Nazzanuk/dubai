@@ -175,51 +175,29 @@ app.component('galleryItem', {
         _.extend($scope, {});
     }
 });
+var headerCtrl = function headerCtrl($scope, $element, $timeout) {
+
+    var getTest = function getTest() {
+        return ['1', '2', '3', '4'];
+    };
+
+    var init = function init() {};
+
+    init();
+
+    _.extend($scope, {
+        getTest: getTest
+    });
+};
+
 app.component('headerItem', {
     templateUrl: 'header',
     restrict: "C",
     bindings: {},
-    transclude: {
-        headerMenu: '?headerMenu'
-    },
-    controller: function controller($scope, $element, $timeout) {
-
-        var $menu, $subMenus;
-
-        var initEl = function initEl() {
-            $menu = $element.find('.header-menu');
-            $subMenus = $element.find('.menu-1-item');
-        };
-
-        var showMenu = function showMenu() {
-            $menu.addClass('active');
-            $subMenus.removeClass('active');
-        };
-
-        var toggleMenu = function toggleMenu() {
-            $menu.toggleClass('active');
-            $subMenus.removeClass('active');
-        };
-
-        var showSubMenu = function showSubMenu(event) {
-            $subMenus.removeClass('active');
-            $(event.target).addClass('active');
-            event.stopPropagation();
-        };
-
-        var init = function init() {
-            $timeout(initEl);
-        };
-
-        init();
-
-        _.extend($scope, {
-            showSubMenu: showSubMenu,
-            toggleMenu: toggleMenu,
-            showMenu: showMenu
-        });
-    }
+    transclude: {}
 });
+
+app.controller('headerCtrl', headerCtrl);
 
 app.component('heroItem', {
     templateUrl: 'hero',
@@ -448,6 +426,17 @@ app.controller('LegalScreen', function ($element, $timeout, $scope) {
     });
 });
 
+app.controller('PostScreen', function ($element, $timeout, $scope) {
+
+    var init = function init() {
+        //$timeout(() => $element.find('[screen]').addClass('active'), 50);
+    };
+
+    init();
+
+    _.extend($scope, {});
+});
+
 app.controller('SearchScreen', function ($element, $timeout, $scope) {
 
     var documents = [],
@@ -495,17 +484,6 @@ app.controller('SearchScreen', function ($element, $timeout, $scope) {
         getDocuments: getDocuments,
         getTypes: getTypes
     });
-});
-
-app.controller('PostScreen', function ($element, $timeout, $scope) {
-
-    var init = function init() {
-        //$timeout(() => $element.find('[screen]').addClass('active'), 50);
-    };
-
-    init();
-
-    _.extend($scope, {});
 });
 
 app.controller('VacancyScreen', function ($element, $timeout, $scope) {
