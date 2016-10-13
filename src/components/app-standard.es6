@@ -7,3 +7,7 @@ app.directive('ngEnter', () => (scope, element, attrs) => {
         event.preventDefault();
     });
 });
+
+app.config(['$compileProvider', function ($compileProvider) {
+    $compileProvider.debugInfoEnabled(false);
+}]);
