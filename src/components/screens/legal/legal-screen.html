@@ -75,9 +75,11 @@
                                         <span class="case-status" ng-if="case.open">OPEN</span>
                                         <span class="case-status closed" ng-if="!case.open">CLOSED</span>
                                     </div>
-                                    <p><span class="fa fa-caret-right"></span> &nbsp; <strong>Department: </strong> {{case.department}}</p>
+                                    <p><strong>Request Type: </strong> {{case.requestType}}</p>
+                                    <p><strong>Department: </strong> {{case.department}}</p>
+                                    <p><strong>Priority: </strong> {{case.priority}}</p>
                                 </div>
-                                <div class="case-actions" style="margin-left: auto">
+                                <div class="case-actions">
                                     <div class="butn teal" ui-sref="case">Reply &nbsp; <i class="fa fa-pencil"></i></div>
                                     <div class="butn" ui-sref="case">View &nbsp; <i class="fa fa-arrow-right"></i></div>
                                 </div>

@@ -135,6 +135,19 @@ app.component('announcementsItem', {
     }
 });
 
+app.component('documentsItem', {
+    templateUrl: 'documents',
+    restrict: 'ECA',
+    bindings: {},
+    controller: function controller($scope) {
+
+        var init = function init() {};
+
+        init();
+
+        _.extend($scope, {});
+    }
+});
 app.component('boxItem', {
     templateUrl: 'box',
     restrict: 'ECA',
@@ -156,19 +169,6 @@ app.component('boxItem', {
     }
 });
 
-app.component('documentsItem', {
-    templateUrl: 'documents',
-    restrict: 'ECA',
-    bindings: {},
-    controller: function controller($scope) {
-
-        var init = function init() {};
-
-        init();
-
-        _.extend($scope, {});
-    }
-});
 app.component('eventItem', {
     templateUrl: 'event',
     restrict: 'EA',
@@ -198,20 +198,6 @@ app.component('eventsItem', {
         });
     }
 });
-app.component('galleryItem', {
-    templateUrl: 'gallery',
-    restrict: 'EA',
-    //restrict: 'ECA',
-    bindings: {},
-    controller: function controller($scope) {
-
-        var init = function init() {};
-
-        init();
-
-        _.extend($scope, {});
-    }
-});
 app.component('footItem', {
     templateUrl: 'foot',
     restrict: "A",
@@ -229,6 +215,20 @@ app.component('footItem', {
     }
 });
 
+app.component('galleryItem', {
+    templateUrl: 'gallery',
+    restrict: 'EA',
+    //restrict: 'ECA',
+    bindings: {},
+    controller: function controller($scope) {
+
+        var init = function init() {};
+
+        init();
+
+        _.extend($scope, {});
+    }
+});
 app.component('headerItem', {
     templateUrl: 'header',
     bindings: {},
@@ -258,8 +258,8 @@ app.component('heroItem', {
         _.extend($scope, {});
     }
 });
-app.component('pressReleasesItem', {
-    templateUrl: 'press-releases',
+app.component('pollsItem', {
+    templateUrl: 'polls',
     restrict: 'ECA',
     bindings: {},
     controller: function controller($scope) {
@@ -271,8 +271,8 @@ app.component('pressReleasesItem', {
         _.extend($scope, {});
     }
 });
-app.component('pollsItem', {
-    templateUrl: 'polls',
+app.component('pressReleasesItem', {
+    templateUrl: 'press-releases',
     restrict: 'ECA',
     bindings: {},
     controller: function controller($scope) {
@@ -337,28 +337,6 @@ app.component('vacanciesItem', {
         _.extend($scope, {});
     }
 });
-app.controller('CaseFormScreen', function ($element, $timeout, $scope) {
-
-    var init = function init() {
-        //$timeout(() => $element.find('[screen]').addClass('active'), 50);
-    };
-
-    init();
-
-    _.extend($scope, {});
-});
-
-app.controller('DiscountsScreen', function ($element, $timeout, $scope) {
-
-    var init = function init() {
-        //$timeout(() => $element.find('[screen]').addClass('active'), 50);
-    };
-
-    init();
-
-    _.extend($scope, {});
-});
-
 app.controller('CaseScreen', function ($element, $timeout, $scope) {
 
     var init = function init() {
@@ -370,7 +348,29 @@ app.controller('CaseScreen', function ($element, $timeout, $scope) {
     _.extend($scope, {});
 });
 
+app.controller('CaseFormScreen', function ($element, $timeout, $scope) {
+
+    var init = function init() {
+        //$timeout(() => $element.find('[screen]').addClass('active'), 50);
+    };
+
+    init();
+
+    _.extend($scope, {});
+});
+
 app.controller('GalleryScreen', function ($element, $timeout, $scope) {
+
+    var init = function init() {
+        //$timeout(() => $element.find('[screen]').addClass('active'), 50);
+    };
+
+    init();
+
+    _.extend($scope, {});
+});
+
+app.controller('DiscountsScreen', function ($element, $timeout, $scope) {
 
     var init = function init() {
         //$timeout(() => $element.find('[screen]').addClass('active'), 50);
@@ -445,7 +445,9 @@ app.controller('LegalScreen', function ($element, $timeout, $scope) {
         obj.id = 'LC0' + _.random(1000000, 9999999);
         obj.open = _.sample([true, true, true, false]);
         obj.date = _.random(1, 28) + '/' + _.random(1, 10) + '/2016';
+        obj.requestType = _.sample(['Request for NDA', 'Request for NOC', 'Request for reviewing a contract']);
         obj.type = _.sample(['case', 'case', 'case', 'case', 'press-release', 'vacancy']);
+        obj.priority = _.sample(['High', 'Medium', 'Low']);
         obj.department = _.sample(['HR', 'Finance', 'Operations', 'Residential Asset Management', 'Retail & Hotel Asset Management', 'REO', 'Legal']);
         obj.filename = _.sample([]);
         obj.ext = _.sample(['doc', 'pdf', 'xls']);

@@ -47,7 +47,8 @@ body {
 
 @media (min-width: 992px) {
   .container {
-    width: 930px;
+    width: unset;
+    //width: 930px;
   }
 }
 

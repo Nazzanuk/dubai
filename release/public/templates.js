@@ -9,6 +9,18 @@ $templateCache.put("announcements","<div class=\"announcements\">\n" +
     "    <i class=\"fa fa-caret-right\"></i> &nbsp; DPG on target to deliver Mudon project with competitive mortgage solutions\n" +
     "</div>")
 
+$templateCache.put("box","<div class=\"box\">\n" +
+    "    <div class=\"box-header\">\n" +
+    "        {{header}}\n" +
+    "\n" +
+    "        <!--<div class=\"box-expand\">-->\n" +
+    "            <!--<i class=\"fa fa-minus\"></i>-->\n" +
+    "        <!--</div>-->\n" +
+    "        <div class=\"box-butn\" ng-if=\"butnText\">{{butnText}} &nbsp; <i class=\"fa fa-caret-right\"></i></div>\n" +
+    "    </div>\n" +
+    "    <div class=\"box-content\" ng-transclude></div>\n" +
+    "</div>")
+
 $templateCache.put("documents","<div id=\"documents\">\n" +
     "    <div class=\"box-item\" header=\"Projects\">\n" +
     "\n" +
@@ -65,18 +77,6 @@ $templateCache.put("documents","<div id=\"documents\">\n" +
     "            </div>\n" +
     "        </div>\n" +
     "    </div>\n" +
-    "</div>")
-
-$templateCache.put("box","<div class=\"box\">\n" +
-    "    <div class=\"box-header\">\n" +
-    "        {{header}}\n" +
-    "\n" +
-    "        <!--<div class=\"box-expand\">-->\n" +
-    "            <!--<i class=\"fa fa-minus\"></i>-->\n" +
-    "        <!--</div>-->\n" +
-    "        <div class=\"box-butn\" ng-if=\"butnText\">{{butnText}} &nbsp; <i class=\"fa fa-caret-right\"></i></div>\n" +
-    "    </div>\n" +
-    "    <div class=\"box-content\" ng-transclude></div>\n" +
     "</div>")
 
 $templateCache.put("event","<div id=\"event\">\n" +
@@ -283,6 +283,31 @@ $templateCache.put("hero","<div id=\"hero\">\n" +
     "    </div>\n" +
     "</div>")
 
+$templateCache.put("press-releases","<div id=\"press-releases\">\n" +
+    "    <div class=\"box-item\" header=\"Press Releases\" butn-text=\"All Press Releases\">\n" +
+    "        <div class=\"press-releases\">\n" +
+    "            <div class=\"hero-main\">\n" +
+    "                <div class=\"main-img\" style=\"background-image: url('http://www.arthurweill.fr/img/unsplash/images_1280/tumblr_n8zm2tFWMf1st5lhmo1_1280.jpg')\"></div>\n" +
+    "                <div class=\"main-overlay\"></div>\n" +
+    "                <div class=\"main-cat\">Corporate</div>\n" +
+    "                <div class=\"main-title\">Design Innovation Project Launched</div>\n" +
+    "            </div>\n" +
+    "            <div class=\"hero-main\">\n" +
+    "                <div class=\"main-img\" style=\"background-image: url('http://www.arabianbusiness.com/incoming/article623751.ece/BINARY/Dubai-property.jpg')\"></div>\n" +
+    "                <div class=\"main-overlay\"></div>\n" +
+    "                <div class=\"main-cat\">Corporate</div>\n" +
+    "                <div class=\"main-title\">DP Expansion Underway</div>\n" +
+    "            </div>\n" +
+    "            <div class=\"hero-main\">\n" +
+    "                <div class=\"main-img\" style=\"background-image: url('http://postbulletin.typepad.com/.a/6a00d83451cc8269e2010536b37c34970b-pi')\"></div>\n" +
+    "                <div class=\"main-overlay\"></div>\n" +
+    "                <div class=\"main-cat\">Corporate</div>\n" +
+    "                <div class=\"main-title\">Partnership with IBM announced</div>\n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "</div>")
+
 $templateCache.put("polls","<div id=\"polls\">\n" +
     "    <div class=\"box-item\" header=\"Polls / Surveys\">\n" +
     "        <img src=\"http://polart2015.com.au/wp-content/uploads/2014/09/PolArt2015-Chairty-Dinner.jpg\" alt=\"\" style=\"width: calc(100% + 30px);margin: -15px -15px 10px\">\n" +
@@ -308,31 +333,6 @@ $templateCache.put("polls","<div id=\"polls\">\n" +
     "\n" +
     "    <!--<script>(function(t,e,c,n){var o,s,a;t.SMCX=t.SMCX||[],e.getElementById(n)||(o=e.getElementsByTagName(c),s=o[o.length-1],a=e.createElement(c),a.type=\"text/javascript\",a.async=!0,a.id=n,a.src=[\"https:\"===location.protocol?\"https://\":\"http://\",\"widget.surveymonkey.com/collect/website/js/dDMSyR8BR9csewvaaowXS2SHb1vMr5PGAxt_2FST7JFwD0QnO6F1mfQCcZFC7ONvxm.js\"].join(\"\"),s.parentNode.insertBefore(a,s))})(window,document,\"script\",\"smcx-sdk\");</script>-->\n" +
     "\n" +
-    "</div>")
-
-$templateCache.put("press-releases","<div id=\"press-releases\">\n" +
-    "    <div class=\"box-item\" header=\"Press Releases\" butn-text=\"All Press Releases\">\n" +
-    "        <div class=\"press-releases\">\n" +
-    "            <div class=\"hero-main\">\n" +
-    "                <div class=\"main-img\" style=\"background-image: url('http://www.arthurweill.fr/img/unsplash/images_1280/tumblr_n8zm2tFWMf1st5lhmo1_1280.jpg')\"></div>\n" +
-    "                <div class=\"main-overlay\"></div>\n" +
-    "                <div class=\"main-cat\">Corporate</div>\n" +
-    "                <div class=\"main-title\">Design Innovation Project Launched</div>\n" +
-    "            </div>\n" +
-    "            <div class=\"hero-main\">\n" +
-    "                <div class=\"main-img\" style=\"background-image: url('http://www.arabianbusiness.com/incoming/article623751.ece/BINARY/Dubai-property.jpg')\"></div>\n" +
-    "                <div class=\"main-overlay\"></div>\n" +
-    "                <div class=\"main-cat\">Corporate</div>\n" +
-    "                <div class=\"main-title\">DP Expansion Underway</div>\n" +
-    "            </div>\n" +
-    "            <div class=\"hero-main\">\n" +
-    "                <div class=\"main-img\" style=\"background-image: url('http://postbulletin.typepad.com/.a/6a00d83451cc8269e2010536b37c34970b-pi')\"></div>\n" +
-    "                <div class=\"main-overlay\"></div>\n" +
-    "                <div class=\"main-cat\">Corporate</div>\n" +
-    "                <div class=\"main-title\">Partnership with IBM announced</div>\n" +
-    "            </div>\n" +
-    "        </div>\n" +
-    "    </div>\n" +
     "</div>")
 
 $templateCache.put("promos","<div id=\"promos\">\n" +
@@ -474,117 +474,6 @@ $templateCache.put("vacancies","<div id=\"vacancies\">\n" +
     "    </div>\n" +
     "</div>")
 
-$templateCache.put("case-screen","<div id=\"case-screen.html\">\n" +
-    "    <div screen=\"case\">\n" +
-    "        <div class=\"container\">\n" +
-    "\n" +
-    "            <div class=\"pull-right\" style=\"margin-top: 30px;\">\n" +
-    "                <div class=\"butn teal\" ui-sref=\"legal\">All Cases &nbsp; <i class=\"fa fa-list-ul\"></i></div>\n" +
-    "                <div class=\"butn\" ui-sref=\"case-form\">Raise a Case &nbsp; +</div>\n" +
-    "            </div>\n" +
-    "\n" +
-    "            <div class=\"dp-header\">Legal Case Management</div>\n" +
-    "            <!--<div></div>-->\n" +
-    "            <!--<div class=\"dp-subheader\">Case Detail</div>-->\n" +
-    "\n" +
-    "            <div class=\"box-item\" header=\"Case Info\">\n" +
-    "                <div class=\"case-header\">\n" +
-    "                    <div class=\"header-field\">\n" +
-    "                        <div class=\"header-label\">Case ID</div>\n" +
-    "                        <div class=\"header-value\">9b72r68e27</div>\n" +
-    "                    </div>\n" +
-    "                    <div class=\"header-field\">\n" +
-    "                        <div class=\"header-label\">Date</div>\n" +
-    "                        <div class=\"header-value\">16th October 2016</div>\n" +
-    "                    </div>\n" +
-    "                    <div class=\"header-field\">\n" +
-    "                        <div class=\"header-label\">Status</div>\n" +
-    "                        <div class=\"header-value\">OPEN</div>\n" +
-    "                    </div>\n" +
-    "                    <div class=\"header-field\">\n" +
-    "                        <div class=\"header-label\">Priority</div>\n" +
-    "                        <div class=\"header-value\">High</div>\n" +
-    "                    </div>\n" +
-    "                    <div class=\"header-field\">\n" +
-    "                        <div class=\"header-label\">Requested By</div>\n" +
-    "                        <div class=\"header-value\">Alejandro</div>\n" +
-    "                    </div>\n" +
-    "                    <div class=\"header-field\">\n" +
-    "                        <div class=\"header-label\">Request Type</div>\n" +
-    "                        <div class=\"header-value\">Project 142596</div>\n" +
-    "                    </div>\n" +
-    "                    <div class=\"header-field\">\n" +
-    "                        <div class=\"header-label\">Contact Details</div>\n" +
-    "                        <div class=\"header-value\">legal@dpg.com</div>\n" +
-    "                    </div>\n" +
-    "                    <div class=\"header-field\">\n" +
-    "                        <div class=\"header-label\"> Business Unit</div>\n" +
-    "                        <div class=\"header-value\">Marketing</div>\n" +
-    "                    </div>\n" +
-    "                </div>\n" +
-    "                <div class=\"case-header\" style=\"margin-top: 0px\">\n" +
-    "                    <div class=\"header-field max\">\n" +
-    "                        <div class=\"header-label\" style=\"flex: 1 0 auto\">Detailed Description</div>\n" +
-    "                    </div>\n" +
-    "                    <div class=\"header-field max flush\">\n" +
-    "                        <div class=\"header-textarea\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor odio perspiciatis quidem quis? Ad assumenda debitis deserunt dolorum eaque fuga hic iste necessitatibus, non numquam odit optio possimus quae quasi quisquam repellendus reprehenderit repudiandae suscipit tempora temporibus ut veritatis voluptates? Aliquid beatae expedita, laborum maxime quaerat sed! Harum incidunt, ipsum?</div>\n" +
-    "                    </div>\n" +
-    "                </div>\n" +
-    "            </div>\n" +
-    "\n" +
-    "            <div class=\"box-item\" header=\"Case Documents\">\n" +
-    "                <div class=\"box-content\">\n" +
-    "                    <div class=\"case-documents\">\n" +
-    "                        <div class=\"result\">\n" +
-    "                            <img class=\"result-icon\" src=\"public/img/doc.svg\">\n" +
-    "                            <div class=\"result-content\">\n" +
-    "                                <div class=\"dp-title\">Internal Staff List 2016</div>\n" +
-    "                                <p>Error maxime, neque officia praesentium repudiandae similique.</p>\n" +
-    "                            </div>\n" +
-    "                        </div>\n" +
-    "                        <div class=\"result\">\n" +
-    "                            <img class=\"result-icon\" src=\"public/img/pdf.svg\">\n" +
-    "                            <div class=\"result-content\">\n" +
-    "                                <div class=\"dp-title\">DPG 2015</div>\n" +
-    "                                <p>Amet autem cumque dolore eaque inventore nostrum obcaecati repudiandae vel voluptas voluptatem!</p>\n" +
-    "                            </div>\n" +
-    "                        </div>\n" +
-    "                        <div class=\"result\">\n" +
-    "                            <img class=\"result-icon\" src=\"public/img/pdf.svg\">\n" +
-    "                            <div class=\"result-content\">\n" +
-    "                                <div class=\"dp-title\">DPG 2016</div>\n" +
-    "                                <p>Distinctio ducimus ea enim ipsam nisi sed tempora. Autem libero nemo quibusdam.</p>\n" +
-    "                            </div>\n" +
-    "                        </div>\n" +
-    "                        <div class=\"result\">\n" +
-    "                            <img class=\"result-icon\" src=\"public/img/doc.svg\">\n" +
-    "                            <div class=\"result-content\">\n" +
-    "                                <div class=\"dp-title\">Internal Staff List 2016</div>\n" +
-    "                                <p>Error maxime, neque officia praesentium repudiandae similique.</p>\n" +
-    "                            </div>\n" +
-    "                        </div>\n" +
-    "                        <div class=\"result\">\n" +
-    "                            <img class=\"result-icon\" src=\"public/img/pdf.svg\">\n" +
-    "                            <div class=\"result-content\">\n" +
-    "                                <div class=\"dp-title\">DPG 2015</div>\n" +
-    "                                <p>Amet autem cumque dolore eaque inventore nostrum obcaecati repudiandae vel voluptas voluptatem!</p>\n" +
-    "                            </div>\n" +
-    "                        </div>\n" +
-    "                        <div class=\"result\">\n" +
-    "                            <img class=\"result-icon\" src=\"public/img/pdf.svg\">\n" +
-    "                            <div class=\"result-content\">\n" +
-    "                                <div class=\"dp-title\">DPG 2016</div>\n" +
-    "                                <p>Distinctio ducimus ea enim ipsam nisi sed tempora. Autem libero nemo quibusdam.</p>\n" +
-    "                            </div>\n" +
-    "                        </div>\n" +
-    "                    </div>\n" +
-    "                </div>\n" +
-    "            </div>\n" +
-    "\n" +
-    "        </div>\n" +
-    "    </div>\n" +
-    "</div>")
-
 $templateCache.put("case-form-screen","<div id=\"case-form-screen.html\">\n" +
     "    <div screen=\"case-form\">\n" +
     "        <div class=\"container\">\n" +
@@ -696,6 +585,155 @@ $templateCache.put("case-form-screen","<div id=\"case-form-screen.html\">\n" +
     "\n" +
     "    </div>\n" +
     "</div>\n" +
+    "</div>")
+
+$templateCache.put("case-screen","<div id=\"case-screen.html\">\n" +
+    "    <div screen=\"case\">\n" +
+    "        <div class=\"container\">\n" +
+    "\n" +
+    "            <div class=\"pull-right\" style=\"margin-top: 30px;\">\n" +
+    "                <div class=\"butn teal\" ui-sref=\"legal\">All Cases &nbsp; <i class=\"fa fa-list-ul\"></i></div>\n" +
+    "                <div class=\"butn\" ui-sref=\"case-form\">Raise a Case &nbsp; +</div>\n" +
+    "            </div>\n" +
+    "\n" +
+    "            <div class=\"dp-header\">Legal Case Management</div>\n" +
+    "            <!--<div></div>-->\n" +
+    "            <!--<div class=\"dp-subheader\">Case Detail</div>-->\n" +
+    "\n" +
+    "            <div class=\"box-item\" header=\"Case Info\">\n" +
+    "                <div class=\"case-header\">\n" +
+    "                    <div class=\"header-field\">\n" +
+    "                        <div class=\"header-label\">Case ID</div>\n" +
+    "                        <div class=\"header-value\">9b72r68e27</div>\n" +
+    "                    </div>\n" +
+    "                    <div class=\"header-field\">\n" +
+    "                        <div class=\"header-label\">Date</div>\n" +
+    "                        <div class=\"header-value\">16th October 2016</div>\n" +
+    "                    </div>\n" +
+    "                    <div class=\"header-field\">\n" +
+    "                        <div class=\"header-label\">Status</div>\n" +
+    "                        <div class=\"header-value\">OPEN</div>\n" +
+    "                    </div>\n" +
+    "                    <div class=\"header-field\">\n" +
+    "                        <div class=\"header-label\">Priority</div>\n" +
+    "                        <div class=\"header-value\">High</div>\n" +
+    "                    </div>\n" +
+    "                    <div class=\"header-field\">\n" +
+    "                        <div class=\"header-label\">Requested By</div>\n" +
+    "                        <div class=\"header-value\">Alejandro</div>\n" +
+    "                    </div>\n" +
+    "                    <div class=\"header-field\">\n" +
+    "                        <div class=\"header-label\">Request Type</div>\n" +
+    "                        <div class=\"header-value\">Project 142596</div>\n" +
+    "                    </div>\n" +
+    "                    <div class=\"header-field\">\n" +
+    "                        <div class=\"header-label\">Contact Details</div>\n" +
+    "                        <div class=\"header-value\">legal@dpg.com</div>\n" +
+    "                    </div>\n" +
+    "                    <div class=\"header-field\">\n" +
+    "                        <div class=\"header-label\"> Business Unit</div>\n" +
+    "                        <div class=\"header-value\">Marketing</div>\n" +
+    "                    </div>\n" +
+    "                </div>\n" +
+    "                <div class=\"case-header\" style=\"margin-top: 0px\">\n" +
+    "                    <div class=\"header-field max\">\n" +
+    "                        <div class=\"header-label\" style=\"flex: 1 0 auto\">Detailed Description</div>\n" +
+    "                    </div>\n" +
+    "                    <div class=\"header-field max flush\">\n" +
+    "                        <div class=\"header-textarea\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor odio perspiciatis quidem quis? Ad assumenda debitis deserunt dolorum eaque fuga hic iste necessitatibus, non numquam odit optio possimus quae quasi quisquam repellendus reprehenderit repudiandae suscipit tempora temporibus ut veritatis voluptates? Aliquid beatae expedita, laborum maxime quaerat sed! Harum incidunt, ipsum?</div>\n" +
+    "                    </div>\n" +
+    "                </div>\n" +
+    "<p style=\"margin-top:15px;\"></p>\n" +
+    "                <div class=\"butn pull-right\" ui-sref=\"case-form\">Reply &nbsp; <i class=\"fa fa-pencil\"></i></div>\n" +
+    "            </div>\n" +
+    "\n" +
+    "            <div class=\"row\">\n" +
+    "                <div class=\"col-md-8\">\n" +
+    "                    <div class=\"box-item\" header=\"Case Documents\">\n" +
+    "                        <div class=\"box-content\">\n" +
+    "                            <div class=\"case-documents\">\n" +
+    "                                <div class=\"result\">\n" +
+    "                                    <img class=\"result-icon\" src=\"public/img/doc.svg\">\n" +
+    "                                    <div class=\"result-content\">\n" +
+    "                                        <div class=\"dp-title\">Internal Staff List 2016</div>\n" +
+    "                                        <p>Error maxime, neque officia praesentium repudiandae similique.</p>\n" +
+    "                                    </div>\n" +
+    "                                </div>\n" +
+    "                                <div class=\"result\">\n" +
+    "                                    <img class=\"result-icon\" src=\"public/img/pdf.svg\">\n" +
+    "                                    <div class=\"result-content\">\n" +
+    "                                        <div class=\"dp-title\">DPG 2015</div>\n" +
+    "                                        <p>Amet autem cumque dolore eaque inventore nostrum obcaecati repudiandae vel voluptas voluptatem!</p>\n" +
+    "                                    </div>\n" +
+    "                                </div>\n" +
+    "                                <div class=\"result\">\n" +
+    "                                    <img class=\"result-icon\" src=\"public/img/pdf.svg\">\n" +
+    "                                    <div class=\"result-content\">\n" +
+    "                                        <div class=\"dp-title\">DPG 2016</div>\n" +
+    "                                        <p>Distinctio ducimus ea enim ipsam nisi sed tempora. Autem libero nemo quibusdam.</p>\n" +
+    "                                    </div>\n" +
+    "                                </div>\n" +
+    "                                <div class=\"result\">\n" +
+    "                                    <img class=\"result-icon\" src=\"public/img/doc.svg\">\n" +
+    "                                    <div class=\"result-content\">\n" +
+    "                                        <div class=\"dp-title\">Internal Staff List 2016</div>\n" +
+    "                                        <p>Error maxime, neque officia praesentium repudiandae similique.</p>\n" +
+    "                                    </div>\n" +
+    "                                </div>\n" +
+    "                                <div class=\"result\">\n" +
+    "                                    <img class=\"result-icon\" src=\"public/img/pdf.svg\">\n" +
+    "                                    <div class=\"result-content\">\n" +
+    "                                        <div class=\"dp-title\">DPG 2015</div>\n" +
+    "                                        <p>Amet autem cumque dolore eaque inventore nostrum obcaecati repudiandae vel voluptas voluptatem!</p>\n" +
+    "                                    </div>\n" +
+    "                                </div>\n" +
+    "                                <div class=\"result\">\n" +
+    "                                    <img class=\"result-icon\" src=\"public/img/pdf.svg\">\n" +
+    "                                    <div class=\"result-content\">\n" +
+    "                                        <div class=\"dp-title\">DPG 2016</div>\n" +
+    "                                        <p>Distinctio ducimus ea enim ipsam nisi sed tempora. Autem libero nemo quibusdam.</p>\n" +
+    "                                    </div>\n" +
+    "                                </div>\n" +
+    "                            </div>\n" +
+    "                        </div>\n" +
+    "                    </div>\n" +
+    "                </div>\n" +
+    "                <div class=\"col-md-4\">\n" +
+    "                    <div class=\"box-item\" header=\"Case Comments\">\n" +
+    "                        <div class=\"box-content clearfix\">\n" +
+    "                            <div class=\"case-comments\">\n" +
+    "                                <div class=\"case-comment\">\n" +
+    "                                    <div class=\"comment-author\">Nathan N</div>\n" +
+    "                                    <div class=\"comment-text\">\n" +
+    "                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A culpa dolorem dolorum est eum fuga hic inventore laborum minima natus necessitatibus quis, quod ut voluptatem.</p>\n" +
+    "                                    </div>\n" +
+    "                                </div>\n" +
+    "                                <div class=\"case-comment\">\n" +
+    "                                    <div class=\"comment-author\">Legal Team</div>\n" +
+    "                                    <div class=\"comment-text\">\n" +
+    "                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquam beatae consequatur earum maxime molestiae odit quo sed veniam voluptatem.</p>\n" +
+    "                                        <p>Asperiores at corporis, cumque doloremque fuga laboriosam nesciunt nostrum, quia similique tempora tempore, velit voluptates? Eaque, illo?</p>\n" +
+    "                                    </div>\n" +
+    "                                </div>\n" +
+    "                                <div class=\"case-comment\">\n" +
+    "                                    <div class=\"comment-author\">Nathan N</div>\n" +
+    "                                    <div class=\"comment-text\">\n" +
+    "                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A culpa dolorem dolorum est eum fuga hic inventore laborum minima natus necessitatibus quis, quod ut voluptatem.</p>\n" +
+    "                                    </div>\n" +
+    "                                </div>\n" +
+    "                            </div>\n" +
+    "\n" +
+    "                            <p class=\"pull-right\" style=\"margin-top: 15px\">\n" +
+    "                                <span class=\"butn\">Reply &nbsp; <i class=\"fa fa-pencil\"></i></span>\n" +
+    "                            </p>\n" +
+    "                        </div>\n" +
+    "                    </div>\n" +
+    "\n" +
+    "                </div>\n" +
+    "            </div>\n" +
+    "\n" +
+    "        </div>\n" +
+    "    </div>\n" +
     "</div>")
 
 $templateCache.put("discounts-screen","<div id=\"discounts-screen.html\">\n" +
@@ -983,9 +1021,11 @@ $templateCache.put("legal-screen","<div id=\"legal-screen.html\">\n" +
     "                                        <span class=\"case-status\" ng-if=\"case.open\">OPEN</span>\n" +
     "                                        <span class=\"case-status closed\" ng-if=\"!case.open\">CLOSED</span>\n" +
     "                                    </div>\n" +
-    "                                    <p><span class=\"fa fa-caret-right\"></span> &nbsp; <strong>Department: </strong> {{case.department}}</p>\n" +
+    "                                    <p><strong>Request Type: </strong> {{case.requestType}}</p>\n" +
+    "                                    <p><strong>Department: </strong> {{case.department}}</p>\n" +
+    "                                    <p><strong>Priority: </strong> {{case.priority}}</p>\n" +
     "                                </div>\n" +
-    "                                <div class=\"case-actions\" style=\"margin-left: auto\">\n" +
+    "                                <div class=\"case-actions\">\n" +
     "                                    <div class=\"butn teal\" ui-sref=\"case\">Reply &nbsp; <i class=\"fa fa-pencil\"></i></div>\n" +
     "                                    <div class=\"butn\" ui-sref=\"case\">View &nbsp; <i class=\"fa fa-arrow-right\"></i></div>\n" +
     "                                </div>\n" +
