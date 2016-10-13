@@ -225,8 +225,8 @@ app.component('pollsItem', {
         _.extend($scope, {});
     }
 });
-app.component('promosItem', {
-    templateUrl: 'promos',
+app.component('pressReleasesItem', {
+    templateUrl: 'press-releases',
     restrict: 'ECA',
     bindings: {},
     controller: function controller($scope) {
@@ -238,8 +238,8 @@ app.component('promosItem', {
         _.extend($scope, {});
     }
 });
-app.component('pressReleasesItem', {
-    templateUrl: 'press-releases',
+app.component('promosItem', {
+    templateUrl: 'promos',
     restrict: 'ECA',
     bindings: {},
     controller: function controller($scope) {
@@ -313,7 +313,7 @@ app.controller('CaseFormScreen', function ($element, $timeout, $scope) {
     _.extend($scope, {});
 });
 
-app.controller('GalleryScreen', function ($element, $timeout, $scope) {
+app.controller('DiscountsScreen', function ($element, $timeout, $scope) {
 
     var init = function init() {
         //$timeout(() => $element.find('[screen]').addClass('active'), 50);
@@ -350,7 +350,7 @@ app.controller('GalleryFolderScreen', function ($element, $timeout, $scope) {
     });
 });
 
-app.controller('DiscountsScreen', function ($element, $timeout, $scope) {
+app.controller('GalleryScreen', function ($element, $timeout, $scope) {
 
     var init = function init() {
         //$timeout(() => $element.find('[screen]').addClass('active'), 50);
@@ -437,17 +437,6 @@ app.controller('LegalScreen', function ($element, $timeout, $scope) {
     });
 });
 
-app.controller('VacancyScreen', function ($element, $timeout, $scope) {
-
-    var init = function init() {
-        //$timeout(() => $element.find('[screen]').addClass('active'), 50);
-    };
-
-    init();
-
-    _.extend($scope, {});
-});
-
 app.controller('SearchScreen', function ($element, $timeout, $scope) {
 
     var documents = [],
@@ -495,6 +484,17 @@ app.controller('SearchScreen', function ($element, $timeout, $scope) {
         getDocuments: getDocuments,
         getTypes: getTypes
     });
+});
+
+app.controller('VacancyScreen', function ($element, $timeout, $scope) {
+
+    var init = function init() {
+        //$timeout(() => $element.find('[screen]').addClass('active'), 50);
+    };
+
+    init();
+
+    _.extend($scope, {});
 });
 
 var app = app || angular.module('app', ['ui.router']);

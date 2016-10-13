@@ -905,19 +905,6 @@ polls-item .polls .tweet, .polls-item .polls .tweet {
     color: #253d98;
     font-weight: bold; }
 
-promos-item .promos, .promos-item .promos {
-  margin-top: 0;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: row;
-      flex-direction: row;
-  margin-right: -30px; }
-  @media (max-width: 767px) {
-    promos-item .promos, .promos-item .promos {
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
-      height: auto; } }
-
 press-releases-item .press-releases, .press-releases-item .press-releases {
   display: -ms-flexbox;
   display: flex;
@@ -933,6 +920,19 @@ press-releases-item .press-releases, .press-releases-item .press-releases {
   @media (max-width: 767px) {
     press-releases-item .press-releases .hero-main, .press-releases-item .press-releases .hero-main {
       min-height: 150px; } }
+
+promos-item .promos, .promos-item .promos {
+  margin-top: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  margin-right: -30px; }
+  @media (max-width: 767px) {
+    promos-item .promos, .promos-item .promos {
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+      height: auto; } }
 
 services-item .services, .services-item .services {
   background: #eee;
@@ -1215,7 +1215,7 @@ vacancies-item .vacancies .vacancy, .vacancies-item .vacancies .vacancy {
       width: 35px;
       pointer-events: none; }
 
-[screen="gallery"] .gallery {
+[screen="discounts"] .discounts {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
@@ -1223,7 +1223,7 @@ vacancies-item .vacancies .vacancy, .vacancies-item .vacancies .vacancy {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin: -15px -15px 0px 0px; }
-  [screen="gallery"] .gallery .discount {
+  [screen="discounts"] .discounts .discount {
     position: relative;
     -ms-flex: 1 0 250px;
         flex: 1 0 250px;
@@ -1236,9 +1236,9 @@ vacancies-item .vacancies .vacancy, .vacancies-item .vacancies .vacancy {
     margin: 15px 15px 0 0;
     background-size: cover;
     background-position: center; }
-    [screen="gallery"] .gallery .discount:nth-child(2n) .discount-butn {
+    [screen="discounts"] .discounts .discount:nth-child(2n) .discount-butn {
       background: #83b5c6; }
-  [screen="gallery"] .gallery .discount-content {
+  [screen="discounts"] .discounts .discount-content {
     background: rgba(0, 0, 0, 0.6);
     padding: 15px 20px;
     color: white;
@@ -1251,10 +1251,10 @@ vacancies-item .vacancies .vacancy, .vacancies-item .vacancies .vacancy {
     -ms-flex-pack: center;
         justify-content: center;
     text-align: center; }
-    [screen="gallery"] .gallery .discount-content .discount-title {
+    [screen="discounts"] .discounts .discount-content .discount-title {
       font-size: 16px;
       font-weight: 600; }
-  [screen="gallery"] .gallery .discount-butn {
+  [screen="discounts"] .discounts .discount-butn {
     background: #83b5c6;
     padding: 15px;
     color: white;
@@ -1301,7 +1301,7 @@ vacancies-item .vacancies .vacancy, .vacancies-item .vacancies .vacancy {
       background: #ddd;
       border: 1px dashed #888; }
 
-[screen="discounts"] .discounts {
+[screen="gallery"] .gallery {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
@@ -1309,7 +1309,7 @@ vacancies-item .vacancies .vacancy, .vacancies-item .vacancies .vacancy {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin: -15px -15px 0px 0px; }
-  [screen="discounts"] .discounts .discount {
+  [screen="gallery"] .gallery .discount {
     position: relative;
     -ms-flex: 1 0 250px;
         flex: 1 0 250px;
@@ -1322,9 +1322,9 @@ vacancies-item .vacancies .vacancy, .vacancies-item .vacancies .vacancy {
     margin: 15px 15px 0 0;
     background-size: cover;
     background-position: center; }
-    [screen="discounts"] .discounts .discount:nth-child(2n) .discount-butn {
+    [screen="gallery"] .gallery .discount:nth-child(2n) .discount-butn {
       background: #83b5c6; }
-  [screen="discounts"] .discounts .discount-content {
+  [screen="gallery"] .gallery .discount-content {
     background: rgba(0, 0, 0, 0.6);
     padding: 15px 20px;
     color: white;
@@ -1337,10 +1337,10 @@ vacancies-item .vacancies .vacancy, .vacancies-item .vacancies .vacancy {
     -ms-flex-pack: center;
         justify-content: center;
     text-align: center; }
-    [screen="discounts"] .discounts .discount-content .discount-title {
+    [screen="gallery"] .gallery .discount-content .discount-title {
       font-size: 16px;
       font-weight: 600; }
-  [screen="discounts"] .discounts .discount-butn {
+  [screen="gallery"] .gallery .discount-butn {
     background: #83b5c6;
     padding: 15px;
     color: white;
@@ -1426,50 +1426,6 @@ vacancies-item .vacancies .vacancy, .vacancies-item .vacancies .vacancy {
   transition: .2s; }
   [screen="legal"] .result-content p:hover {
     color: #333; }
-
-[screen="vacancy"] .vacancy-hero {
-  height: 100px;
-  margin-top: 30px;
-  display: -ms-flexbox;
-  display: flex;
-  background: #83b5c6; }
-
-[screen="vacancy"] .vacancy-date, [screen="vacancy"] .vacancy-cat {
-  background: #253d98;
-  color: white;
-  padding: 5px 10px;
-  display: inline-block;
-  font-weight: bold; }
-
-[screen="vacancy"] .vacancy-cat {
-  font-size: 12px;
-  line-height: 1;
-  background: #e03c31;
-  float: right;
-  text-transform: uppercase; }
-
-[screen="vacancy"] .vacancy-screen-content {
-  margin-top: 30px;
-  padding: 30px;
-  background: white; }
-  [screen="vacancy"] .vacancy-screen-content p {
-    margin: 20px 0 0;
-    line-height: 1.6;
-    font-size: 15px; }
-  [screen="vacancy"] .vacancy-screen-content h2 {
-    font-weight: 600;
-    margin: 30px 0 0;
-    font-size: 22px; }
-  [screen="vacancy"] .vacancy-screen-content img {
-    width: 100%;
-    height: auto; }
-
-[screen="vacancy"] .vacancy-summary {
-  text-transform: uppercase;
-  font-weight: 500;
-  font-size: 20px;
-  color: #999;
-  margin: 15px 0 0; }
 
 [screen="search"] .search-bar {
   margin-top: 30px;
@@ -1570,3 +1526,47 @@ vacancies-item .vacancies .vacancy, .vacancies-item .vacancies .vacancy {
   background: none;
   padding: 4px 0px;
   font-weight: 500; }
+
+[screen="vacancy"] .vacancy-hero {
+  height: 100px;
+  margin-top: 30px;
+  display: -ms-flexbox;
+  display: flex;
+  background: #83b5c6; }
+
+[screen="vacancy"] .vacancy-date, [screen="vacancy"] .vacancy-cat {
+  background: #253d98;
+  color: white;
+  padding: 5px 10px;
+  display: inline-block;
+  font-weight: bold; }
+
+[screen="vacancy"] .vacancy-cat {
+  font-size: 12px;
+  line-height: 1;
+  background: #e03c31;
+  float: right;
+  text-transform: uppercase; }
+
+[screen="vacancy"] .vacancy-screen-content {
+  margin-top: 30px;
+  padding: 30px;
+  background: white; }
+  [screen="vacancy"] .vacancy-screen-content p {
+    margin: 20px 0 0;
+    line-height: 1.6;
+    font-size: 15px; }
+  [screen="vacancy"] .vacancy-screen-content h2 {
+    font-weight: 600;
+    margin: 30px 0 0;
+    font-size: 22px; }
+  [screen="vacancy"] .vacancy-screen-content img {
+    width: 100%;
+    height: auto; }
+
+[screen="vacancy"] .vacancy-summary {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 20px;
+  color: #999;
+  margin: 15px 0 0; }
