@@ -15,6 +15,7 @@ var headerCtrl = function ($scope, $element, $timeout) {
 
 app.component('headerItem', {
     templateUrl: 'header',
+    restrict: "E",
     bindings: {},
     transclude: {}
 });

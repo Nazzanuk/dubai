@@ -165,6 +165,20 @@ app.component('documentsItem', {
         _.extend($scope, {});
     }
 });
+app.component('eventItem', {
+    templateUrl: 'event',
+    restrict: 'EA',
+    bindings: {},
+    controller: function controller($scope, Event) {
+
+        var init = function init() {};
+
+        init();
+
+        _.extend($scope, Event);
+        _.extend($scope, {});
+    }
+});
 app.component('eventsItem', {
     templateUrl: 'events',
     restrict: 'ECA',
@@ -197,6 +211,20 @@ app.component('footItem', {
     }
 });
 
+app.component('galleryItem', {
+    templateUrl: 'gallery',
+    restrict: 'EA',
+    //restrict: 'ECA',
+    bindings: {},
+    controller: function controller($scope) {
+
+        var init = function init() {};
+
+        init();
+
+        _.extend($scope, {});
+    }
+});
 var headerCtrl = function headerCtrl($scope, $element, $timeout) {
 
     var getTest = function getTest() {
@@ -214,26 +242,13 @@ var headerCtrl = function headerCtrl($scope, $element, $timeout) {
 
 app.component('headerItem', {
     templateUrl: 'header',
+    restrict: "E",
     bindings: {},
     transclude: {}
 });
 
 app.controller('headerCtrl', headerCtrl);
 
-app.component('galleryItem', {
-    templateUrl: 'gallery',
-    restrict: 'EA',
-    //restrict: 'ECA',
-    bindings: {},
-    controller: function controller($scope) {
-
-        var init = function init() {};
-
-        init();
-
-        _.extend($scope, {});
-    }
-});
 app.component('heroItem', {
     templateUrl: 'hero',
     restrict: 'ECA',
@@ -257,20 +272,6 @@ app.component('pollsItem', {
 
         init();
 
-        _.extend($scope, {});
-    }
-});
-app.component('eventItem', {
-    templateUrl: 'event',
-    restrict: 'EA',
-    bindings: {},
-    controller: function controller($scope, Event) {
-
-        var init = function init() {};
-
-        init();
-
-        _.extend($scope, Event);
         _.extend($scope, {});
     }
 });
@@ -373,6 +374,17 @@ app.controller('DiscountsScreen', function ($element, $timeout, $scope) {
     _.extend($scope, {});
 });
 
+app.controller('GalleryScreen', function ($element, $timeout, $scope) {
+
+    var init = function init() {
+        //$timeout(() => $element.find('[screen]').addClass('active'), 50);
+    };
+
+    init();
+
+    _.extend($scope, {});
+});
+
 app.controller('GalleryFolderScreen', function ($element, $timeout, $scope) {
 
     var images = [];
@@ -400,17 +412,6 @@ app.controller('GalleryFolderScreen', function ($element, $timeout, $scope) {
 });
 
 app.controller('HomeScreen', function ($element, $timeout, $scope) {
-
-    var init = function init() {
-        //$timeout(() => $element.find('[screen]').addClass('active'), 50);
-    };
-
-    init();
-
-    _.extend($scope, {});
-});
-
-app.controller('GalleryScreen', function ($element, $timeout, $scope) {
 
     var init = function init() {
         //$timeout(() => $element.find('[screen]').addClass('active'), 50);
