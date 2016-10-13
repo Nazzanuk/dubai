@@ -1,23 +1,18 @@
-var headerCtrl = function ($scope, $element, $timeout) {
-
-    var getTest = () => ['1', '2', '3', '4'];
-
-    var init = () => {
-
-    };
-
-    init();
-
-    _.extend($scope, {
-        getTest
-    });
-};
-
 app.component('headerItem', {
     templateUrl: 'header',
-    restrict: "E",
     bindings: {},
-    transclude: {}
-});
+    transclude: {
+        headerLinks:'?headerLinks'
+    },
+    controller: function ($scope, $element, $timeout) {
 
-app.controller('headerCtrl', headerCtrl);
+        var init = () => {
+
+        };
+
+        init();
+
+        _.extend($scope, {
+        });
+    }
+});

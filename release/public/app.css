@@ -17,9 +17,17 @@ body {
   font-weight: 300;
   font-size: 14px; }
 
+@media (min-width: 992px) {
+  .container {
+    width: 930px; } }
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1100px; } }
+
 @media (min-width: 1400px) {
   .container {
-    width: 1370px; } }
+    width: 1300px; } }
 
 a {
   color: #253d98;
@@ -673,6 +681,20 @@ events-item .events, .events-item .events {
     events-item .events .event:nth-child(2n) .event-date, .events-item .events .event:nth-child(2n) .event-date {
       background: #e7665d; }
 
+gallery-item .gallery, [gallery-item] .gallery {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+  gallery-item .gallery .gallery-item, [gallery-item] .gallery .gallery-item {
+    -ms-flex: 1 0 100px;
+        flex: 1 0 100px;
+    height: 118px;
+    background-size: cover;
+    background-position: center; }
+
 foot-item .foot, [foot-item] .foot {
   margin-top: 30px;
   margin-bottom: 30px;
@@ -701,47 +723,33 @@ foot-item .foot, [foot-item] .foot {
       .dark foot-item .foot .foot-bottom a, .dark [foot-item] .foot .foot-bottom a {
         color: white; }
 
-gallery-item .gallery, [gallery-item] .gallery {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: row;
-      flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
-  gallery-item .gallery .gallery-item, [gallery-item] .gallery .gallery-item {
-    -ms-flex: 1 0 100px;
-        flex: 1 0 100px;
-    height: 118px;
-    background-size: cover;
-    background-position: center; }
-
-header-item header-menu, .header-item header-menu, [ng-controller="headerCtrl"] header-menu {
+header-item header-menu {
   display: inline; }
 
-header-item .header, .header-item .header, [ng-controller="headerCtrl"] .header {
+header-item .header {
   background: white;
   text-align: center;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.15); }
-  header-item .header a, .header-item .header a, [ng-controller="headerCtrl"] .header a {
+  header-item .header a {
     display: block;
     text-decoration: none; }
-  header-item .header .container, .header-item .header .container, [ng-controller="headerCtrl"] .header .container {
+  header-item .header .container {
     position: relative; }
-  header-item .header .header-top, .header-item .header .header-top, [ng-controller="headerCtrl"] .header .header-top {
+  header-item .header .header-top {
     background: #253d98;
     height: 100px;
     line-height: 60px;
     padding: 20px 0; }
-    header-item .header .header-top .menu-items, .header-item .header .header-top .menu-items, [ng-controller="headerCtrl"] .header .header-top .menu-items {
+    header-item .header .header-top .menu-items {
       float: right;
       display: inline-block; }
-    header-item .header .header-top .menu-item, .header-item .header .header-top .menu-item, [ng-controller="headerCtrl"] .header .header-top .menu-item {
+    header-item .header .header-top .menu-item {
       float: left;
       font-size: 13px;
       text-transform: uppercase;
       font-weight: 700;
       letter-spacing: 1px; }
-      header-item .header .header-top .menu-item .dropdown, .header-item .header .header-top .menu-item .dropdown, [ng-controller="headerCtrl"] .header .header-top .menu-item .dropdown {
+      header-item .header .header-top .menu-item .dropdown {
         line-height: 23px;
         padding: 5px 10px;
         margin-top: 12px;
@@ -750,9 +758,9 @@ header-item .header, .header-item .header, [ng-controller="headerCtrl"] .header 
         border: 1px solid rgba(37, 61, 152, 0.9);
         background: rgba(37, 61, 152, 0.8);
         color: white; }
-      header-item .header .header-top .menu-item .fa, .header-item .header .header-top .menu-item .fa, [ng-controller="headerCtrl"] .header .header-top .menu-item .fa {
+      header-item .header .header-top .menu-item .fa {
         vertical-align: top; }
-    header-item .header .header-top .menu-search, .header-item .header .header-top .menu-search, [ng-controller="headerCtrl"] .header .header-top .menu-search {
+    header-item .header .header-top .menu-search {
       line-height: 20px;
       padding: 5px 10px;
       height: 30px;
@@ -764,7 +772,7 @@ header-item .header, .header-item .header, [ng-controller="headerCtrl"] .header 
       display: inline-block;
       position: absolute;
       margin-left: -150px; }
-      header-item .header .header-top .menu-search .fa, .header-item .header .header-top .menu-search .fa, [ng-controller="headerCtrl"] .header .header-top .menu-search .fa {
+      header-item .header .header-top .menu-search .fa {
         position: absolute;
         right: 0;
         top: 0;
@@ -776,7 +784,7 @@ header-item .header, .header-item .header, [ng-controller="headerCtrl"] .header 
         line-height: 30px;
         font-size: 16px;
         cursor: pointer; }
-      header-item .header .header-top .menu-search input, .header-item .header .header-top .menu-search input, [ng-controller="headerCtrl"] .header .header-top .menu-search input {
+      header-item .header .header-top .menu-search input {
         background: none;
         border: none;
         width: 300px;
@@ -788,7 +796,7 @@ header-item .header, .header-item .header, [ng-controller="headerCtrl"] .header 
         font-weight: 300;
         color: black;
         padding-left: 5px; }
-  header-item .header .header-bottom, .header-item .header .header-bottom, [ng-controller="headerCtrl"] .header .header-bottom {
+  header-item .header .header-bottom {
     background: #253d98;
     background: #0d0d0d;
     background: #eee;
@@ -799,7 +807,7 @@ header-item .header, .header-item .header, [ng-controller="headerCtrl"] .header 
     font-weight: 300;
     font-size: 13px;
     white-space: nowrap; }
-    header-item .header .header-bottom .bottom-item, .header-item .header .header-bottom .bottom-item, [ng-controller="headerCtrl"] .header .header-bottom .bottom-item {
+    header-item .header .header-bottom .bottom-item {
       padding: 0 15px;
       background: white;
       color: black;
@@ -808,43 +816,43 @@ header-item .header, .header-item .header, [ng-controller="headerCtrl"] .header 
       line-height: 30px;
       display: inline-block;
       float: left; }
-      header-item .header .header-bottom .bottom-item.item-menu, .header-item .header .header-bottom .bottom-item.item-menu, [ng-controller="headerCtrl"] .header .header-bottom .bottom-item.item-menu {
+      header-item .header .header-bottom .bottom-item.item-menu {
         background: #f7f7f7;
         border-right: 1px solid #fff;
         color: #999;
         font-weight: normal; }
-      header-item .header .header-bottom .bottom-item .item-image, .header-item .header .header-bottom .bottom-item .item-image, [ng-controller="headerCtrl"] .header .header-bottom .bottom-item .item-image {
+      header-item .header .header-bottom .bottom-item .item-image {
         padding: 0;
         height: 20px;
         width: 20px;
         margin: 5px 0 5px 10px;
         background-position: center;
         background-size: cover; }
-  header-item .header .logo, .header-item .header .logo, [ng-controller="headerCtrl"] .header .logo {
+  header-item .header .logo {
     position: absolute;
     cursor: pointer;
     transition: .2s; }
-    header-item .header .logo:hover, .header-item .header .logo:hover, [ng-controller="headerCtrl"] .header .logo:hover {
+    header-item .header .logo:hover {
       transform: scale(1.05); }
-    header-item .header .logo.right, .header-item .header .logo.right, [ng-controller="headerCtrl"] .header .logo.right {
+    header-item .header .logo.right {
       right: 15px; }
-    header-item .header .logo img, .header-item .header .logo img, [ng-controller="headerCtrl"] .header .logo img {
+    header-item .header .logo img {
       height: 40px;
       vertical-align: top;
       margin-top: 10px;
       float: left; }
-      header-item .header .logo img:first-child, .header-item .header .logo img:first-child, [ng-controller="headerCtrl"] .header .logo img:first-child {
+      header-item .header .logo img:first-child {
         -webkit-filter: grayscale(0%);
                 filter: grayscale(0%);
         opacity: 1; }
-    header-item .header .logo .line, .header-item .header .logo .line, [ng-controller="headerCtrl"] .header .logo .line {
+    header-item .header .logo .line {
       height: 30px;
       margin: 0 10px;
       width: 3px;
       background: #eee;
       float: left;
       margin-top: 15px; }
-    header-item .header .logo.right, .header-item .header .logo.right, [ng-controller="headerCtrl"] .header .logo.right {
+    header-item .header .logo.right {
       right: 15px; }
 
 hero-item .hero, .hero-item .hero {
@@ -885,6 +893,22 @@ hero-item .hero, .hero-item .hero {
     hero-item .hero .hero-items .hero-main .main-title, .hero-item .hero .hero-items .hero-main .main-title {
       font-size: 18px; }
 
+press-releases-item .press-releases, .press-releases-item .press-releases {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  height: 250px;
+  margin: -15px; }
+  @media (max-width: 767px) {
+    press-releases-item .press-releases, .press-releases-item .press-releases {
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+      height: auto; } }
+  @media (max-width: 767px) {
+    press-releases-item .press-releases .hero-main, .press-releases-item .press-releases .hero-main {
+      min-height: 150px; } }
+
 polls-item .polls .tweet, .polls-item .polls .tweet {
   display: -ms-flexbox;
   display: flex;
@@ -904,22 +928,6 @@ polls-item .polls .tweet, .polls-item .polls .tweet {
   polls-item .polls .tweet a, .polls-item .polls .tweet a {
     color: #253d98;
     font-weight: bold; }
-
-press-releases-item .press-releases, .press-releases-item .press-releases {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: row;
-      flex-direction: row;
-  height: 250px;
-  margin: -15px; }
-  @media (max-width: 767px) {
-    press-releases-item .press-releases, .press-releases-item .press-releases {
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
-      height: auto; } }
-  @media (max-width: 767px) {
-    press-releases-item .press-releases .hero-main, .press-releases-item .press-releases .hero-main {
-      min-height: 150px; } }
 
 promos-item .promos, .promos-item .promos {
   margin-top: 0;
@@ -1261,46 +1269,6 @@ vacancies-item .vacancies .vacancy, .vacancies-item .vacancies .vacancy {
     font-weight: bold;
     text-transform: uppercase; }
 
-[screen="gallery-folder"] .gallery-folder {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: row;
-      flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin: -15px -15px 0px 0px; }
-  [screen="gallery-folder"] .gallery-folder .folder-image {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex: 0 0 auto;
-        flex: 0 0 auto;
-    -ms-flex-direction: column;
-        flex-direction: column;
-    -ms-flex-pack: center;
-        justify-content: center;
-    -ms-flex-align: center;
-        align-items: center;
-    padding: 5px;
-    border: 1px dashed #ddd;
-    margin: 15px 15px 0 0;
-    background: #f7f7f7;
-    transition: .2s;
-    cursor: pointer; }
-    [screen="gallery-folder"] .gallery-folder .folder-image .image-image {
-      height: 80px;
-      width: 90px;
-      background: #fff;
-      background-size: cover;
-      background-position: center; }
-    [screen="gallery-folder"] .gallery-folder .folder-image .image-title {
-      margin-top: 5px;
-      font-weight: 600;
-      font-size: 12px;
-      padding: 5px 0px 0; }
-    [screen="gallery-folder"] .gallery-folder .folder-image:hover {
-      background: #ddd;
-      border: 1px dashed #888; }
-
 [screen="gallery"] .gallery {
   display: -ms-flexbox;
   display: flex;
@@ -1347,6 +1315,83 @@ vacancies-item .vacancies .vacancy, .vacancies-item .vacancies .vacancy {
     font-weight: bold;
     text-transform: uppercase; }
 
+[screen="gallery-folder"] .gallery-folder {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: -15px -15px 0px 0px; }
+  [screen="gallery-folder"] .gallery-folder .folder-image {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-align: center;
+        align-items: center;
+    padding: 5px;
+    border: 1px dashed #ddd;
+    margin: 15px 15px 0 0;
+    background: #f7f7f7;
+    transition: .2s;
+    cursor: pointer; }
+    [screen="gallery-folder"] .gallery-folder .folder-image .image-image {
+      height: 80px;
+      width: 90px;
+      background: #fff;
+      background-size: cover;
+      background-position: center; }
+    [screen="gallery-folder"] .gallery-folder .folder-image .image-title {
+      margin-top: 5px;
+      font-weight: 600;
+      font-size: 12px;
+      padding: 5px 0px 0; }
+    [screen="gallery-folder"] .gallery-folder .folder-image:hover {
+      background: #ddd;
+      border: 1px dashed #888; }
+
+[screen="legal"] .case-status {
+  background: #72b330;
+  color: white;
+  line-height: 1;
+  padding: 5px 10px;
+  font-size: 10px;
+  margin-left: 5px;
+  display: inline-block;
+  vertical-align: text-top; }
+  [screen="legal"] .case-status.closed {
+    background: #e03c31; }
+
+[screen="legal"] .case-actions {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  color: #555; }
+  [screen="legal"] .case-actions > * {
+    margin-left: 3px; }
+  [screen="legal"] .case-actions .butn {
+    width: 100px; }
+    [screen="legal"] .case-actions .butn .fa {
+      vertical-align: top;
+      font-size: 85%; }
+
+[screen="legal"] .result-content p {
+  font-size: 12px;
+  margin-top: 2px;
+  transition: .2s; }
+  [screen="legal"] .result-content p:hover {
+    color: #333; }
+
 [screen="post"] .post-hero {
   height: 400px;
   margin-top: 30px;
@@ -1389,43 +1434,6 @@ vacancies-item .vacancies .vacancy, .vacancies-item .vacancies .vacancy {
   font-size: 20px;
   color: #999;
   margin: 15px 0 0; }
-
-[screen="legal"] .case-status {
-  background: #72b330;
-  color: white;
-  line-height: 1;
-  padding: 5px 10px;
-  font-size: 10px;
-  margin-left: 5px;
-  display: inline-block;
-  vertical-align: text-top; }
-  [screen="legal"] .case-status.closed {
-    background: #e03c31; }
-
-[screen="legal"] .case-actions {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: row;
-      flex-direction: row;
-  -ms-flex-pack: center;
-      justify-content: center;
-  -ms-flex-align: center;
-      align-items: center;
-  color: #555; }
-  [screen="legal"] .case-actions > * {
-    margin-left: 3px; }
-  [screen="legal"] .case-actions .butn {
-    width: 100px; }
-    [screen="legal"] .case-actions .butn .fa {
-      vertical-align: top;
-      font-size: 85%; }
-
-[screen="legal"] .result-content p {
-  font-size: 12px;
-  margin-top: 2px;
-  transition: .2s; }
-  [screen="legal"] .result-content p:hover {
-    color: #333; }
 
 [screen="search"] .search-bar {
   margin-top: 30px;

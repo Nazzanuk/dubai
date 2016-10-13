@@ -9,18 +9,6 @@ $templateCache.put("announcements","<div class=\"announcements\">\n" +
     "    <i class=\"fa fa-caret-right\"></i> &nbsp; DPG on target to deliver Mudon project with competitive mortgage solutions\n" +
     "</div>")
 
-$templateCache.put("box","<div class=\"box\">\n" +
-    "    <div class=\"box-header\">\n" +
-    "        {{header}}\n" +
-    "\n" +
-    "        <!--<div class=\"box-expand\">-->\n" +
-    "            <!--<i class=\"fa fa-minus\"></i>-->\n" +
-    "        <!--</div>-->\n" +
-    "        <div class=\"box-butn\" ng-if=\"butnText\">{{butnText}} &nbsp; <i class=\"fa fa-caret-right\"></i></div>\n" +
-    "    </div>\n" +
-    "    <div class=\"box-content\" ng-transclude></div>\n" +
-    "</div>")
-
 $templateCache.put("documents","<div id=\"documents\">\n" +
     "    <div class=\"box-item\" header=\"Projects\">\n" +
     "\n" +
@@ -77,6 +65,18 @@ $templateCache.put("documents","<div id=\"documents\">\n" +
     "            </div>\n" +
     "        </div>\n" +
     "    </div>\n" +
+    "</div>")
+
+$templateCache.put("box","<div class=\"box\">\n" +
+    "    <div class=\"box-header\">\n" +
+    "        {{header}}\n" +
+    "\n" +
+    "        <!--<div class=\"box-expand\">-->\n" +
+    "            <!--<i class=\"fa fa-minus\"></i>-->\n" +
+    "        <!--</div>-->\n" +
+    "        <div class=\"box-butn\" ng-if=\"butnText\">{{butnText}} &nbsp; <i class=\"fa fa-caret-right\"></i></div>\n" +
+    "    </div>\n" +
+    "    <div class=\"box-content\" ng-transclude></div>\n" +
     "</div>")
 
 $templateCache.put("event","<div id=\"event\">\n" +
@@ -222,20 +222,12 @@ $templateCache.put("gallery","<div id=\"gallery\">\n" +
     "    </div>\n" +
     "</div>")
 
-$templateCache.put("header","<div ng-controller=\"headerCtrl\">\n" +
+$templateCache.put("header","<div id=\"header\">\n" +
     "    <div class=\"header\">\n" +
     "        <div class=\"header-bottom\">\n" +
     "            <div class=\"container\">\n" +
     "\n" +
-    "                <div ng-repeat=\"test in getTest() track by $index\" class=\"bottom-item item-menu\">\n" +
-    "                    {{test}}\n" +
-    "                </div>\n" +
-    "\n" +
-    "                <div class=\"bottom-item item-menu\">DP Destinations</div>\n" +
-    "                <div class=\"bottom-item item-menu\">DP Projects</div>\n" +
-    "                <div class=\"bottom-item item-menu\">DP Management</div>\n" +
-    "                <div class=\"bottom-item item-menu\">DP Business Unit</div>\n" +
-    "                <div class=\"bottom-item item-menu\">Dubai Holding</div>\n" +
+    "                <div ng-transclude=\"headerLinks\"></div>\n" +
     "\n" +
     "                <div class=\"pull-right bottom-item\">\n" +
     "                    Ahmed Mahmood\n" +
@@ -836,6 +828,36 @@ $templateCache.put("gallery-screen","<div id=\"gallery-screen.html\">\n" +
     "    </div>\n" +
     "</div>")
 
+$templateCache.put("gallery-folder-screen","<div id=\"gallery-folder-screen.html\">\n" +
+    "    <div screen=\"gallery-folder\">\n" +
+    "        <div class=\"container\">\n" +
+    "\n" +
+    "            <div class=\"row\">\n" +
+    "\n" +
+    "                <div class=\"col-sm-8\">\n" +
+    "                    <div class=\"dp-header\">Human Resources</div>\n" +
+    "\n" +
+    "                    <div class=\"box-item\">\n" +
+    "                        <div class=\"gallery-folder\">\n" +
+    "                            <div class=\"folder-image\" ng-repeat=\"image in getImages() track by $index\">\n" +
+    "                                <div class=\"image-image\" style=\"background-image:url('http://placeimg.com/600/400?random={{$index}}');\" alt=\"\"></div>\n" +
+    "                                <div class=\"image-title\">HR_{{image}}</div>\n" +
+    "                            </div>\n" +
+    "                        </div>\n" +
+    "                    </div>\n" +
+    "                </div>\n" +
+    "\n" +
+    "                <div class=\"col-sm-4\">\n" +
+    "                    <vacancies-item></vacancies-item>\n" +
+    "                    <!--<gallery-item></gallery-item>-->\n" +
+    "                </div>\n" +
+    "            </div>\n" +
+    "\n" +
+    "\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "</div>")
+
 $templateCache.put("home-screen","<div id=\"home-screen.html\">\n" +
     "    <div screen=\"home\">\n" +
     "        <div class=\"container\">\n" +
@@ -881,36 +903,6 @@ $templateCache.put("home-screen","<div id=\"home-screen.html\">\n" +
     "            </div>\n" +
     "        </div>\n" +
     "\n" +
-    "    </div>\n" +
-    "</div>")
-
-$templateCache.put("gallery-folder-screen","<div id=\"gallery-folder-screen.html\">\n" +
-    "    <div screen=\"gallery-folder\">\n" +
-    "        <div class=\"container\">\n" +
-    "\n" +
-    "            <div class=\"row\">\n" +
-    "\n" +
-    "                <div class=\"col-sm-8\">\n" +
-    "                    <div class=\"dp-header\">Human Resources</div>\n" +
-    "\n" +
-    "                    <div class=\"box-item\">\n" +
-    "                        <div class=\"gallery-folder\">\n" +
-    "                            <div class=\"folder-image\" ng-repeat=\"image in getImages() track by $index\">\n" +
-    "                                <div class=\"image-image\" style=\"background-image:url('http://placeimg.com/600/400?random={{$index}}');\" alt=\"\"></div>\n" +
-    "                                <div class=\"image-title\">HR_{{image}}</div>\n" +
-    "                            </div>\n" +
-    "                        </div>\n" +
-    "                    </div>\n" +
-    "                </div>\n" +
-    "\n" +
-    "                <div class=\"col-sm-4\">\n" +
-    "                    <vacancies-item></vacancies-item>\n" +
-    "                    <!--<gallery-item></gallery-item>-->\n" +
-    "                </div>\n" +
-    "            </div>\n" +
-    "\n" +
-    "\n" +
-    "        </div>\n" +
     "    </div>\n" +
     "</div>")
 
