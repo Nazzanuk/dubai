@@ -211,6 +211,19 @@ app.component('footItem', {
     }
 });
 
+app.component('heroItem', {
+    templateUrl: 'hero',
+    restrict: 'ECA',
+    bindings: {},
+    controller: function controller($scope) {
+
+        var init = function init() {};
+
+        init();
+
+        _.extend($scope, {});
+    }
+});
 app.component('galleryItem', {
     templateUrl: 'gallery',
     restrict: 'EA',
@@ -249,19 +262,6 @@ app.component('headerItem', {
 
 app.controller('headerCtrl', headerCtrl);
 
-app.component('heroItem', {
-    templateUrl: 'hero',
-    restrict: 'ECA',
-    bindings: {},
-    controller: function controller($scope) {
-
-        var init = function init() {};
-
-        init();
-
-        _.extend($scope, {});
-    }
-});
 app.component('pollsItem', {
     templateUrl: 'polls',
     restrict: 'ECA',
@@ -288,19 +288,6 @@ app.component('pressReleasesItem', {
         _.extend($scope, {});
     }
 });
-app.component('promosItem', {
-    templateUrl: 'promos',
-    restrict: 'ECA',
-    bindings: {},
-    controller: function controller($scope) {
-
-        var init = function init() {};
-
-        init();
-
-        _.extend($scope, {});
-    }
-});
 app.component('servicesItem', {
     templateUrl: 'services',
     restrict: 'ECA',
@@ -315,6 +302,19 @@ app.component('servicesItem', {
     }
 });
 
+app.component('promosItem', {
+    templateUrl: 'promos',
+    restrict: 'ECA',
+    bindings: {},
+    controller: function controller($scope) {
+
+        var init = function init() {};
+
+        init();
+
+        _.extend($scope, {});
+    }
+});
 app.component('twitterItem', {
     templateUrl: 'twitter',
     restrict: 'ECA',
@@ -341,7 +341,7 @@ app.component('vacanciesItem', {
         _.extend($scope, {});
     }
 });
-app.controller('CaseScreen', function ($element, $timeout, $scope) {
+app.controller('CaseFormScreen', function ($element, $timeout, $scope) {
 
     var init = function init() {
         //$timeout(() => $element.find('[screen]').addClass('active'), 50);
@@ -352,7 +352,7 @@ app.controller('CaseScreen', function ($element, $timeout, $scope) {
     _.extend($scope, {});
 });
 
-app.controller('CaseFormScreen', function ($element, $timeout, $scope) {
+app.controller('CaseScreen', function ($element, $timeout, $scope) {
 
     var init = function init() {
         //$timeout(() => $element.find('[screen]').addClass('active'), 50);
@@ -420,60 +420,6 @@ app.controller('HomeScreen', function ($element, $timeout, $scope) {
     init();
 
     _.extend($scope, {});
-});
-
-app.controller('LegalScreen', function ($element, $timeout, $scope) {
-
-    var cases = [],
-        searchFilter = {};
-
-    var getCases = function getCases() {
-        return cases;
-    };
-
-    var getSearchFilter = function getSearchFilter() {
-        return searchFilter;
-    };
-
-    var getTypes = function getTypes() {
-        return _.uniq(_.map(cases, 'type'));
-    };
-
-    var genCases = function genCases() {
-        _.times(50, genCase);
-    };
-
-    var genCase = function genCase() {
-        var obj = {};
-
-        obj.id = 'LC0' + _.random(1000000, 9999999);
-        obj.open = _.sample([true, true, true, false]);
-        obj.date = _.random(1, 28) + '/' + _.random(1, 10) + '/2016';
-        obj.type = _.sample(['case', 'case', 'case', 'case', 'press-release', 'vacancy']);
-        obj.department = _.sample(['HR', 'Finance', 'Operations', 'Residential Asset Management', 'Retail & Hotel Asset Management', 'REO', 'Legal']);
-        obj.filename = _.sample([]);
-        obj.ext = _.sample(['doc', 'pdf', 'xls']);
-        obj.title = _.sampleSize(['DPG', 'Property', 'Analysis', '2016', 'HR', 'Department', 'Project', 'New', 'Staff', 'Form', 'Modules', 'Component', 'Core'], _.random(2, 5)).join(" ");
-        obj.description = _.sampleSize(['Amet', 'autem', 'cumque', 'dolore', 'eaque inventore', 'nostrum obcaecati', 'repudiandae vel', 'voluptas voluptatem'], 4).join(" ");
-
-        obj.title = obj.type == 'vacancy' ? 'New Position - ' + obj.title : obj.title;
-        cases.push(obj);
-    };
-
-    var init = function init() {
-        genCases();
-        //$timeout(() => $element.find('[screen]').addClass('active'), 50);
-    };
-
-    init();
-
-    _.extend($scope, {});
-
-    _.extend($scope, {
-        getSearchFilter: getSearchFilter,
-        getCases: getCases,
-        getTypes: getTypes
-    });
 });
 
 app.controller('PostScreen', function ($element, $timeout, $scope) {
@@ -545,4 +491,58 @@ app.controller('VacancyScreen', function ($element, $timeout, $scope) {
     init();
 
     _.extend($scope, {});
+});
+
+app.controller('LegalScreen', function ($element, $timeout, $scope) {
+
+    var cases = [],
+        searchFilter = {};
+
+    var getCases = function getCases() {
+        return cases;
+    };
+
+    var getSearchFilter = function getSearchFilter() {
+        return searchFilter;
+    };
+
+    var getTypes = function getTypes() {
+        return _.uniq(_.map(cases, 'type'));
+    };
+
+    var genCases = function genCases() {
+        _.times(50, genCase);
+    };
+
+    var genCase = function genCase() {
+        var obj = {};
+
+        obj.id = 'LC0' + _.random(1000000, 9999999);
+        obj.open = _.sample([true, true, true, false]);
+        obj.date = _.random(1, 28) + '/' + _.random(1, 10) + '/2016';
+        obj.type = _.sample(['case', 'case', 'case', 'case', 'press-release', 'vacancy']);
+        obj.department = _.sample(['HR', 'Finance', 'Operations', 'Residential Asset Management', 'Retail & Hotel Asset Management', 'REO', 'Legal']);
+        obj.filename = _.sample([]);
+        obj.ext = _.sample(['doc', 'pdf', 'xls']);
+        obj.title = _.sampleSize(['DPG', 'Property', 'Analysis', '2016', 'HR', 'Department', 'Project', 'New', 'Staff', 'Form', 'Modules', 'Component', 'Core'], _.random(2, 5)).join(" ");
+        obj.description = _.sampleSize(['Amet', 'autem', 'cumque', 'dolore', 'eaque inventore', 'nostrum obcaecati', 'repudiandae vel', 'voluptas voluptatem'], 4).join(" ");
+
+        obj.title = obj.type == 'vacancy' ? 'New Position - ' + obj.title : obj.title;
+        cases.push(obj);
+    };
+
+    var init = function init() {
+        genCases();
+        //$timeout(() => $element.find('[screen]').addClass('active'), 50);
+    };
+
+    init();
+
+    _.extend($scope, {});
+
+    _.extend($scope, {
+        getSearchFilter: getSearchFilter,
+        getCases: getCases,
+        getTypes: getTypes
+    });
 });

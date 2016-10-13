@@ -1,4 +1,4 @@
-header-item, .header-item, .header-el {
+header-item, .header-item, [ng-controller="headerCtrl"] {
 
   header-menu {
     display: inline;
