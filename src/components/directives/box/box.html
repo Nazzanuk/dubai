@@ -1,11 +1,15 @@
 <div class="box">
     <div class="box-header">
-        {{header}}
+        <div class="header-tab active" ng-if="!headers">{{header}}</div>
+        <div class="header-tab"
+             header-tab="{{$index}}"
+             ng-repeat="header in headers"
+            ng-class="{active:getCurrentTab() == $index}"
+        >{{header}}</div>
 
-        <!--<div class="box-expand">-->
-            <!--<i class="fa fa-minus"></i>-->
-        <!--</div>-->
         <div class="box-butn" ng-if="butnText">{{butnText}} &nbsp; <i class="fa fa-caret-right"></i></div>
     </div>
-    <div class="box-content" ng-transclude></div>
+    <div class="box-content" ng-transclude>
+
+    </div>
 </div>

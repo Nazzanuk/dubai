@@ -4,8 +4,8 @@ documents-item, .documents-item {
     position: relative;
 
     .box-butn {
-      line-height: 29px;
-      margin: 5px;
+      //line-height: 29px;
+      margin: 0px;
       background: $teal;
       background: #f7f7f7;
       padding: 0 10px;
@@ -16,11 +16,15 @@ documents-item, .documents-item {
       letter-spacing: 0;
       transition: .2s;
       position: absolute;
-      top: -56px;
+      top: -55px;
       right: -15px;
       font-weight: bold;
       border: 1px solid transparent;
       border-bottom: none;
+
+
+      line-height: 39px;
+      height: 39px;
 
       &:hover {
         background: #f7f7f7;
@@ -39,7 +43,7 @@ documents-item, .documents-item {
         visibility: hidden;
         opacity: 0;
         position: absolute;
-        top: 30px;
+        top: 38px;
         right: -1px;
         background: #f7f7f7;
         color: #333;

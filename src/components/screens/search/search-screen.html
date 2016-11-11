@@ -1,5 +1,5 @@
 <div id="search-screen.html">
-    <div screen="search">
+    <div class="screen-search">
         <div class="container">
             <!--<div class="dp-header">Document Search</div>-->
 
@@ -41,25 +41,30 @@
                             <div class="search-filter">
                                 <div class="fa fa-caret-down"></div>
                                 <select>
-                                    <option value="">All Document Types</option>
-                                </select>
-                            </div>
-                            <div class="search-filter">
-                                <div class="fa fa-caret-down"></div>
-                                <select>
-                                    <option value="">All Document Subtypes</option>
-                                </select>
-                            </div>
-                            <div class="search-filter">
-                                <div class="fa fa-caret-down"></div>
-                                <select>
                                     <option value="">All Projects</option>
                                 </select>
                             </div>
                         </div>
                     </div>
 
-                    <div class="box-item" header="Advanced Filters"></div>
+                    <div class="box-item" header="Advanced Filters" ng-if="getSearchFilter().type == 'document'">
+                        <div class="search-filters">
+                            <div class="search-filter">
+                                <div class="fa fa-caret-down"></div>
+                                <select ng-model="getSearchFilter().docType">
+                                    <option value="">All Document Types</option>
+                                    <option value="{{type}}" ng-repeat="type in getDocTypes()">{{type}}</option>
+                                </select>
+                            </div>
+                            <div class="search-filter" ng-if="getSearchFilter().docType">
+                                <div class="fa fa-caret-down"></div>
+                                <select ng-model="getSearchFilter().docSubtype">
+                                    <option value="">All Document Subtypes</option>
+                                    <option value="{{type}}" ng-repeat="type in getSubtypes()">{{type}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="col-sm-9">

@@ -1,5 +1,5 @@
 <div id="legal-screen.html">
-    <div screen="legal">
+    <div class="screen-legal">
         <div class="container">
 
 
@@ -67,7 +67,7 @@
                 <div class="col-md-9">
                     <div class="box-item" header="All Cases">
                         <div class="case-documents" ui-sref="case">
-                            <div class="result" ng-repeat="case in getCases()">
+                            <div class="result" ng-repeat="case in getCases() | orderBy: '-open'">
                                 <img class="result-icon" src="public/img/folder (2).svg">
                                 <div class="result-content">
                                     <div class="dp-title">

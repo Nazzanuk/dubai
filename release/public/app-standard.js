@@ -41,6 +41,9 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
             $timeout(function () {
                 return $('[screen]').addClass('active');
             }, 350);
+            $timeout(function () {
+                return $(window).scrollTop(0);
+            }, 350);
             return $timeout(300);
         }
     };
@@ -49,7 +52,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider.otherwise("/");
 
     // Now set up the states
-    $stateProvider.state(new Route('home', "/", resolve)).state(new Route('post', "/post", resolve)).state(new Route('vacancy', "/vacancy", resolve)).state(new Route('search', "/search", resolve)).state(new Route('legal', "/legal", resolve)).state(new Route('gallery', "/gallery", resolve)).state(new Route('gallery-folder', "/gallery-folder", resolve)).state(new Route('discounts', "/discounts", resolve)).state(new Route('case-form', "/case-form", resolve)).state(new Route('case', "/case", resolve));
+    $stateProvider.state(new Route('home', "/", resolve)).state(new Route('post', "/post", resolve)).state(new Route('post-2', "/post-2", resolve)).state(new Route('vacancy', "/vacancy", resolve)).state(new Route('search', "/search", resolve)).state(new Route('legal', "/legal", resolve)).state(new Route('gallery', "/gallery", resolve)).state(new Route('gallery-folder', "/gallery-folder", resolve)).state(new Route('discounts', "/discounts", resolve)).state(new Route('collab', "/collab", resolve)).state(new Route('case-form', "/case-form", resolve)).state(new Route('case', "/case", resolve));
 
     //use real urls instead of hashes
     //$locationProvider.html5Mode(true);
@@ -140,35 +143,54 @@ app.component('boxItem', {
     restrict: 'ECA',
     bindings: {
         header: '@',
+        headers: '=',
         butnText: '@',
         butnLink: '@',
         butnColor: '@'
     },
     transclude: true,
-    controller: function controller($scope) {
+    controller: function controller($scope, $element, $timeout) {
 
-        var init = function init() {};
+        var currentTab = 0;
+
+        var getCurrentTab = function getCurrentTab() {
+            return currentTab;
+        };
+
+        var setActiveTab = function setActiveTab() {
+            var index = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+
+
+            $element.find('[box-tab]').removeClass('active');
+            $element.find('[box-tab=\'' + currentTab + '\']').addClass('active');
+        };
+
+        var events = function events() {
+            $element.find('[box-tab=\'' + currentTab + '\']').addClass('active');
+
+            $element.on('click', '[header-tab]', function () {
+                currentTab = $(this).attr('header-tab');
+
+                setActiveTab(currentTab);
+
+                $scope.$apply();
+            });
+        };
+
+        var init = function init() {
+            events();
+            $timeout(setActiveTab);
+        };
 
         init();
 
         _.extend($scope, this);
-        _.extend($scope, {});
+        _.extend($scope, {
+            getCurrentTab: getCurrentTab
+        });
     }
 });
 
-app.component('documentsItem', {
-    templateUrl: 'documents',
-    restrict: 'ECA',
-    bindings: {},
-    controller: function controller($scope) {
-
-        var init = function init() {};
-
-        init();
-
-        _.extend($scope, {});
-    }
-});
 app.component('eventItem', {
     templateUrl: 'event',
     restrict: 'EA',
@@ -196,6 +218,19 @@ app.component('eventsItem', {
         _.extend($scope, {
             toggleEvent: Event.toggleEvent
         });
+    }
+});
+app.component('documentsItem', {
+    templateUrl: 'documents',
+    restrict: 'ECA',
+    bindings: {},
+    controller: function controller($scope) {
+
+        var init = function init() {};
+
+        init();
+
+        _.extend($scope, {});
     }
 });
 app.component('footItem', {
@@ -229,19 +264,6 @@ app.component('galleryItem', {
         _.extend($scope, {});
     }
 });
-app.component('heroItem', {
-    templateUrl: 'hero',
-    restrict: 'ECA',
-    bindings: {},
-    controller: function controller($scope) {
-
-        var init = function init() {};
-
-        init();
-
-        _.extend($scope, {});
-    }
-});
 app.component('headerItem', {
     templateUrl: 'header',
     bindings: {},
@@ -258,8 +280,8 @@ app.component('headerItem', {
     }
 });
 
-app.component('pressReleasesItem', {
-    templateUrl: 'press-releases',
+app.component('heroItem', {
+    templateUrl: 'hero',
     restrict: 'ECA',
     bindings: {},
     controller: function controller($scope) {
@@ -273,6 +295,19 @@ app.component('pressReleasesItem', {
 });
 app.component('pollsItem', {
     templateUrl: 'polls',
+    restrict: 'ECA',
+    bindings: {},
+    controller: function controller($scope) {
+
+        var init = function init() {};
+
+        init();
+
+        _.extend($scope, {});
+    }
+});
+app.component('pressReleasesItem', {
+    templateUrl: 'press-releases',
     restrict: 'ECA',
     bindings: {},
     controller: function controller($scope) {
@@ -311,8 +346,8 @@ app.component('servicesItem', {
     }
 });
 
-app.component('vacanciesItem', {
-    templateUrl: 'vacancies',
+app.component('twitterItem', {
+    templateUrl: 'twitter',
     restrict: 'ECA',
     bindings: {},
     controller: function controller($scope) {
@@ -324,8 +359,8 @@ app.component('vacanciesItem', {
         _.extend($scope, {});
     }
 });
-app.component('twitterItem', {
-    templateUrl: 'twitter',
+app.component('vacanciesItem', {
+    templateUrl: 'vacancies',
     restrict: 'ECA',
     bindings: {},
     controller: function controller($scope) {
@@ -348,7 +383,7 @@ app.controller('CaseScreen', function ($element, $timeout, $scope) {
     _.extend($scope, {});
 });
 
-app.controller('CaseFormScreen', function ($element, $timeout, $scope) {
+app.controller('CollabScreen', function ($element, $timeout, $scope) {
 
     var init = function init() {
         //$timeout(() => $element.find('[screen]').addClass('active'), 50);
@@ -359,7 +394,7 @@ app.controller('CaseFormScreen', function ($element, $timeout, $scope) {
     _.extend($scope, {});
 });
 
-app.controller('DiscountsScreen', function ($element, $timeout, $scope) {
+app.controller('CaseFormScreen', function ($element, $timeout, $scope) {
 
     var init = function init() {
         //$timeout(() => $element.find('[screen]').addClass('active'), 50);
@@ -381,7 +416,7 @@ app.controller('GalleryScreen', function ($element, $timeout, $scope) {
     _.extend($scope, {});
 });
 
-app.controller('HomeScreen', function ($element, $timeout, $scope) {
+app.controller('DiscountsScreen', function ($element, $timeout, $scope) {
 
     var init = function init() {
         //$timeout(() => $element.find('[screen]').addClass('active'), 50);
@@ -416,6 +451,17 @@ app.controller('GalleryFolderScreen', function ($element, $timeout, $scope) {
     _.extend($scope, {
         getImages: getImages
     });
+});
+
+app.controller('HomeScreen', function ($element, $timeout, $scope) {
+
+    var init = function init() {
+        //$timeout(() => $element.find('[screen]').addClass('active'), 50);
+    };
+
+    init();
+
+    _.extend($scope, {});
 });
 
 app.controller('LegalScreen', function ($element, $timeout, $scope) {
@@ -485,10 +531,31 @@ app.controller('PostScreen', function ($element, $timeout, $scope) {
     _.extend($scope, {});
 });
 
+app.controller('Post2Screen', function ($element, $timeout, $scope) {
+
+    var init = function init() {
+        //$timeout(() => $element.find('[screen]').addClass('active'), 50);
+    };
+
+    init();
+
+    _.extend($scope, {});
+});
+
 app.controller('SearchScreen', function ($element, $timeout, $scope) {
 
     var documents = [],
         searchFilter = {};
+
+    var docTypes = ['Contracts', 'Identifications Documents', 'Agreements', 'Notices', 'Cheques'];
+
+    var subtypes = {
+        'Contracts': ['Lease Contracts', 'Speciality leasing', 'Contracts / Permits', 'External brokers contract'],
+        'Identifications Documents': ['Emirates ID copy', 'Passport Copies', 'Authorized Signatories', 'Passport copies'],
+        'Agreements': ['MOA', 'Non-residential lease agreements'],
+        'Cheques': ['Cheques copies'],
+        'Notices': ["Renewal Notices", "Renewal Notices POD", "Empower Notices", "Empower Notices POD", "NOD'S", "Publications", "Court orders", "Notice of Terminations", "Violation Notices"]
+    };
 
     var getDocuments = function getDocuments() {
         return documents;
@@ -502,8 +569,16 @@ app.controller('SearchScreen', function ($element, $timeout, $scope) {
         return _.uniq(_.map(documents, 'type'));
     };
 
+    var getDocTypes = function getDocTypes() {
+        return docTypes;
+    };
+
+    var getSubtypes = function getSubtypes() {
+        return subtypes[searchFilter.docType];
+    };
+
     var genDocuments = function genDocuments() {
-        _.times(50, genDocument);
+        return _.times(50, genDocument);
     };
 
     var genDocument = function genDocument() {
@@ -512,6 +587,8 @@ app.controller('SearchScreen', function ($element, $timeout, $scope) {
         obj.id = Math.random().toString(36).substring(7);
         obj.date = _.random(1, 28) + '/' + _.random(1, 10) + '/2016';
         obj.type = _.sample(['document', 'document', 'document', 'document', 'press-release', 'vacancy']);
+        obj.docType = _.sample(docTypes);
+        obj.docSubtype = _.sample(subtypes[obj.docType]);
         obj.filename = _.sample([]);
         obj.ext = _.sample(['doc', 'pdf', 'xls']);
         obj.title = _.sampleSize(['DPG', 'Property', 'Analysis', '2016', 'HR', 'Department', 'Project', 'New', 'Staff', 'Form', 'Modules', 'Component', 'Core'], _.random(2, 5)).join(" ");
@@ -530,6 +607,8 @@ app.controller('SearchScreen', function ($element, $timeout, $scope) {
     _.extend($scope, {
         getSearchFilter: getSearchFilter,
         getDocuments: getDocuments,
+        getDocTypes: getDocTypes,
+        getSubtypes: getSubtypes,
         getTypes: getTypes
     });
 });
